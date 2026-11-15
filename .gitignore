@@ -1,0 +1,41 @@
+# Compilación y herramientas locales
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+/CMakeFiles/
+/CMakeCache.txt
+/compile_commands.json
+/CMakeUserPresets.json
+*.exe
+*.dll
+*.obj
+*.o
+*.pdb
+*.ilk
+
+# Configuración privada
+/.env
+/.env.*
+!/.env.example
+/config/*.env
+!/config/*.example.env
+/config/*.local.*
+/config/conexion.local.*
+
+# Datos de trabajo y evaluaciones reservadas
+/datos_locales/
+/datos_mongo/
+/dump/
+/banco/evaluacion/
+/banco/evaluaciones/
+/banco/reservado/
+/docs/privado/
+*.bson
+*.log
+~$*
+Thumbs.db
+.DS_Store
+
+/.vscode/
+/mongocxx_install_manifest.txt
