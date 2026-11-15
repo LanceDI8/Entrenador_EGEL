@@ -1,0 +1,1288 @@
+{
+  "_comentarios": [
+    "Lote 01: 50 preguntas nuevas. Coloca este archivo en la subcarpeta lotes del banco."
+  ],
+  "area": 4,
+  "temas": [
+    {
+      "codigoTema": "EGEL-TEMA-A4-014",
+      "subarea": "4.1 Gestión de tiempos, costos, recursos humanos y de riesgo",
+      "nombre": "Cronogramas y asignación de recursos",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 01.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-051",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "En una entrega, A tarda 2 días. Después de A se ejecutan en paralelo B de 4 días y C de 3 días. D dura 2 días y espera a ambas.\n\n¿Cuál es la duración mínima?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "11 días.",
+              "explicacion": "Suma B y C como si no pudieran ejecutarse en paralelo."
+            },
+            {
+              "id": "B",
+              "texto": "8 días.",
+              "explicacion": "Se suman A, la rama más larga B y D: 2 + 4 + 2."
+            },
+            {
+              "id": "C",
+              "texto": "7 días.",
+              "explicacion": "Usa la rama de 3 días, aunque D también espera a B."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-052",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "La ruta A–B–D dura 12 días y A–C–D dura 9. Las rutas comparten solo A y D y no hay otras dependencias. Si C se retrasa dos días,\n\n¿qué pasa con la entrega?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Sigue en 12 días.",
+              "explicacion": "La rama de C pasa a 11 y aún no determina el fin."
+            },
+            {
+              "id": "B",
+              "texto": "Pasa a 11 días.",
+              "explicacion": "Ignora que la otra ruta todavía requiere 12."
+            },
+            {
+              "id": "C",
+              "texto": "Pasa a 14 días.",
+              "explicacion": "Trata C como si estuviera en la ruta crítica original."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-053",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "En un plan, X y Y empiezan juntas y cada una requiere a tiempo completo a la única persona experta disponible.\n\n¿Qué ajuste atiende el problema?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Acortar en el papel las duraciones para que quepan en las mismas fechas.",
+              "explicacion": "No libera capacidad real."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar la dependencia técnica de una tarea sin analizarla.",
+              "explicacion": "El conflicto se debe al recurso compartido, no necesariamente a dependencias."
+            },
+            {
+              "id": "C",
+              "texto": "Nivelar recursos, reprogramando una de las dos o asignando otra persona competente.",
+              "explicacion": "El calendario debe respetar la capacidad real de ejecución."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-054",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "La ruta crítica incluye Diseño, Integración y Validación. Acelerar una actividad de documentación con holgura cuesta 3,000 pesos. El único objetivo es reducir la fecha final.\n\n¿Qué conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Pagar la aceleración de documentación porque es la más barata.",
+              "explicacion": "Su bajo costo no la convierte en determinante de la fecha final."
+            },
+            {
+              "id": "B",
+              "texto": "Evaluar primero opciones para acortar actividades críticas.",
+              "explicacion": "Acortar una actividad con holgura no adelanta por sí sola el fin."
+            },
+            {
+              "id": "C",
+              "texto": "Aumentar la holgura de documentación y contarla como días ahorrados.",
+              "explicacion": "La holgura no reduce la duración de la ruta crítica."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-055",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un patrocinador quiere ver qué entregables se prometieron y cómo se dividen en paquetes de trabajo.\n\n¿Qué artefacto conviene revisar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La estructura de desglose del trabajo.",
+              "explicacion": "Organiza jerárquicamente el alcance en entregables y paquetes."
+            },
+            {
+              "id": "B",
+              "texto": "El registro de riesgos por probabilidad.",
+              "explicacion": "Enumera incertidumbres, no desglosa el alcance."
+            },
+            {
+              "id": "C",
+              "texto": "El informe de costos acumulados.",
+              "explicacion": "Muestra gasto, no la jerarquía del trabajo."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-015",
+      "subarea": "4.1 Gestión de tiempos, costos, recursos humanos y de riesgo",
+      "nombre": "Estimación y control presupuestal",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 01.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-056",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "Con estimación PERT, los tiempos optimista, más probable y pesimista son 3, 6 y 15 días. Usa (O + 4M + P) / 6.\n\n¿Cuál es el tiempo esperado?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "8 días.",
+              "explicacion": "Es el promedio simple de los tres tiempos, no el ponderado."
+            },
+            {
+              "id": "B",
+              "texto": "6 días.",
+              "explicacion": "Usa solo el tiempo más probable."
+            },
+            {
+              "id": "C",
+              "texto": "7 días.",
+              "explicacion": "La suma ponderada es 3 + 24 + 15 = 42; entre 6 da 7."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-057",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "Un proyecto tiene valor ganado de 72 mil pesos y costo real de 84 mil. Si la variación de costo se calcula como valor ganado menos costo real,\n\n¿cuál debe reportarse?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "84 mil pesos.",
+              "explicacion": "Es el gasto real, no la diferencia respecto del valor ganado."
+            },
+            {
+              "id": "B",
+              "texto": "−12 mil pesos.",
+              "explicacion": "72 menos 84 da −12; el signo negativo indica sobrecosto."
+            },
+            {
+              "id": "C",
+              "texto": "12 mil pesos.",
+              "explicacion": "Invierte el orden de la resta y cambia el significado del indicador."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-058",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "En un periodo se planificó un valor de 50 mil, se completó trabajo con valor de 60 mil y se gastaron 75 mil.\n\n¿Qué interpretación corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Atraso y sobrecosto.",
+              "explicacion": "El trabajo realizado tiene más valor que lo planificado a esa fecha."
+            },
+            {
+              "id": "B",
+              "texto": "Adelanto y ahorro.",
+              "explicacion": "Gastar 75 para ganar un valor de 60 no representa ahorro."
+            },
+            {
+              "id": "C",
+              "texto": "Adelanto frente al plan, con sobrecosto por el trabajo realizado.",
+              "explicacion": "El valor ganado supera el plan, pero es inferior al costo real."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-059",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "Una prueba cuesta 12 horas a 250 pesos y una corrección 8 horas a 375 pesos. Se agregará 10 % de reserva sobre ambos trabajos.\n\n¿Qué monto presupuestar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "6,000 pesos.",
+              "explicacion": "Excluye la reserva pedida."
+            },
+            {
+              "id": "B",
+              "texto": "6,300 pesos.",
+              "explicacion": "Aplica la reserva solo a uno de los dos trabajos."
+            },
+            {
+              "id": "C",
+              "texto": "6,600 pesos.",
+              "explicacion": "Cada trabajo cuesta 3,000; la reserva sobre 6,000 es 600."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-060",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un proyecto sin diseño técnico detallado ya conoce entradas, salidas, consultas y datos mantenidos. Quiere estimar tamaño funcional sin depender del lenguaje.\n\n¿Qué técnica encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Conteo exacto de líneas del código definitivo.",
+              "explicacion": "El código todavía no existe y depende de la implementación."
+            },
+            {
+              "id": "B",
+              "texto": "Estimación por puntos de función.",
+              "explicacion": "Usa funcionalidad observable en vez de líneas de un lenguaje específico."
+            },
+            {
+              "id": "C",
+              "texto": "Número de personas en las reuniones del proyecto.",
+              "explicacion": "No mide funcionalidad entregada."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-016",
+      "subarea": "4.1 Gestión de tiempos, costos, recursos humanos y de riesgo",
+      "nombre": "Responsabilidad, riesgos y operación",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-061",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una función opcional necesita una biblioteca que podría dejar de recibir mantenimiento. El patrocinador la elimina del alcance y con ello desaparece la dependencia.\n\n¿Qué respuesta al riesgo aplica?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Transferir el riesgo al proveedor de la biblioteca.",
+              "explicacion": "No se pactó que un tercero asumiera la exposición."
+            },
+            {
+              "id": "B",
+              "texto": "Evitar el riesgo al eliminar la actividad que generaba la exposición.",
+              "explicacion": "La decisión retira la causa del riesgo del plan."
+            },
+            {
+              "id": "C",
+              "texto": "Aceptar el riesgo y registrar su impacto sin actuar.",
+              "explicacion": "Se cambió el alcance para eliminar la exposición."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-062",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "Se usa exposición esperada igual a probabilidad por impacto. R1 tiene 25 % de probabilidad y cuesta 40,000 pesos; R2 tiene 60 % y cuesta 12,000.\n\n¿Cuál se atiende primero con ese criterio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Ambos, porque cada uno tiene un factor mayor.",
+              "explicacion": "Los productos permiten distinguir sus exposiciones."
+            },
+            {
+              "id": "B",
+              "texto": "R2, porque 60 % es mayor que 25 %.",
+              "explicacion": "El criterio también toma en cuenta el impacto."
+            },
+            {
+              "id": "C",
+              "texto": "R1, con exposición de 10,000 frente a 7,200 pesos.",
+              "explicacion": "Se compara el producto de ambos factores."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-063",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una actualización falló y los usuarios no pueden entrar. La causa todavía no se conoce.\n\n¿Qué hace primero la gestión de incidentes?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Esperar a demostrar la causa raíz antes de restaurar el acceso.",
+              "explicacion": "Retrasa la recuperación sin necesidad."
+            },
+            {
+              "id": "B",
+              "texto": "Restaurar el acceso con una acción segura y registrar lo ocurrido.",
+              "explicacion": "El objetivo inmediato es recuperar el servicio; la causa puede investigarse después."
+            },
+            {
+              "id": "C",
+              "texto": "Cerrar los reportes al recibirlos porque ya se registraron.",
+              "explicacion": "El servicio sigue interrumpido."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-064",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Tres incidentes similares se resolvieron reiniciando un proceso. El equipo quiere evitar que se repitan.\n\n¿Qué actividad debe abrir?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Investigar el problema común y registrar una causa raíz o solución conocida.",
+              "explicacion": "La gestión de problemas aborda la recurrencia y no solo el síntoma."
+            },
+            {
+              "id": "B",
+              "texto": "Cambiar el nombre de los incidentes para que parezcan distintos.",
+              "explicacion": "Dificulta identificar el patrón sin resolverlo."
+            },
+            {
+              "id": "C",
+              "texto": "Reiniciar cada vez y borrar el historial previo.",
+              "explicacion": "No aprende de la repetición."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-065",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una matriz RACI, el analista realiza una revisión y la líder acepta el resultado final.\n\n¿Cómo representar esas funciones?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Analista R y líder A.",
+              "explicacion": "R ejecuta el trabajo; A responde por la decisión final."
+            },
+            {
+              "id": "B",
+              "texto": "Analista A y líder R.",
+              "explicacion": "Invierte quién ejecuta y quién responde por el resultado."
+            },
+            {
+              "id": "C",
+              "texto": "Ambos I.",
+              "explicacion": "Informar no equivale a ejecutar o aceptar el trabajo."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-017",
+      "subarea": "4.1 Gestión de tiempos, costos, recursos humanos y de riesgo",
+      "nombre": "Alcance, cambios y compromisos",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-066",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cliente pide una función no incluida y no acepta mover la fecha.\n\n¿Qué hacer antes de comprometerla?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Prometerla y trabajar en ella sin registrar el cambio.",
+              "explicacion": "Oculta impacto y puede crear sobrecarga o incumplimiento."
+            },
+            {
+              "id": "B",
+              "texto": "Rechazarla sin registrar la solicitud ni evaluar alternativas.",
+              "explicacion": "Impide una decisión informada por el responsable del alcance."
+            },
+            {
+              "id": "C",
+              "texto": "Evaluar impacto y negociar un ajuste de alcance, recursos o fecha con aprobación.",
+              "explicacion": "Un cambio aprobado requiere conocer y acordar sus consecuencias."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-067",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un paquete de trabajo tiene un responsable, pero «terminado» significa cosas distintas para desarrollo y calidad.\n\n¿Qué añadir al plan?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El color que tendrá la tarea en el tablero.",
+              "explicacion": "No define qué trabajo cuenta como terminado."
+            },
+            {
+              "id": "B",
+              "texto": "Criterios verificables de finalización y quién acepta el paquete.",
+              "explicacion": "Alinea qué evidencia se requiere y quién decide la aceptación."
+            },
+            {
+              "id": "C",
+              "texto": "Una duración mayor sin aclarar el resultado.",
+              "explicacion": "Da más tiempo, pero no resuelve el desacuerdo."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-068",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Durante un cierre, el equipo detecta que una licencia expira justo antes de la entrega.\n\n¿Qué debe quedar en el registro de riesgos antes de decidir?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Solo el costo del equipo de desarrollo.",
+              "explicacion": "No describe el evento ni su gestión."
+            },
+            {
+              "id": "B",
+              "texto": "Solo el nombre de la licencia.",
+              "explicacion": "No establece impacto ni acción."
+            },
+            {
+              "id": "C",
+              "texto": "Probabilidad, efecto, responsable, respuesta y señal de activación.",
+              "explicacion": "Permite dar seguimiento y actuar cuando aparezca la condición."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-069",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La dirección quiere saber si un retraso cambia la fecha de entrega o solo consume margen.\n\n¿Qué información necesita el análisis?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Solo el costo por hora de quien ejecuta la tarea.",
+              "explicacion": "No establece relaciones de calendario."
+            },
+            {
+              "id": "B",
+              "texto": "Solo el porcentaje de código escrito.",
+              "explicacion": "No muestra qué trabajo determina la fecha final."
+            },
+            {
+              "id": "C",
+              "texto": "La holgura de la actividad, sus dependencias y la ruta crítica vigente.",
+              "explicacion": "Permite determinar si el atraso se propaga al fin del proyecto."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-070",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una parte interesada recibe reportes semanales; otra aprueba cambios antes de ejecutarlos.\n\n¿Qué instrumento documenta las diferencias de comunicación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un inventario de herramientas de chat.",
+              "explicacion": "Enumera canales, pero no define cómo se usan."
+            },
+            {
+              "id": "B",
+              "texto": "Un solo correo semanal que se envía a todos sin distinguir decisiones.",
+              "explicacion": "Puede omitir la solicitud de autorización o enviarla tarde."
+            },
+            {
+              "id": "C",
+              "texto": "Un plan con destinatarios, frecuencia, propósito, responsable y canal.",
+              "explicacion": "Distingue informar periódicamente de solicitar una aprobación."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-018",
+      "subarea": "4.2 Calidad del software",
+      "nombre": "Indicadores, metas y defectos",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-071",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La meta es reducir fallos de pago que ve el cliente.\n\n¿Qué métrica está mejor ligada a esa meta?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Número de clases en el módulo de pagos.",
+              "explicacion": "No indica con qué frecuencia falla el pago."
+            },
+            {
+              "id": "B",
+              "texto": "Horas de reuniones sobre pagos.",
+              "explicacion": "Mide actividad interna, no el resultado del cliente."
+            },
+            {
+              "id": "C",
+              "texto": "Proporción de intentos válidos de pago que fallan por causa del sistema.",
+              "explicacion": "Mide el resultado que experimenta el usuario y define un denominador."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-072",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "Un equipo registró 12 defectos en 60 solicitudes y luego 15 en 150.\n\n¿Cómo comparar la frecuencia por solicitud?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Subió porque hubo 15 en vez de 12 defectos.",
+              "explicacion": "Los conteos absolutos no consideran que cambió el volumen."
+            },
+            {
+              "id": "B",
+              "texto": "Bajó de 20 % a 10 %.",
+              "explicacion": "Se usan las solicitudes de cada periodo como denominador."
+            },
+            {
+              "id": "C",
+              "texto": "Se mantuvo en 12 % en ambos periodos.",
+              "explicacion": "No resulta de dividir cada conteo por su exposición."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-073",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un informe mezcla fallos leves de texto con pérdida de datos. El equipo solo cuenta cuántos defectos tiene cada categoría.\n\n¿Qué agregar para decidir prioridades?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Severidad e impacto junto a la frecuencia.",
+              "explicacion": "Un defecto raro puede ser más grave que muchos errores cosméticos."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar los casos raros del análisis.",
+              "explicacion": "Oculta riesgos de gran impacto."
+            },
+            {
+              "id": "C",
+              "texto": "Ordenar solo por la fecha en que se reportaron.",
+              "explicacion": "La antigüedad no refleja importancia por sí sola."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-074",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cliente pide que dos sistemas intercambien expedientes sin intervención manual.\n\n¿Qué atributo conviene verificar de forma directa?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Interoperabilidad mediante pruebas de intercambio entre ambos sistemas.",
+              "explicacion": "Evalúa si pueden intercambiar y usar la información."
+            },
+            {
+              "id": "B",
+              "texto": "Portabilidad medida al instalar una aplicación en dos equipos.",
+              "explicacion": "Instalar en entornos distintos no comprueba el intercambio."
+            },
+            {
+              "id": "C",
+              "texto": "Usabilidad medida por cantidad de botones.",
+              "explicacion": "No demuestra que ambos sistemas entiendan los datos."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-075",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El responsable quiere comprobar que un fallo aislado no derribe todo el servicio.\n\n¿Cuál evidencia es pertinente?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un inventario de componentes desplegados.",
+              "explicacion": "No demuestra cómo se comporta el servicio cuando uno falla."
+            },
+            {
+              "id": "B",
+              "texto": "Una encuesta de satisfacción sobre el aspecto del portal.",
+              "explicacion": "No mide continuidad ante fallos."
+            },
+            {
+              "id": "C",
+              "texto": "Una prueba controlada de fallo de un componente y observación de las funciones que deben seguir disponibles.",
+              "explicacion": "Prueba la tolerancia a fallos frente al escenario acordado."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-019",
+      "subarea": "4.2 Calidad del software",
+      "nombre": "Herramientas de análisis y control",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-076",
+          "version": 1,
+          "formato": "interpretacion_tecnica",
+          "enunciado": "En un mes hubo 40 defectos de validación, 10 de interfaz y 5 de conexión. Se quiere mostrar el aporte acumulado empezando por la categoría más frecuente.\n\n¿Qué gráfico usar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Gráfico de dispersión de costo contra tiempo.",
+              "explicacion": "Muestra relación entre dos variables, no contribución por causa."
+            },
+            {
+              "id": "B",
+              "texto": "Histograma de tiempos de resolución.",
+              "explicacion": "Representa distribución de una variable numérica, no categorías acumuladas."
+            },
+            {
+              "id": "C",
+              "texto": "Pareto con barras descendentes y porcentaje acumulado.",
+              "explicacion": "Prioriza visualmente categorías y muestra su contribución acumulada."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-077",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una investigación, el equipo propone causas de reproceso relacionadas con métodos, personas y herramientas.\n\n¿Qué visual permite ordenar esas hipótesis?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Diagrama de causa y efecto o Ishikawa.",
+              "explicacion": "Agrupa causas posibles para orientar el análisis posterior."
+            },
+            {
+              "id": "B",
+              "texto": "Diagrama de Gantt de entregas.",
+              "explicacion": "Organiza tareas en el tiempo, no hipótesis causales."
+            },
+            {
+              "id": "C",
+              "texto": "Diagrama entidad-relación de registros.",
+              "explicacion": "Representa datos y relaciones, no causas."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-078",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se obtuvieron 80 tiempos de respuesta y se quiere ver cuántos caen en intervalos de 100 ms.\n\n¿Qué gráfico corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Diagrama de flujo del módulo.",
+              "explicacion": "Muestra pasos y decisiones, no frecuencias observadas."
+            },
+            {
+              "id": "B",
+              "texto": "Pareto de las causas de fallos.",
+              "explicacion": "Ordena categorías de causas, no los tiempos en intervalos."
+            },
+            {
+              "id": "C",
+              "texto": "Histograma de frecuencias por intervalo.",
+              "explicacion": "Muestra la distribución de una medida numérica agrupada en rangos."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-079",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo sospecha que a mayor número de solicitudes simultáneas aumenta la latencia. Tiene pares de mediciones de carga y latencia.\n\n¿Qué visual sirve para explorar la relación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Histograma de latencia sin incluir carga.",
+              "explicacion": "Pierde la relación entre ambas variables."
+            },
+            {
+              "id": "B",
+              "texto": "Diagrama de dispersión.",
+              "explicacion": "Cada punto conserva el par carga y latencia para observar asociación."
+            },
+            {
+              "id": "C",
+              "texto": "Lista de fechas sin mediciones.",
+              "explicacion": "No muestra la relación de interés."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-080",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una carta de control, una medición supera el límite superior aunque aún cumple la tolerancia del cliente.\n\n¿Qué decisión es adecuada?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Rechazar automáticamente el producto por incumplir la tolerancia.",
+              "explicacion": "La medición todavía está dentro de la especificación."
+            },
+            {
+              "id": "B",
+              "texto": "Investigar una causa especial sin declarar por ello un incumplimiento del producto.",
+              "explicacion": "Los límites de control describen el proceso; la tolerancia describe la especificación."
+            },
+            {
+              "id": "C",
+              "texto": "Ignorar la señal porque el producto cumple la tolerancia.",
+              "explicacion": "Puede pasar por alto una variación especial del proceso."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-020",
+      "subarea": "4.2 Calidad del software",
+      "nombre": "Aseguramiento y mejora de procesos",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-081",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo descubre que distintos revisores omiten puntos diferentes al comprobar migraciones.\n\n¿Qué control ligero ayuda a uniformar la revisión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una meta de revisar en menos tiempo, sin pasos definidos.",
+              "explicacion": "Puede aumentar omisiones bajo presión."
+            },
+            {
+              "id": "B",
+              "texto": "Una lista de verificación con evidencias para los pasos críticos.",
+              "explicacion": "Reduce omisiones y deja constancia de lo comprobado."
+            },
+            {
+              "id": "C",
+              "texto": "Un cambio de nombre para la reunión de revisión.",
+              "explicacion": "No estandariza qué se verifica."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-082",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una iniciativa DMAIC, ya se midió el nivel actual de defectos y se quiere identificar sus causas.\n\n¿Qué etapa sigue?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Analizar.",
+              "explicacion": "Después de medir se investigan causas y relaciones en los datos."
+            },
+            {
+              "id": "B",
+              "texto": "Definir de nuevo sin revisar los datos.",
+              "explicacion": "No aprovecha las mediciones para explicar el problema."
+            },
+            {
+              "id": "C",
+              "texto": "Controlar.",
+              "explicacion": "Corresponde a sostener una mejora ya implantada."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-083",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La meta es disminuir reprocesos. El equipo quiere aplicar Goal–Question–Metric.\n\n¿Qué orden sigue?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Definir la meta, formular preguntas que permitan evaluarla y elegir métricas que las contesten.",
+              "explicacion": "La medición queda vinculada a la decisión que se quiere tomar."
+            },
+            {
+              "id": "B",
+              "texto": "Elegir primero cualquier métrica disponible y después inventar una meta.",
+              "explicacion": "Puede producir mediciones sin relevancia para la mejora."
+            },
+            {
+              "id": "C",
+              "texto": "Registrar opiniones sin preguntas ni medidas.",
+              "explicacion": "No permite evaluar sistemáticamente el avance."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-084",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Antes de liberar, un equipo quiere demostrar que se construyó lo especificado y que el personal puede usarlo para su trabajo real.\n\n¿Qué combinación corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Solo verificar que la compilación termina.",
+              "explicacion": "No confirma requisitos ni utilidad para los usuarios."
+            },
+            {
+              "id": "B",
+              "texto": "Revisiones y pruebas contra requisitos, más validación con escenarios de trabajo de usuarios.",
+              "explicacion": "Cubre conformidad con lo especificado y adecuación a la necesidad real."
+            },
+            {
+              "id": "C",
+              "texto": "Solo una encuesta sin ejecutar escenarios.",
+              "explicacion": "Recoge opiniones, pero no demuestra funcionamiento ni conformidad."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-085",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Después de mejorar un proceso, las primeras mediciones bajan.\n\n¿Qué acción ayuda a confirmar que el cambio se sostiene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Eliminar las mediciones anteriores para que no afecten el promedio.",
+              "explicacion": "Pierde la línea base para comparar."
+            },
+            {
+              "id": "B",
+              "texto": "Definir seguimiento periódico, umbrales de alerta y responsable de actuar ante desvíos.",
+              "explicacion": "Hace observable si la mejora persiste y quién responde."
+            },
+            {
+              "id": "C",
+              "texto": "Dejar de medir en cuanto se observa el primer resultado favorable.",
+              "explicacion": "Impide saber si el proceso vuelve al estado anterior."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-021",
+      "subarea": "4.3 Metodologías de desarrollo",
+      "nombre": "Scrum y entrega de valor",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-086",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo necesita acordar el resultado que guiará un Sprint antes de decidir el plan de trabajo.\n\n¿En qué evento lo establece?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Sprint Retrospective.",
+              "explicacion": "Busca mejoras en la manera de trabajar."
+            },
+            {
+              "id": "B",
+              "texto": "Sprint Review.",
+              "explicacion": "Inspecciona el resultado y la situación al final del Sprint."
+            },
+            {
+              "id": "C",
+              "texto": "Sprint Planning.",
+              "explicacion": "Allí se formula el objetivo y se prepara el trabajo del Sprint."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-087",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "A mitad del Sprint, cambia una condición del producto, pero el objetivo sigue vigente.\n\n¿Cómo reaccionan Product Owner y Developers?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Aclarar o renegociar alcance del Sprint sin poner en peligro su objetivo.",
+              "explicacion": "Permite adaptación conservando la dirección del trabajo."
+            },
+            {
+              "id": "B",
+              "texto": "Ocultar el cambio hasta terminar, aunque afecte el plan.",
+              "explicacion": "Impide adaptar el trabajo a información nueva."
+            },
+            {
+              "id": "C",
+              "texto": "Cancelar siempre el Sprint ante cualquier cambio de detalle.",
+              "explicacion": "No es necesario si el objetivo conserva sentido."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-088",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Al final del Sprint, usuarios y equipo revisan el incremento y discuten qué conviene hacer después.\n\n¿Qué evento describe?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Daily Scrum.",
+              "explicacion": "Es una revisión breve del avance hacia el objetivo por parte de Developers."
+            },
+            {
+              "id": "B",
+              "texto": "Sprint Retrospective.",
+              "explicacion": "Se centra en mejorar procesos y colaboración del equipo."
+            },
+            {
+              "id": "C",
+              "texto": "Sprint Review.",
+              "explicacion": "Inspecciona el resultado del Sprint y adapta prioridades futuras con interesados."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-089",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un incremento compila, pero no cumple el criterio acordado de pasar pruebas de regresión.\n\n¿Cómo tratar ese trabajo en Scrum?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Declararlo terminado si la demostración en pantalla funciona.",
+              "explicacion": "Una demostración no sustituye el criterio acordado."
+            },
+            {
+              "id": "B",
+              "texto": "Cambiar el nombre de las pruebas para reportarlas como aprobadas.",
+              "explicacion": "No cambia su resultado ni satisface el criterio."
+            },
+            {
+              "id": "C",
+              "texto": "No considerarlo terminado hasta cumplir la Definición de Terminado.",
+              "explicacion": "La calidad acordada es parte de lo que hace utilizable al incremento."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-090",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Dos Sprints repiten el mismo bloqueo por revisiones tardías. El equipo quiere inspeccionar su colaboración y acordar un experimento de mejora.\n\n¿Qué evento conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Sprint Planning sin conversar sobre lo que ocurrió.",
+              "explicacion": "Planear trabajo no basta para aprender del bloqueo repetido."
+            },
+            {
+              "id": "B",
+              "texto": "Sprint Retrospective.",
+              "explicacion": "Examina cómo se trabajó y elige cambios para el siguiente Sprint."
+            },
+            {
+              "id": "C",
+              "texto": "Sprint Review como reemplazo de la retrospectiva.",
+              "explicacion": "Su foco es inspeccionar el producto con interesados."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-022",
+      "subarea": "4.3 Metodologías de desarrollo",
+      "nombre": "Kanban, XP y procesos adaptativos",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-091",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La columna Revisión tiene límite de tres tareas y ya está llena. La siguiente tarea de desarrollo terminó.\n\n¿Qué acción favorece el flujo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mover el trabajo a Revisión y ocultar otra tarjeta temporalmente.",
+              "explicacion": "El trabajo en curso real sigue excediendo el límite."
+            },
+            {
+              "id": "B",
+              "texto": "Ayudar a liberar Revisión antes de añadir otro elemento a esa columna.",
+              "explicacion": "Respeta el límite y dirige esfuerzo al cuello de botella."
+            },
+            {
+              "id": "C",
+              "texto": "Abrir varias tareas nuevas para mantener ocupado a desarrollo.",
+              "explicacion": "Aumenta inventario y no desbloquea la revisión."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-092",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo compara cuánto tarda desde que inicia el trabajo hasta que lo termina, dejando fuera la espera previa.\n\n¿Qué está midiendo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Rendimiento, expresado como elementos terminados por semana.",
+              "explicacion": "Cuenta elementos por periodo en vez de duración de cada elemento."
+            },
+            {
+              "id": "B",
+              "texto": "Tiempo de ciclo.",
+              "explicacion": "Mide desde el inicio del trabajo hasta su finalización."
+            },
+            {
+              "id": "C",
+              "texto": "Tiempo total desde la solicitud del cliente.",
+              "explicacion": "Incluye una espera previa que aquí se excluye."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-093",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El área usuaria no logra explicar una pantalla y necesita reaccionar a ejemplos antes de aprobarla.\n\n¿Qué enfoque reduce incertidumbre temprano?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Prototipar interacciones y validar tareas con las personas usuarias antes del diseño final.",
+              "explicacion": "Convierte necesidades difíciles de verbalizar en evidencia observable."
+            },
+            {
+              "id": "B",
+              "texto": "Implementar primero la infraestructura definitiva para todos los escenarios.",
+              "explicacion": "No aclara el comportamiento que esperan de la pantalla."
+            },
+            {
+              "id": "C",
+              "texto": "Cerrar todo el diseño antes de mostrarlo a usuarios.",
+              "explicacion": "Pospone la evidencia y eleva el costo de corregir."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-094",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un contrato exige requisitos estables y aprobación formal al final de cada fase antes de pasar a la siguiente.\n\n¿Qué enfoque coincide mejor con esa condición?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un prototipo desechable como única entrega del producto.",
+              "explicacion": "No cubre las fases y entregables contractuales."
+            },
+            {
+              "id": "B",
+              "texto": "Un flujo continuo que no usa fases ni hitos formales.",
+              "explicacion": "No satisface el mecanismo de aprobación especificado."
+            },
+            {
+              "id": "C",
+              "texto": "Un ciclo secuencial con hitos de aprobación por fase.",
+              "explicacion": "Su organización encaja con el control formal de entregables sucesivos."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-095",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un producto tiene alta incertidumbre técnica; cada vuelta identifica riesgos, prueba mitigaciones y decide la siguiente inversión.\n\n¿Qué modelo se aproxima?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Espiral orientada al riesgo.",
+              "explicacion": "Cada ciclo usa la evaluación de riesgos para decidir el siguiente trabajo."
+            },
+            {
+              "id": "B",
+              "texto": "Un plan que congela todas las decisiones después de la primera prueba.",
+              "explicacion": "Contradice la adaptación tras reducir incertidumbre."
+            },
+            {
+              "id": "C",
+              "texto": "Cascada estricta sin volver a evaluar riesgos entre fases.",
+              "explicacion": "No describe la reevaluación en vueltas sucesivas."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A4-023",
+      "subarea": "4.3 Metodologías de desarrollo",
+      "nombre": "DevOps, entrega continua y seguridad",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A4-096",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cambio aprobado debe quedar siempre listo para producción, pero la fecha de publicación la decide una persona.\n\n¿Qué práctica describe?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Entrega continua con decisión manual de liberar.",
+              "explicacion": "Automatiza la preparación sin exigir publicar cada cambio automáticamente."
+            },
+            {
+              "id": "B",
+              "texto": "Integración sin compilaciones ni pruebas.",
+              "explicacion": "No demuestra que el cambio quede listo para liberar."
+            },
+            {
+              "id": "C",
+              "texto": "Despliegue continuo sin aprobación manual.",
+              "explicacion": "Publicaría automáticamente cuando pasan los controles."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-097",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo detecta vulnerabilidades en dependencias solo después de publicar.\n\n¿Qué control acerca la detección al cambio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Analizar dependencias automáticamente en la integración y bloquear según el criterio acordado.",
+              "explicacion": "La comprobación ocurre antes de liberar el cambio vulnerable."
+            },
+            {
+              "id": "B",
+              "texto": "Revisar únicamente un informe anual de dependencias.",
+              "explicacion": "Demora la detección frente al ritmo de los cambios."
+            },
+            {
+              "id": "C",
+              "texto": "Ignorar dependencias transitivas aunque se usen en producción.",
+              "explicacion": "Deja fuera parte del software que ejecuta el producto."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-098",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una versión nueva se publica primero al 5 % del tráfico y se compara su tasa de errores con la versión anterior antes de ampliar.\n\n¿Qué estrategia aplica?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Despliegue canario.",
+              "explicacion": "Limita la exposición mientras se observa el comportamiento real."
+            },
+            {
+              "id": "B",
+              "texto": "Copia de seguridad sin tráfico a la versión nueva.",
+              "explicacion": "No prueba la versión con una fracción real de usuarios."
+            },
+            {
+              "id": "C",
+              "texto": "Reemplazo total inmediato.",
+              "explicacion": "Expondría toda la carga desde el inicio."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-099",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un despliegue puede volver al ejecutable anterior, pero la migración de datos borra una columna que ese ejecutable necesita.\n\n¿Qué mejora hace viable la reversión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Separar la migración en pasos compatibles y retirar la columna solo cuando ya no se necesite volver.",
+              "explicacion": "Mantiene temporalmente compatibilidad entre versiones de aplicación y datos."
+            },
+            {
+              "id": "B",
+              "texto": "Guardar solo una copia del binario anterior.",
+              "explicacion": "El binario seguirá necesitando la columna eliminada."
+            },
+            {
+              "id": "C",
+              "texto": "Reiniciar el servicio con la versión anterior sin revisar datos.",
+              "explicacion": "No restaura el esquema del que depende esa versión."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A4-100",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una comprobación detecta una contraseña en un commit antes de liberar.\n\n¿Qué respuesta se debe preparar en el flujo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar solo el nombre de la variable que contiene la contraseña.",
+              "explicacion": "No elimina ni invalida el secreto."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar el texto del archivo y seguir usando la misma contraseña.",
+              "explicacion": "El valor pudo quedar en historial o copias."
+            },
+            {
+              "id": "C",
+              "texto": "Bloquear la publicación, revocar o rotar el secreto expuesto y corregir el repositorio.",
+              "explicacion": "La rotación reduce el riesgo aunque alguien ya haya copiado el valor."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    }
+  ]
+}

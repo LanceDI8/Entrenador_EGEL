@@ -1,0 +1,1288 @@
+{
+  "_comentarios": [
+    "Lote 02: 50 reactivos originales. Agrega este archivo a banco/lotes junto a tus archivos anteriores."
+  ],
+  "area": 1,
+  "temas": [
+    {
+      "codigoTema": "EGEL-TEMA-A1-025",
+      "subarea": "1.1 Tipos de requerimientos",
+      "nombre": "Solicitud del sistema y viabilidad inicial",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 3–9.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-101",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una cooperativa solicita «una app con mapas» porque las visitas de sus inspectores se programan dos veces y los expedientes no muestran quién irá.\n\n¿Qué debería consignarse primero en la solicitud del sistema?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Reducir las visitas duplicadas y permitir que coordinación conozca al inspector asignado.",
+              "explicacion": "Expresa el problema y el resultado de negocio sin dar por aprobada una solución."
+            },
+            {
+              "id": "B",
+              "texto": "Mostrar mapas y elegir la biblioteca que los renderiza.",
+              "explicacion": "Describe una opción técnica, pero no aclara por qué el proyecto es necesario."
+            },
+            {
+              "id": "C",
+              "texto": "Actualizar los teléfonos de todos los inspectores a un mismo modelo.",
+              "explicacion": "Es una decisión de adquisición cuya necesidad aún no se ha justificado."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-102",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un museo evalúa digitalizar sus controles de acceso. Hay lectores que envían identificadores por un protocolo propietario no documentado y no se pueden reemplazar.\n\n¿Qué comprobación despeja primero la duda técnica?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Comparar cuánto cuesta capacitar al personal para cada turno.",
+              "explicacion": "Estima impacto operativo o económico, sin comprobar el protocolo."
+            },
+            {
+              "id": "B",
+              "texto": "Probar con un lector real si una integración permitida puede obtener y procesar una lectura.",
+              "explicacion": "Ataca la restricción de compatibilidad con evidencia reproducible."
+            },
+            {
+              "id": "C",
+              "texto": "Pedir a recepción que opine sobre dos diseños de pantalla.",
+              "explicacion": "Explora aceptación y usabilidad, pero no la integración requerida."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-103",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema de inventario funciona con los dispositivos disponibles. En el turno nocturno nadie tiene permiso para aprobar las discrepancias que bloquearían el cierre.\n\n¿Qué viabilidad falta demostrar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La operativa: hace falta un flujo de aprobación que el turno pueda ejecutar.",
+              "explicacion": "La tecnología funciona, pero el proceso real no puede concluir con los roles actuales."
+            },
+            {
+              "id": "B",
+              "texto": "La técnica: falta comprobar que se pueda ejecutar la aplicación.",
+              "explicacion": "Esa capacidad ya fue demostrada con los dispositivos disponibles."
+            },
+            {
+              "id": "C",
+              "texto": "La de portabilidad: el programa debe ejecutarse en otro sistema operativo.",
+              "explicacion": "Cambiar de plataforma no resuelve la falta de un aprobador."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-104",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una red de clínicas construirá un registro de citas. El patrocinador confirma que el cobro seguirá en un sistema externo y que esta entrega solo consultará si el pago fue acreditado.\n\n¿Qué límite debe quedar escrito?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El nuevo sistema no tendrá ninguna interacción con el sistema externo.",
+              "explicacion": "Sin la consulta acordada no se sabría si el pago fue acreditado."
+            },
+            {
+              "id": "B",
+              "texto": "El nuevo sistema consultará el estado del pago; procesar o devolver cobros queda fuera del alcance.",
+              "explicacion": "Delimita responsabilidades y conserva la interacción externa necesaria."
+            },
+            {
+              "id": "C",
+              "texto": "El nuevo sistema incluye el ciclo completo de cobro porque recibe su estado.",
+              "explicacion": "Consultar un estado no transfiere la responsabilidad de cobrar."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-105",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una dirección fija como meta disminuir de 18 % a 10 % la proporción de pedidos devueltos por dirección incorrecta. El equipo propone validar el código postal durante la captura.\n\n¿Cuál elemento representa la necesidad de negocio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Consultar un catálogo postal desde la interfaz de captura.",
+              "explicacion": "Describe una solución de integración, no el beneficio de negocio."
+            },
+            {
+              "id": "B",
+              "texto": "Disminuir al 10 % las devoluciones por dirección incorrecta.",
+              "explicacion": "Describe el resultado medible que justifica la inversión."
+            },
+            {
+              "id": "C",
+              "texto": "Validar el código postal al guardar una dirección.",
+              "explicacion": "Describe una función propuesta para contribuir a la meta."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-026",
+      "subarea": "1.2 Técnicas de obtención, análisis y validación",
+      "nombre": "Elicitación y contraste de fuentes",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 17–22.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-106",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una biblioteca quiere descubrir cómo el turno vespertino resuelve devoluciones sin código de barras. Los registros solo dicen «ajuste manual» y en entrevista cada persona recuerda una variante.\n\n¿Qué técnica aporta la evidencia faltante?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Observar devoluciones reales y anotar pasos, decisiones y excepciones en contexto.",
+              "explicacion": "Permite revelar prácticas tácitas que no aparecen en el registro ni se recuerdan con precisión."
+            },
+            {
+              "id": "B",
+              "texto": "Encuestar a lectores sobre su satisfacción con los horarios.",
+              "explicacion": "Recoge otra perspectiva, pero no muestra el procedimiento de ajuste."
+            },
+            {
+              "id": "C",
+              "texto": "Revisar únicamente el catálogo de libros dañados.",
+              "explicacion": "No permite conocer cómo se procesa una devolución sin código."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-107",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Tres áreas usan formularios diferentes para el mismo alta. Se necesita confrontar variantes, acordar campos comunes y cerrar decisiones con sus representantes en una sesión.\n\n¿Qué técnica conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una observación individual del área con más volumen de trabajo.",
+              "explicacion": "Muestra una práctica local, no un acuerdo entre áreas."
+            },
+            {
+              "id": "B",
+              "texto": "Tres cuestionarios anónimos sin devolución de resultados.",
+              "explicacion": "Obtienen opiniones, pero no resuelven en conjunto las discrepancias."
+            },
+            {
+              "id": "C",
+              "texto": "Un taller facilitado de requisitos con las tres áreas y registro de acuerdos.",
+              "explicacion": "Permite negociar en conjunto y dejar decisiones verificables."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-108",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un archivo histórico conserva resoluciones de expedientes excepcionales. Los responsables actuales desconocen varios casos que deben admitirse en el nuevo sistema.\n\n¿Qué fuente revisar primero para identificar ejemplos comprobables?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una muestra autorizada de resoluciones previas y sus justificaciones.",
+              "explicacion": "Aporta casos reales y la razón por la que fueron tratados de modo especial."
+            },
+            {
+              "id": "B",
+              "texto": "Un sondeo abierto sobre excepciones imaginadas.",
+              "explicacion": "Puede generar ideas, pero no confirma qué casos ya ocurrieron."
+            },
+            {
+              "id": "C",
+              "texto": "El catálogo de campos de un formulario vacío.",
+              "explicacion": "Describe entradas habituales y no muestra cómo se resolvieron excepciones."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-109",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Los gestores afirman que siempre piden una firma antes de cerrar un caso. El historial de algunos casos cerrados indica una excepción autorizada.\n\n¿Qué debe hacer la persona analista?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Eliminar los registros contradictorios porque no coinciden con la entrevista.",
+              "explicacion": "Descarta evidencia sin determinar si representa una excepción válida."
+            },
+            {
+              "id": "B",
+              "texto": "Contrastar ambos tipos de evidencia y validar con el responsable cuándo se permite la excepción.",
+              "explicacion": "Una diferencia entre fuentes puede revelar una regla condicional que falta explicitar."
+            },
+            {
+              "id": "C",
+              "texto": "Convertir todos los cierres sin firma en el flujo habitual.",
+              "explicacion": "Una excepción no justifica reemplazar la regla general."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-110",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un campus necesita conocer qué términos resultan ambiguos en la solicitud de becas y explorar ejemplos inesperados antes de redactar preguntas de encuesta.\n\n¿Qué técnica iniciarías?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Entrevistas semiestructuradas con solicitantes de perfiles distintos.",
+              "explicacion": "Las repreguntas permiten aclarar vocabulario y descubrir situaciones no previstas."
+            },
+            {
+              "id": "B",
+              "texto": "Un conteo automático del número de visitas por día.",
+              "explicacion": "Mide tráfico, no cómo interpreta cada persona las palabras del trámite."
+            },
+            {
+              "id": "C",
+              "texto": "Un cuestionario de sí o no ya cerrado para todos los solicitantes.",
+              "explicacion": "La estructura no permite explorar términos ni ejemplos nuevos."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-027",
+      "subarea": "1.1 Tipos de requerimientos",
+      "nombre": "Capas y calidad de los requisitos",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 24–36,67.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-111",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El mismo documento contiene «disminuir cancelaciones de citas», «la recepcionista puede ofrecer un horario alternativo» y «al cancelar, la agenda devuelve hasta tres horarios libres».\n\n¿Cuál corresponde a un requisito de usuario?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Disminuir cancelaciones de citas.",
+              "explicacion": "Es un objetivo de negocio y no una tarea concreta del rol."
+            },
+            {
+              "id": "B",
+              "texto": "Al cancelar, la agenda devuelve hasta tres horarios libres.",
+              "explicacion": "Es una especificación de comportamiento del sistema."
+            },
+            {
+              "id": "C",
+              "texto": "La recepcionista puede ofrecer un horario alternativo.",
+              "explicacion": "Describe una capacidad que el rol necesita para su tarea."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-112",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Para cerrar un informe, el requisito R1 exige conservar toda nota del auditor. R2 ordena eliminar cualquier nota al cambiar de etapa, incluso la del auditor.\n\n¿Qué defecto muestran al leerse juntos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Inconsistencia entre requisitos.",
+              "explicacion": "Hay una misma nota que se exige conservar y eliminar bajo la misma condición."
+            },
+            {
+              "id": "B",
+              "texto": "Falta de medición del rendimiento.",
+              "explicacion": "El problema es qué debe pasar con las notas, no cuánto tarda."
+            },
+            {
+              "id": "C",
+              "texto": "Ausencia de identificadores para trazarlos.",
+              "explicacion": "R1 y R2 ya están identificados; el conflicto está en su contenido."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-113",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un requisito dice que los avisos «se enviarán al terminar el periodo» y no se acordó si periodo significa turno, semana o mes.\n\n¿Qué corrección resuelve el defecto principal?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Pedir que el envío tarde menos de dos segundos.",
+              "explicacion": "Define otro aspecto y no aclara cuándo empieza la operación."
+            },
+            {
+              "id": "B",
+              "texto": "Acordar la unidad de periodo y expresar la condición de envío con un ejemplo de fecha o turno.",
+              "explicacion": "Elimina interpretaciones incompatibles sobre cuándo se debe actuar."
+            },
+            {
+              "id": "C",
+              "texto": "Añadir el identificador del módulo que envía los avisos.",
+              "explicacion": "Ayuda a localizarlo, pero deja indefinida la condición de envío."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-114",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un requisito explica cómo guardar una orden válida, pero omite qué conservar cuando falta un dato obligatorio después de que el cliente capturó los demás.\n\n¿Qué mejora su completitud?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Definir el resultado del rechazo, qué datos persisten y qué se informa a la persona.",
+              "explicacion": "Documenta la excepción y los efectos que faltaban."
+            },
+            {
+              "id": "B",
+              "texto": "Aumentar la prioridad de la orden en el listado de requisitos.",
+              "explicacion": "Prioridad y detalle del comportamiento son asuntos distintos."
+            },
+            {
+              "id": "C",
+              "texto": "Cambiar el nombre de la pantalla para indicar que captura órdenes.",
+              "explicacion": "La pantalla se identifica, pero la excepción sigue sin definirse."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-115",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una especificación pide que la misma solicitud se confirme en el sistema actual y en el nuevo sin recaptura de datos.\n\n¿Cuál criterio permitiría validar la interoperabilidad?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Verificar que ambas pantallas usen la misma fuente y tamaño de texto.",
+              "explicacion": "Comprueba uniformidad visual, no intercambio de información."
+            },
+            {
+              "id": "B",
+              "texto": "Comprobar que el nuevo sistema pueda guardar una solicitud de forma local.",
+              "explicacion": "Puede guardar sin comunicarse con el sistema actual."
+            },
+            {
+              "id": "C",
+              "texto": "Enviar una solicitud identificable desde el sistema nuevo y verificar que el actual la acepte con los campos acordados y devuelva su confirmación.",
+              "explicacion": "Prueba el intercambio y el uso de los datos entre sistemas."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-028",
+      "subarea": "1.1 Tipos de requerimientos",
+      "nombre": "Funciones y restricciones medibles",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 31–36,67.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-116",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La oficina de personal necesita emitir constancias y exige que la información salarial solo pueda leerla el titular o un revisor autorizado.\n\n¿Cuál regla especifica una restricción de acceso comprobable?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Permitir la lectura salarial únicamente al titular o a un revisor autorizado y denegarla a los demás roles.",
+              "explicacion": "Define sujetos, operación protegida y resultado de acceso no permitido."
+            },
+            {
+              "id": "B",
+              "texto": "Emitir una constancia después de verificar el número de empleado.",
+              "explicacion": "Describe una función; por sí sola no fija quién lee los datos salariales."
+            },
+            {
+              "id": "C",
+              "texto": "Ocultar el sueldo cuando la pantalla tenga un tamaño reducido.",
+              "explicacion": "La condición es visual, no de autorización."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-117",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un archivo histórico debe restaurar el servicio a más tardar cuatro horas después de una caída y puede perder como máximo 15 minutos de cambios.\n\n¿Qué condición corresponde al objetivo de tiempo de recuperación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El respaldo restaurado debe perder a lo sumo 15 minutos de cambios.",
+              "explicacion": "Esto limita la pérdida de datos, no el tiempo para volver a operar."
+            },
+            {
+              "id": "B",
+              "texto": "El servicio debe estar operativo dentro de cuatro horas desde la interrupción.",
+              "explicacion": "El objetivo de tiempo mide cuánto puede durar la interrupción."
+            },
+            {
+              "id": "C",
+              "texto": "La restauración debe durar 15 minutos y admitir pérdida de cuatro horas.",
+              "explicacion": "Intercambia las dos restricciones acordadas."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-118",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un kiosco emitirá comprobantes de ingreso. La jefatura quiere saber si soporta la hora pico, no solo si un comprobante individual sale rápido.\n\n¿Qué enunciado representa capacidad de procesamiento?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Registrar un folio por comprobante emitido.",
+              "explicacion": "Describe la funcionalidad de identificación, no la capacidad."
+            },
+            {
+              "id": "B",
+              "texto": "Mostrar el comprobante de una única solicitud en dos segundos.",
+              "explicacion": "Es una medida de latencia individual; no comprueba el volumen atendido."
+            },
+            {
+              "id": "C",
+              "texto": "Emitir al menos 600 comprobantes válidos por hora con el volumen de entrada acordado.",
+              "explicacion": "Mide el número de operaciones completadas por unidad de tiempo."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-119",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una bodega debe permitir registrar recepciones mientras se pierde la conexión por 30 minutos. Al volver la red, las recepciones se sincronizan.\n\n¿Qué criterio cubre el escenario completo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Ejecutar la recepción solo con conexión estable y verificar su folio.",
+              "explicacion": "No reproduce la situación que motivó el requisito."
+            },
+            {
+              "id": "B",
+              "texto": "Comprobar únicamente que la aplicación muestra «sin red».",
+              "explicacion": "El mensaje no demuestra que la recepción pueda registrarse y sincronizarse."
+            },
+            {
+              "id": "C",
+              "texto": "Con la red desconectada 30 minutos, registrar una recepción y verificar que al reconectar se sincronice una sola vez.",
+              "explicacion": "Verifica la operación durante la desconexión y el efecto al recuperarse."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-120",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un sistema de facturación se exige «guardar durante 90 días las solicitudes rechazadas», pero no se aclara el punto de partida.\n\n¿Qué redacción evita que dos implementaciones borren en fechas distintas?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Guardar 90 días en una tabla con nombre específico.",
+              "explicacion": "Fija un detalle técnico, pero no el inicio del periodo."
+            },
+            {
+              "id": "B",
+              "texto": "Contar 90 días desde una fecha seleccionada por cada equipo.",
+              "explicacion": "Conserva la ambigüedad que causaría diferencias."
+            },
+            {
+              "id": "C",
+              "texto": "Contar los 90 días a partir de la fecha de rechazo registrada, en la zona horaria acordada.",
+              "explicacion": "Establece el evento de referencia y cómo interpretar las fechas."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-029",
+      "subarea": "1.2 Técnicas de obtención, análisis y validación",
+      "nombre": "Priorización y negociación aplicada",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 38–52.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-121",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un portal de citas, confirmar la cita es indispensable. Elegir un tema de color sería agradable y se incluirá únicamente si queda capacidad.\n\n¿Cómo clasificas el tema de color con MoSCoW?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Must Have.",
+              "explicacion": "Reservar y confirmar sigue siendo viable sin personalizar colores."
+            },
+            {
+              "id": "B",
+              "texto": "Won't Have en esta entrega.",
+              "explicacion": "Todavía podría incluirse en la entrega si hay capacidad."
+            },
+            {
+              "id": "C",
+              "texto": "Could Have.",
+              "explicacion": "Es deseable, pero el lanzamiento cumple su propósito sin esa opción."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-122",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La investigación muestra que si un portal no conserva los borradores, los usuarios se molestan. Cuando los conserva, lo consideran normal y su satisfacción no sube notablemente.\n\n¿Qué tipo de atributo representa en Kano?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Básico.",
+              "explicacion": "Su ausencia provoca insatisfacción y su presencia se da por sentada."
+            },
+            {
+              "id": "B",
+              "texto": "De desempeño lineal.",
+              "explicacion": "Ese tipo muestra aumento de satisfacción al mejorar el nivel de la característica."
+            },
+            {
+              "id": "C",
+              "texto": "Atractivo.",
+              "explicacion": "Un atractivo sorprende si existe y su ausencia suele tolerarse."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-123",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El tiempo de espera de una consulta baja de seis a tres segundos y luego a uno. La satisfacción mejora de manera gradual en cada reducción.\n\n¿Cómo se comporta esa característica en Kano?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Como atributo indiferente.",
+              "explicacion": "La percepción sí cambia con el tiempo de espera."
+            },
+            {
+              "id": "B",
+              "texto": "Como atributo de desempeño.",
+              "explicacion": "Mejorar el nivel de servicio aumenta gradualmente la satisfacción."
+            },
+            {
+              "id": "C",
+              "texto": "Como atractivo cuya ausencia normalmente pasa inadvertida.",
+              "explicacion": "La espera produce diferencias de satisfacción en todo el rango observado."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-124",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Hay capacidad para una mejora. A aporta valor alto con esfuerzo bajo; B aporta valor alto con esfuerzo alto; C aporta valor bajo con esfuerzo bajo. Ninguna depende de otra.\n\n¿Cuál prioriza la matriz valor-esfuerzo como ganancia rápida?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "A.",
+              "explicacion": "Combina impacto alto y esfuerzo bajo sin depender de otra mejora."
+            },
+            {
+              "id": "B",
+              "texto": "B.",
+              "explicacion": "Aporta valor, pero requiere el esfuerzo alto que no caracteriza una ganancia rápida."
+            },
+            {
+              "id": "C",
+              "texto": "C.",
+              "explicacion": "Es barata, pero su valor bajo hace que rinda menos que A."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-125",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En Planning Poker dos personas estiman 3 y 13 puntos porque una asumió que ya existen datos de prueba y la otra no.\n\n¿Qué acción aprovecha mejor esa diferencia?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Promediar ambas cifras y reportarlas como horas comprometidas.",
+              "explicacion": "Mezcla supuestos incompatibles y convierte una estimación relativa en tiempo sin base."
+            },
+            {
+              "id": "B",
+              "texto": "Pedir que expliquen sus supuestos, acordar qué incluye el trabajo y volver a estimar.",
+              "explicacion": "La discrepancia revela una incertidumbre que conviene resolver antes de repetir la ronda."
+            },
+            {
+              "id": "C",
+              "texto": "Aceptar 13 automáticamente para no discutir el alcance.",
+              "explicacion": "El margen no aclara qué trabajo se está estimando."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-030",
+      "subarea": "1.3 Documentación de requerimientos",
+      "nombre": "Análisis estructurado y flujos de información",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 54–63.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-126",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En el DFD de un centro de entregas, se dibuja un flujo directo de «Proveedor» al almacén «Recepciones». El sistema debe validar cada recepción antes de guardarla.\n\n¿Cómo se corrige el modelo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Convertir el almacén en una segunda entidad externa y mantener la conexión.",
+              "explicacion": "Cambiar el símbolo no modela la validación que debe ejecutar el sistema."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar el almacén y representar la validación con una línea entre proveedores.",
+              "explicacion": "No representa ni el proceso interno ni la persistencia."
+            },
+            {
+              "id": "C",
+              "texto": "Pasar la entrada de proveedor por el proceso «Validar recepción», que escribe en el almacén.",
+              "explicacion": "El proceso transforma o valida el dato y controla la escritura."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-127",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El diagrama de contexto indica que el usuario envía una solicitud y recibe un folio. Al descomponer el proceso, aparecen la solicitud y los archivos internos, pero ya no sale el folio.\n\n¿Qué revisión corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Agregar otro proceso que intercambie datos internos, sin devolver el folio.",
+              "explicacion": "Añade detalle, pero no recupera el flujo externo faltante."
+            },
+            {
+              "id": "B",
+              "texto": "Retirar el folio del contexto sin consultar si es un requisito aprobado.",
+              "explicacion": "Oculta la discrepancia y puede eliminar una necesidad real."
+            },
+            {
+              "id": "C",
+              "texto": "Restituir la salida de folio hacia el usuario para balancear la descomposición.",
+              "explicacion": "El nivel inferior debe conservar los flujos externos del proceso que descompone."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-128",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un DFD, un proceso «Calcular cuota» devuelve un importe pero no recibe datos ni lee almacenes. La cuota depende de la categoría del solicitante.\n\n¿Qué falta?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una entrada que aporte la categoría o una lectura del almacén donde está registrada.",
+              "explicacion": "La salida debe poder explicarse con entradas disponibles al proceso."
+            },
+            {
+              "id": "B",
+              "texto": "Otro flujo de salida con el mismo importe.",
+              "explicacion": "Una salida adicional no proporciona la categoría."
+            },
+            {
+              "id": "C",
+              "texto": "Una flecha de control que indique que el proceso ocurre los lunes.",
+              "explicacion": "El calendario no aporta el dato necesario para calcular."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-129",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un DFD muestra «Validar solicitud» seguido por «Registrar solicitud». El equipo quiere establecer exactamente qué campos viajan en «Solicitud validada».\n\n¿Qué artefacto debe complementar el dibujo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un diccionario de datos con estructura, tipos y reglas del flujo.",
+              "explicacion": "Da significado verificable al nombre de la flecha."
+            },
+            {
+              "id": "B",
+              "texto": "Una lista de personas que pueden aprobar el diagrama.",
+              "explicacion": "Identifica revisores, pero no especifica los datos."
+            },
+            {
+              "id": "C",
+              "texto": "Un cronograma de implementación de ambos procesos.",
+              "explicacion": "Indica cuándo se desarrollan, no los campos intercambiados."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-130",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo debate si poner «Sucursal» dentro del límite de la aplicación. La sucursal solo envía solicitudes y recibe respuestas mediante otro sistema.\n\n¿Cómo se representa en el diagrama de contexto?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Como entidad externa que intercambia flujos con la aplicación.",
+              "explicacion": "Participa en la interacción, pero no forma parte de las funciones internas del sistema."
+            },
+            {
+              "id": "B",
+              "texto": "Como un subproceso que reemplaza a toda la aplicación.",
+              "explicacion": "Confunde a un participante externo con el sistema bajo estudio."
+            },
+            {
+              "id": "C",
+              "texto": "Como almacén interno con cada una de sus solicitudes.",
+              "explicacion": "No se describe un almacenamiento controlado por la aplicación."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-031",
+      "subarea": "1.3 Documentación de requerimientos",
+      "nombre": "Historias de usuario y criterios de aceptación",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 64–66,73–74.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-131",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una historia dice «Como auxiliar, quiero un botón verde». En la entrevista se descubre que necesita recuperar un folio si se perdió el comprobante.\n\n¿Qué versión conserva mejor el valor para el usuario?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Como auxiliar, quiero un botón visible para tener una pantalla más moderna.",
+              "explicacion": "No expresa la recuperación del folio ni el resultado esperado."
+            },
+            {
+              "id": "B",
+              "texto": "Como auxiliar, quiero consultar el folio de una operación existente para volver a entregar su comprobante.",
+              "explicacion": "Especifica rol, capacidad y beneficio sin imponer el diseño visual."
+            },
+            {
+              "id": "C",
+              "texto": "Como programador, quiero cambiar el botón verde por uno azul.",
+              "explicacion": "Describe trabajo técnico sin la necesidad del auxiliar."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-132",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una historia junta inscripción, pago, comprobante y un reporte administrativo. Ninguna cabe en la iteración.\n\n¿Qué división mantiene valor verificable en el primer incremento?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Diseñar cada pantalla sin conectar ninguna acción.",
+              "explicacion": "Entrega una parte visual, pero no un comportamiento verificable de inscripción."
+            },
+            {
+              "id": "B",
+              "texto": "Crear todas las tablas y aplazar cualquier operación que las use.",
+              "explicacion": "Separa por capa y todavía no permite completar una tarea de usuario."
+            },
+            {
+              "id": "C",
+              "texto": "Habilitar la inscripción de una persona sin pago cuando la cuota sea cero y verificar el comprobante de esa inscripción.",
+              "explicacion": "Entrega un recorrido completo y útil para un caso de negocio acotado."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-133",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una historia permite reactivar una credencial si venció hace como máximo siete días. Se escribe el escenario «Dado que venció hace siete días, cuando solicito reactivarla...».\n\n¿Qué completa el criterio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Entonces se ejecuta una función interna cuyo nombre decidirá el equipo.",
+              "explicacion": "No expresa el resultado de negocio que debe observarse."
+            },
+            {
+              "id": "B",
+              "texto": "Entonces el sistema la reactiva y muestra el nuevo estado.",
+              "explicacion": "El valor límite de siete días está incluido y el resultado es observable."
+            },
+            {
+              "id": "C",
+              "texto": "Entonces el sistema rechaza la reactivación por haber llegado al séptimo día.",
+              "explicacion": "Trata el límite inclusivo como si fuera exclusivo."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-134",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una historia pide «facilitar las transferencias frecuentes» y el equipo no puede explicar cómo sabría que terminó.\n\n¿Qué dimensión de INVEST se debe reforzar primero?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Independiente: agregar todas las funciones relacionadas en la misma historia.",
+              "explicacion": "Agrupar funciones no hace verificable la necesidad ni favorece independencia."
+            },
+            {
+              "id": "B",
+              "texto": "Comprobable: acordar escenarios y resultados que permitan aceptar la historia.",
+              "explicacion": "Sin evidencia de aceptación no hay una forma compartida de decidir si se cumple."
+            },
+            {
+              "id": "C",
+              "texto": "Negociable: quitar toda referencia al resultado que espera el usuario.",
+              "explicacion": "Negociar detalles no requiere eliminar el propósito ni los criterios de aceptación."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-135",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un producto acepta reservar una sala solo si no hay solapamiento con una reserva previa. Si ambas usan intervalos con fin exclusivo, una termina a las 10:00 y la siguiente empieza a las 10:00.\n\n¿Qué criterio de aceptación corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La segunda reserva se acepta si no hay otro conflicto, porque ambos intervalos solo se tocan.",
+              "explicacion": "El instante de fin no pertenece a la reserva anterior."
+            },
+            {
+              "id": "B",
+              "texto": "La primera se cancela automáticamente para liberar la sala.",
+              "explicacion": "No hay conflicto que justifique cancelar una reserva confirmada."
+            },
+            {
+              "id": "C",
+              "texto": "La segunda se rechaza porque el mismo minuto aparece en las dos fechas.",
+              "explicacion": "Confunde límite exclusivo con un instante compartido por ambos intervalos."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-032",
+      "subarea": "1.3 Documentación de requerimientos",
+      "nombre": "Revisiones y validación previa a la construcción",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 68–74.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-136",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Antes de programar se revisará una especificación de becas. El autor quiere recorrer casos concretos con otras personas y que señalen dudas durante la explicación.\n\n¿Qué técnica encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una inspección que solo compare consumo de memoria.",
+              "explicacion": "No se dispone de un producto en ejecución ni se busca medir memoria."
+            },
+            {
+              "id": "B",
+              "texto": "Una prueba de carga sobre la aplicación desplegada.",
+              "explicacion": "La aplicación aún no existe y la técnica mediría comportamiento en ejecución."
+            },
+            {
+              "id": "C",
+              "texto": "Una revisión guiada por el autor o walkthrough.",
+              "explicacion": "El autor conduce el recorrido y el grupo analiza ejemplos sin ejecutar software."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-137",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se discute si un formulario debe pedir primero el motivo de un trámite o sus documentos. El objetivo es aprender cuál flujo entienden los usuarios, sin comprometer aún la solución final.\n\n¿Qué conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Probar un prototipo desechable con usuarios que realicen la tarea.",
+              "explicacion": "Permite validar la navegación antes de invertir en implementación final."
+            },
+            {
+              "id": "B",
+              "texto": "Congelar la interfaz basándose únicamente en una descripción de la base de datos.",
+              "explicacion": "Un modelo de datos no demuestra cómo entienden los usuarios el recorrido."
+            },
+            {
+              "id": "C",
+              "texto": "Publicar la versión definitiva y observar después los errores.",
+              "explicacion": "Pospone la validación hasta un momento de mayor costo de corrección."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-138",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un campo admite de 8 a 14 caracteres, inclusive. El equipo quiere revisar fallos de comparación en ambos extremos con un conjunto compacto.\n\n¿Qué valores debe elegir?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "8, 10, 12 y 14 caracteres.",
+              "explicacion": "Todos son válidos y no comprueban rechazo a ambos lados."
+            },
+            {
+              "id": "B",
+              "texto": "7, 8, 14 y 15 caracteres.",
+              "explicacion": "Prueba justo antes y dentro del mínimo, y dentro y después del máximo."
+            },
+            {
+              "id": "C",
+              "texto": "6, 9, 13 y 16 caracteres.",
+              "explicacion": "Incluye clases válidas e inválidas, pero evita los extremos exactos y sus vecinos inmediatos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-139",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una regla cobra una tarifa según tres tipos de usuario; dentro de cada tipo aplica el mismo cálculo, sin rangos adicionales.\n\n¿Qué conjunto representa una partición de equivalencia compacta?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un caso de cada tipo de usuario reconocido.",
+              "explicacion": "Cada caso representa una clase de entradas con comportamiento propio."
+            },
+            {
+              "id": "B",
+              "texto": "Solo los usuarios con el folio numéricamente menor y mayor.",
+              "explicacion": "El folio no determina la tarifa según la regla descrita."
+            },
+            {
+              "id": "C",
+              "texto": "Tres casos del tipo más frecuente.",
+              "explicacion": "Repite la misma clase y deja dos reglas sin verificar."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-140",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo revisa un requisito con una lista formal: claridad, consistencia, origen y criterio de prueba. Todavía no existe código.\n\n¿Qué evidencia obtiene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Resultados de rendimiento en un entorno real.",
+              "explicacion": "Requiere ejecutar un sistema y no se obtiene leyendo la especificación."
+            },
+            {
+              "id": "B",
+              "texto": "Defectos y omisiones encontrados en una revisión estática del documento.",
+              "explicacion": "Se puede inspeccionar la calidad del requisito antes de la implementación."
+            },
+            {
+              "id": "C",
+              "texto": "Cobertura de instrucciones del módulo que lo implementará.",
+              "explicacion": "No hay instrucciones ejecutables que medir."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-033",
+      "subarea": "1.3 Documentación de requerimientos",
+      "nombre": "Casos de uso y excepciones del dominio",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 86–101.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-141",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Para reservar o cancelar una sala, siempre se verifica la identidad. El equipo quiere mostrar en UML que ambas operaciones reutilizan esa verificación obligatoria.\n\n¿Qué relación corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "«Reservar sala» generaliza a «Cancelar sala».",
+              "explicacion": "Son objetivos distintos del usuario, no versiones especializada y general de un objetivo."
+            },
+            {
+              "id": "B",
+              "texto": "«Verificar identidad» extiende ambos casos de forma opcional.",
+              "explicacion": "La verificación no es opcional según la regla."
+            },
+            {
+              "id": "C",
+              "texto": "Cada caso base incluye «Verificar identidad».",
+              "explicacion": "La inclusión representa un comportamiento obligatorio reutilizado."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-142",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Al emitir un recibo, solo si la persona pide copia impresa se ejecuta «Imprimir copia». La emisión puede concluir sin ello.\n\n¿Qué relación modela la impresión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "«Emitir recibo» incluye «Imprimir copia» en todos los escenarios.",
+              "explicacion": "Eso haría obligatoria la impresión."
+            },
+            {
+              "id": "B",
+              "texto": "«Imprimir copia» es un actor que inicia «Emitir recibo».",
+              "explicacion": "Es comportamiento, no un rol que interactúe con el sistema."
+            },
+            {
+              "id": "C",
+              "texto": "«Imprimir copia» extiende «Emitir recibo» bajo esa condición.",
+              "explicacion": "La extensión añade una operación opcional al caso base completo."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-143",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En «Importar asistencia», el sistema comprueba que el archivo pertenezca al curso seleccionado. Si corresponde a otro curso, no importa filas y muestra el motivo.\n\n¿Dónde se documenta ese escenario?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "En un flujo alternativo con condición, acciones y resultado del rechazo.",
+              "explicacion": "Es un desvío causado por una condición durante la ejecución."
+            },
+            {
+              "id": "B",
+              "texto": "Como un actor con el nombre «Archivo de otro curso».",
+              "explicacion": "El archivo es un dato de entrada, no un rol."
+            },
+            {
+              "id": "C",
+              "texto": "Como postcondición de éxito, afirmando que todas las filas se importaron.",
+              "explicacion": "El escenario precisamente evita importar filas."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-144",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En «Asignar asesor», un coordinador elige al asesor y el servicio de correo externo envía un aviso cuando el sistema lo solicita.\n\n¿Cuál de los dos participantes es un actor secundario del caso?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El coordinador que elige al asesor.",
+              "explicacion": "Es quien inicia el caso para lograr su objetivo de asignación."
+            },
+            {
+              "id": "B",
+              "texto": "La tabla interna de asesores.",
+              "explicacion": "Un almacén dentro del sistema no es un actor externo."
+            },
+            {
+              "id": "C",
+              "texto": "El servicio de correo externo.",
+              "explicacion": "Apoya el caso al recibir una solicitud de notificación, pero no inicia la asignación."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-145",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una credencial inicia en «Activa». Al reportarse extravío pasa a «Bloqueada», y al reponerla queda «Sustituida». Se necesita detectar cambios imposibles, como volver de «Sustituida» a «Activa» sin una regla que lo autorice.\n\n¿Qué representación usar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un DFD que solo describe el envío de archivos.",
+              "explicacion": "Muestra movimiento de datos, no el ciclo de vida del objeto."
+            },
+            {
+              "id": "B",
+              "texto": "Una máquina de estados de la credencial con eventos y transiciones permitidas.",
+              "explicacion": "Modela el ciclo de vida de un objeto y deja visibles las transiciones no definidas."
+            },
+            {
+              "id": "C",
+              "texto": "Un diagrama de casos de uso con solo el nombre de cada actor.",
+              "explicacion": "No muestra estados ni cómo cambia la credencial."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A1-034",
+      "subarea": "1.3 Documentación de requerimientos",
+      "nombre": "Trazabilidad y análisis de cambios",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 75–77.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A1-146",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una política reduce de cinco a dos días el plazo para corregir una solicitud. Se necesita localizar qué escenarios de prueba y pantallas dependen de la regla.\n\n¿Qué acción conviene primero?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar el texto de la primera pantalla que mencione el plazo.",
+              "explicacion": "Puede dejar otras dependencias usando la regla anterior."
+            },
+            {
+              "id": "B",
+              "texto": "Recorrer los vínculos desde el requisito hacia diseño, implementación y pruebas afectadas.",
+              "explicacion": "La trazabilidad hacia adelante permite hacer un análisis de impacto antes de modificar."
+            },
+            {
+              "id": "C",
+              "texto": "Crear otro requisito con nuevo plazo sin enlazarlo con el anterior.",
+              "explicacion": "Divide el historial y oculta qué artefactos deben actualizarse."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-147",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un control impide editar órdenes cerradas. Para justificar por qué existe, la persona auditora parte del identificador del caso de prueba y quiere hallar la política de origen.\n\n¿Qué recorrido necesita?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Seguir del requisito hacia todas las pantallas y detenerse ahí.",
+              "explicacion": "Eso analiza destinos y no recupera la política que justifica el control."
+            },
+            {
+              "id": "B",
+              "texto": "Contar los casos de prueba que ejecuta el equipo por semana.",
+              "explicacion": "Mide actividad, no el vínculo con una fuente."
+            },
+            {
+              "id": "C",
+              "texto": "Seguir la trazabilidad hacia atrás: prueba, requisito y fuente de negocio.",
+              "explicacion": "Permite explicar el origen de la prueba y de la regla que verifica."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-148",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En la matriz, R7 está ligado a P4 y P5. P4 verifica la autorización normal; P5 verifica el rechazo sin permisos. Se decide suprimir P5 por falta de tiempo.\n\n¿Qué concluye quien revisa cobertura?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La eliminación de P5 obliga a eliminar también R7.",
+              "explicacion": "Se puede conservar el requisito y registrar o resolver su brecha de cobertura."
+            },
+            {
+              "id": "B",
+              "texto": "El rechazo sin permisos quedará sin prueba si no existe otro caso que lo cubra.",
+              "explicacion": "Los vínculos deben evaluarse por el comportamiento específico que cubre cada prueba."
+            },
+            {
+              "id": "C",
+              "texto": "R7 conserva cobertura completa porque sigue ligado a P4.",
+              "explicacion": "Cubrir el camino normal no verifica el rechazo."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-149",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una regla R12 fue aprobada en la versión 1 y se modifica con una solicitud de cambio autorizada. Se quiere conservar evidencia de qué versión verificaron las pruebas históricas.\n\n¿Qué práctica ayuda?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Reutilizar R12 para una función diferente y dejar los enlaces intactos.",
+              "explicacion": "Atribuye evidencia anterior a un comportamiento que no se verificó."
+            },
+            {
+              "id": "B",
+              "texto": "Sobrescribir R12 sin dejar fecha ni vínculo a la solicitud.",
+              "explicacion": "Impide reconstruir el criterio que regía en pruebas pasadas."
+            },
+            {
+              "id": "C",
+              "texto": "Versionar R12 y enlazar las pruebas y sus resultados con la versión aplicable.",
+              "explicacion": "Conserva tanto el historial como la relación de cada evidencia con su regla."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A1-150",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo detecta que un prototipo permite buscar por apellido, pero no encuentra ningún requisito, acuerdo o necesidad que lo respalde.\n\n¿Qué hacer antes de volverlo parte del alcance?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Asumir que ya está aprobado porque se ve en el prototipo.",
+              "explicacion": "Una representación visual no equivale a una decisión de alcance."
+            },
+            {
+              "id": "B",
+              "texto": "Verificar su origen con las partes interesadas y registrar la decisión y el vínculo si se aprueba.",
+              "explicacion": "Distingue una sugerencia de diseño de una capacidad acordada."
+            },
+            {
+              "id": "C",
+              "texto": "Eliminar de la matriz todo lo relacionado con búsquedas.",
+              "explicacion": "Un hallazgo puntual no invalida las demás búsquedas que sí están trazadas."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    }
+  ]
+}

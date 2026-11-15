@@ -1,0 +1,1288 @@
+{
+  "_comentarios": [
+    "Lote 02: 50 reactivos originales. Agrega este archivo a banco/lotes junto a tus archivos anteriores."
+  ],
+  "area": 2,
+  "temas": [
+    {
+      "codigoTema": "EGEL-TEMA-A2-025",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Decisiones de arquitectura y atributos de calidad",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 20–24.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-101",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación recibe una foto y tarda dos minutos en generar una miniatura. El usuario solo necesita un folio inmediato y puede consultar el resultado después.\n\n¿Qué arquitectura reduce el tiempo de espera de la solicitud?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Enviar la foto al navegador y pedir que permanezca abierto durante el procesamiento.",
+              "explicacion": "Traslada el trabajo al cliente y no garantiza que se complete si este cierra la página."
+            },
+            {
+              "id": "B",
+              "texto": "Registrar el trabajo y enviarlo a una cola para que un trabajador lo procese en segundo plano.",
+              "explicacion": "Separa la aceptación rápida del procesamiento lento y permite consultar por folio."
+            },
+            {
+              "id": "C",
+              "texto": "Generar la miniatura en el hilo de la solicitud y ampliar el tiempo de espera del cliente.",
+              "explicacion": "Puede evitar un corte, pero el usuario sigue esperando dos minutos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-102",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un servicio de cotización externo falla durante varios minutos. Los componentes internos tienen un número limitado de hilos y no deben quedarse esperando al proveedor.\n\n¿Qué decisión protege mejor esos recursos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Usar tiempos de espera acotados y un cortacircuitos que suspenda llamadas tras fallos repetidos.",
+              "explicacion": "Evita acumular llamadas largas cuando la dependencia se conoce indisponible."
+            },
+            {
+              "id": "B",
+              "texto": "Agregar un caché de resultados sin poner límites a las llamadas que no están en caché.",
+              "explicacion": "Puede ayudar con casos conocidos, pero las llamadas nuevas aún agotan los hilos."
+            },
+            {
+              "id": "C",
+              "texto": "Reintentar sin límite en el mismo hilo hasta recibir una cotización.",
+              "explicacion": "Multiplica el tiempo de ocupación de los hilos y puede agravar la saturación."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-103",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una escuela cambia cada semestre su proveedor de correo. Las reglas de inscripción no deben conocer el SDK de cada proveedor.\n\n¿Qué límite de arquitectura facilita el cambio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Compartir el SDK mediante una variable global a la que accedan los casos de uso.",
+              "explicacion": "Centraliza la instancia, pero el núcleo sigue dependiendo del SDK."
+            },
+            {
+              "id": "B",
+              "texto": "Definir un puerto de notificación que use el núcleo y poner cada SDK detrás de un adaptador.",
+              "explicacion": "La lógica de inscripción depende de un contrato propio y los detalles externos se sustituyen aparte."
+            },
+            {
+              "id": "C",
+              "texto": "Importar el SDK del proveedor en cada caso de uso que mande correo.",
+              "explicacion": "Propaga la dependencia y obliga a modificar muchos casos al cambiarlo."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-104",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un tablero de seguimiento consulta muchas veces los mismos resultados. Se admite un retraso de 30 segundos, pero las operaciones que actualizan el estado deben confirmarse en la fuente principal.\n\n¿Qué diseño respeta ese límite?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Usar una caché de lectura con vigencia máxima de 30 segundos y confirmar las escrituras en la fuente principal.",
+              "explicacion": "Aprovecha la tolerancia en lecturas sin delegar la confirmación de escrituras a datos temporales."
+            },
+            {
+              "id": "B",
+              "texto": "Usar una caché sin caducidad y borrarla al reiniciar el servicio.",
+              "explicacion": "No limita el atraso a 30 segundos."
+            },
+            {
+              "id": "C",
+              "texto": "Guardar también las escrituras en caché y confirmarlas aunque la fuente esté caída.",
+              "explicacion": "Una escritura se daría por válida sin la confirmación exigida."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-105",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un único servicio aloja consultas públicas y exportaciones pesadas. Las exportaciones ocupan todos los hilos y dejan sin respuesta las consultas. Se requiere aislar capacidad sin aumentar primero el total.\n\n¿Qué cambio conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Asignar grupos separados de trabajadores y cupos de ejecución a consultas y exportaciones.",
+              "explicacion": "Un tipo de trabajo ya no puede consumir los recursos reservados al otro."
+            },
+            {
+              "id": "B",
+              "texto": "Dejar ambos trabajos en el mismo grupo y aumentar la cantidad máxima de solicitudes en cola.",
+              "explicacion": "Aumenta la espera posible y no reserva recursos para las consultas."
+            },
+            {
+              "id": "C",
+              "texto": "Hacer que las exportaciones se reintenten inmediatamente cuando no haya hilos.",
+              "explicacion": "Agrega presión al recurso compartido en vez de aislarlo."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-026",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Vistas 4+1 y elección de diagramas",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A1, pp. 82–85; UNITEC-ISC-EGEL-Plus-ISOFT, pp. 25–28.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-106",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Operaciones quiere saber en qué nodos se ejecutan el API y el trabajador de correo, y qué enlaces atraviesan para llegar a la base de datos.\n\n¿Qué vista del modelo 4+1 es la más directa?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La física o de despliegue.",
+              "explicacion": "Expone la asignación de componentes ejecutables a nodos y sus conexiones."
+            },
+            {
+              "id": "B",
+              "texto": "La lógica.",
+              "explicacion": "Describe responsabilidades funcionales y relaciones del modelo, no su instalación."
+            },
+            {
+              "id": "C",
+              "texto": "La de desarrollo.",
+              "explicacion": "Organiza módulos o paquetes del código, pero no especifica dónde se ejecutan."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-107",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo revisa qué hilos consumen una cola, cómo se sincronizan y si pueden bloquearse cuando se reciben muchos mensajes.\n\n¿Qué vista 4+1 responde esa pregunta?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La vista lógica.",
+              "explicacion": "Puede mostrar conceptos y responsabilidades, pero no es la vista enfocada en concurrencia."
+            },
+            {
+              "id": "B",
+              "texto": "La vista de desarrollo.",
+              "explicacion": "Describe la estructura del código, no la sincronización de hilos en ejecución."
+            },
+            {
+              "id": "C",
+              "texto": "La vista de procesos.",
+              "explicacion": "Se centra en concurrencia, comunicación y comportamiento en ejecución."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-108",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo nuevo quiere saber en qué paquetes residen la capa de aplicación y los adaptadores, y qué biblioteca debe compilar antes de otra.\n\n¿Qué vista debe consultar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La vista física.",
+              "explicacion": "Explica dónde se instala el software, no cómo está organizado para construirlo."
+            },
+            {
+              "id": "B",
+              "texto": "La vista de desarrollo.",
+              "explicacion": "Muestra la organización estática de módulos, paquetes y dependencias de construcción."
+            },
+            {
+              "id": "C",
+              "texto": "La vista de escenarios.",
+              "explicacion": "Muestra recorridos representativos, no la dependencia de construcción entre módulos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-109",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La arquitectura de devoluciones está documentada en cuatro vistas. La persona revisora quiere usar una devolución concreta para comprobar que juntas explican el flujo completo.\n\n¿Cuál es el papel de ese caso en 4+1?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Es únicamente una lista de nodos de ejecución.",
+              "explicacion": "Esa lista pertenece al despliegue y no muestra el recorrido de devolución."
+            },
+            {
+              "id": "B",
+              "texto": "Reemplaza todas las vistas porque una historia basta para describir la arquitectura.",
+              "explicacion": "Un escenario valida aspectos concretos y no sustituye el conjunto de perspectivas."
+            },
+            {
+              "id": "C",
+              "texto": "Es un escenario que recorre e integra las vistas para validar la arquitectura.",
+              "explicacion": "El «+1» permite conectar decisiones de distintas vistas mediante un recorrido representativo."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-110",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una integración debe mostrar al revisor el orden exacto entre autorizar un pedido, reservar inventario y notificar el resultado. También necesita mostrar una alternativa de rechazo.\n\n¿Qué diagrama conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un diagrama de clases con cardinalidad entre pedido e inventario.",
+              "explicacion": "Describe estructura estática y no el intercambio de mensajes del escenario."
+            },
+            {
+              "id": "B",
+              "texto": "Un diagrama de secuencia con un fragmento alternativo para el rechazo.",
+              "explicacion": "Muestra mensajes en orden temporal y permite distinguir flujos condicionales."
+            },
+            {
+              "id": "C",
+              "texto": "Un diagrama de paquetes de los tres módulos.",
+              "explicacion": "Organiza módulos, pero no muestra el orden ni las alternativas de los mensajes."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-027",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Modelado de dominio y límites de consistencia",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 17–18.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-111",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una aseguradora, «cliente» significa contratante en el área comercial y persona cubierta en reclamaciones. Ambas definiciones tienen reglas distintas.\n\n¿Qué decisión de diseño evita que se mezclen?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Crear una clase Cliente global y obligar a ambas áreas a usar los mismos campos y reglas.",
+              "explicacion": "Acopla significados diferentes y propaga cambios de un área a otra."
+            },
+            {
+              "id": "B",
+              "texto": "Definir contextos delimitados y traducir explícitamente el concepto en sus interfaces.",
+              "explicacion": "Cada modelo conserva el significado útil para su área y acuerda cómo intercambiarlo."
+            },
+            {
+              "id": "C",
+              "texto": "Nombrar ambos modelos con siglas, sin documentar sus reglas ni su relación.",
+              "explicacion": "Cambiar el nombre no establece límites ni traducciones."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-112",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema rastrea envíos por número de guía. El domicilio puede cambiar, pero el envío sigue siendo el mismo y conserva su historial.\n\n¿Cómo conviene modelarlo en el dominio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Como entidad con identidad estable por número de guía.",
+              "explicacion": "La identidad permanece aunque cambien atributos y estado."
+            },
+            {
+              "id": "B",
+              "texto": "Como servicio sin estado ni identificador.",
+              "explicacion": "No representa el historial ni las transiciones de un envío concreto."
+            },
+            {
+              "id": "C",
+              "texto": "Como objeto de valor identificado por el domicilio.",
+              "explicacion": "Dos envíos al mismo domicilio serían indistinguibles y un cambio alteraría la identidad."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-113",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El dominio necesita representar un importe con moneda. Dos importes de 100 MXN son equivalentes sin importar dónde se crearon.\n\n¿Qué representación encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un número suelto que ignore la moneda.",
+              "explicacion": "Puede confundir cantidades iguales expresadas en monedas distintas."
+            },
+            {
+              "id": "B",
+              "texto": "Un objeto de valor inmutable comparado por importe y moneda.",
+              "explicacion": "El significado está en los valores de sus atributos, no en una identidad independiente."
+            },
+            {
+              "id": "C",
+              "texto": "Una entidad nueva con identificador distinto para cada aparición de 100 MXN.",
+              "explicacion": "Introduce identidades donde el dominio solo requiere equivalencia por valor."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-114",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un pedido, el total debe ser igual a la suma de sus líneas y ningún descuento puede volverlo negativo. Un cliente externo necesita cambiar una línea.\n\n¿Qué diseño protege ambas reglas?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Permitir al cliente escribir directamente cada línea y actualizar el total en una tarea posterior.",
+              "explicacion": "Deja periodos con un total inconsistente y no protege la regla de descuento."
+            },
+            {
+              "id": "B",
+              "texto": "Guardar el total como una constante inmutable al crear el pedido.",
+              "explicacion": "Cambiar líneas válidas ya no podría reflejarse en el total."
+            },
+            {
+              "id": "C",
+              "texto": "Exponer el cambio a través de la raíz Pedido, que valida líneas y recalcula el total.",
+              "explicacion": "Concentra las modificaciones relacionadas en el límite donde se verifican las invariantes."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-115",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un sistema de renta, el módulo de reservas necesita cargar un agregado Reserva por identificador sin conocer tablas ni consultas.\n\n¿Qué abstracción describe mejor esa operación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una ventana de usuario encargada de ejecutar SQL y devolver la reserva.",
+              "explicacion": "Mezcla presentación, persistencia y la operación del dominio."
+            },
+            {
+              "id": "B",
+              "texto": "Un repositorio de reservas con una interfaz expresada en términos del dominio.",
+              "explicacion": "La operación habla de agregados y oculta detalles de persistencia al módulo."
+            },
+            {
+              "id": "C",
+              "texto": "Un objeto de valor que conserve la cadena de conexión a la base.",
+              "explicacion": "No ofrece una operación de búsqueda ni protege el límite con la infraestructura."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-028",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Diseño estructurado, cohesión y dependencias",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 19–23.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-116",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un módulo recibe una solicitud, calcula impuestos, formatea el recibo y envía correo. Los cuatro pasos cambian por razones distintas.\n\n¿Qué descomposición mejora la cohesión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Separar validación, cálculo, formato y notificación, y coordinarlos desde el caso de uso.",
+              "explicacion": "Agrupa cada tipo de decisión en una responsabilidad clara."
+            },
+            {
+              "id": "B",
+              "texto": "Partir el archivo en dos al llegar a cierto número de líneas, manteniendo las mismas dependencias.",
+              "explicacion": "El tamaño de archivo no garantiza que cada módulo tenga un propósito coherente."
+            },
+            {
+              "id": "C",
+              "texto": "Duplicar el flujo completo en cada pantalla que lo ejecute.",
+              "explicacion": "Aumenta duplicación y conserva responsabilidades mezcladas."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-117",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una carta estructurada muestra que el módulo «Procesar reembolso» llama a «Validar cuenta» y después a «Registrar movimiento».\n\n¿Qué información aporta principalmente?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Las dependencias funcionales entre columnas de la base de datos.",
+              "explicacion": "La carta no es un modelo relacional de persistencia."
+            },
+            {
+              "id": "B",
+              "texto": "La asignación de cada módulo a un servidor físico.",
+              "explicacion": "Para eso hace falta un diagrama de despliegue."
+            },
+            {
+              "id": "C",
+              "texto": "Jerarquía de llamadas y reparto de responsabilidades entre módulos.",
+              "explicacion": "Describe qué módulo coordina y cuáles ejecutan funciones subordinadas."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-118",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un módulo consulta un expediente para usar únicamente su fecha de cierre. Recibe todo el objeto y lee varios atributos que no necesita.\n\n¿Qué interfaz reduce el acoplamiento por datos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Dar al módulo acceso directo al esquema completo de la base.",
+              "explicacion": "Sustituye un objeto amplio por una dependencia aún mayor."
+            },
+            {
+              "id": "B",
+              "texto": "Entregar solo la fecha de cierre como argumento o resultado del contrato.",
+              "explicacion": "Limita la dependencia a la información que la operación realmente requiere."
+            },
+            {
+              "id": "C",
+              "texto": "Agregar más campos al objeto por si alguna versión futura los necesita.",
+              "explicacion": "Amplía la superficie de dependencia sin una necesidad actual."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-119",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un módulo recibe una bandera «modo» para decidir si calcula, imprime o cancela. Cada cliente debe conocer qué valores activan cada rama.\n\n¿Qué rediseño reduce ese acoplamiento?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar la bandera numérica por una cadena sin cambiar las tres operaciones mezcladas.",
+              "explicacion": "Mejora legibilidad, pero el cliente todavía selecciona ramas de responsabilidades diferentes."
+            },
+            {
+              "id": "B",
+              "texto": "Exponer operaciones explícitas para calcular, imprimir y cancelar.",
+              "explicacion": "Los clientes invocan una intención en lugar de controlar ramas internas mediante una bandera."
+            },
+            {
+              "id": "C",
+              "texto": "Aumentar el número de valores posibles de «modo».",
+              "explicacion": "Vuelve más amplia la dependencia sobre el flujo interno."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-120",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un informe agrupa datos y los exporta a CSV, PDF o un formato nuevo. El agrupamiento no cambia con el formato.\n\n¿Qué diseño facilita añadir la próxima salida?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Separar el agrupamiento de un contrato de exportación con una implementación por formato.",
+              "explicacion": "Las variantes cambian por separado y la regla común se conserva en un solo sitio."
+            },
+            {
+              "id": "B",
+              "texto": "Decidir el formato dentro de cada consulta a la base de datos.",
+              "explicacion": "Traslada decisiones de salida a persistencia y mezcla responsabilidades."
+            },
+            {
+              "id": "C",
+              "texto": "Añadir una copia del agrupamiento a cada exportador.",
+              "explicacion": "Cada salida puede divergir en la misma regla de agrupamiento."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-029",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Relaciones UML y ciclo de vida de objetos",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 24–28; UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 41–84.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-121",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Cada solicitud puede tener cero o un dictamen activo, y cada dictamen activo pertenece a exactamente una solicitud.\n\n¿Qué multiplicidades representan las reglas?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "0..* en ambos extremos.",
+              "explicacion": "Admitiría varios dictámenes activos por solicitud y dictámenes compartidos."
+            },
+            {
+              "id": "B",
+              "texto": "1 junto a Dictamen y 0..1 junto a Solicitud.",
+              "explicacion": "Exigiría dictamen para toda solicitud y permitiría dictámenes sin solicitud."
+            },
+            {
+              "id": "C",
+              "texto": "0..1 junto a Dictamen y 1 junto a Solicitud.",
+              "explicacion": "Cada solicitud ve hasta un dictamen y cada dictamen apunta a una solicitud obligatoria."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-122",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un comprobante contiene renglones que no tienen sentido sin su comprobante y no se comparten con otros. Al eliminar el comprobante se eliminan sus renglones.\n\n¿Qué relación representa ese ciclo de vida?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Generalización de Renglón hacia Comprobante.",
+              "explicacion": "Un renglón no es un tipo de comprobante."
+            },
+            {
+              "id": "B",
+              "texto": "Composición desde Comprobante hacia Renglón.",
+              "explicacion": "La parte es exclusiva del todo y su ciclo de vida depende de él."
+            },
+            {
+              "id": "C",
+              "texto": "Agregación compartida.",
+              "explicacion": "Permite partes con un ciclo de vida independiente o compartidas."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-123",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una coordinación guarda referencias a docentes que existen por separado y pueden integrarse a otra coordinación. Eliminar una coordinación no elimina al docente. Se desea representar explícitamente un todo con partes compartibles.\n\n¿Qué relación corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Realización, con flecha discontinua hacia Docente.",
+              "explicacion": "Describe cumplimiento de una interfaz, no agrupación de objetos."
+            },
+            {
+              "id": "B",
+              "texto": "Composición, con diamante lleno del lado de Coordinación.",
+              "explicacion": "Impondría la pertenencia exclusiva y dependencia que el caso niega."
+            },
+            {
+              "id": "C",
+              "texto": "Agregación compartida, con diamante vacío del lado de Coordinación.",
+              "explicacion": "Expresa agrupación sin imponer dependencia de vida de los docentes."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-124",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "«PagoConTarjeta» y «PagoConSaldo» ofrecen las operaciones de la interfaz «MedioDePago». Ninguna clase deriva de la otra.\n\n¿Qué relación mostrar entre cada clase y la interfaz?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Generalización de PagoConTarjeta hacia PagoConSaldo.",
+              "explicacion": "La relación del caso es de ambas clases con la interfaz, no entre implementaciones."
+            },
+            {
+              "id": "B",
+              "texto": "Composición de la interfaz dentro de cada clase.",
+              "explicacion": "No se trata de una parte poseída, sino de un contrato implementado."
+            },
+            {
+              "id": "C",
+              "texto": "Realización de la interfaz.",
+              "explicacion": "Cada clase cumple el contrato sin requerir heredar de la otra."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-125",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El objeto Cuenta conserva un Titular como referencia. En una operación de reporte, también recibe temporalmente un Formateador y no lo guarda.\n\n¿Qué par distingue las relaciones?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Dependencia temporal con Titular y composición con Formateador.",
+              "explicacion": "Invierte la permanencia y atribuye propiedad a un objeto no guardado."
+            },
+            {
+              "id": "B",
+              "texto": "Asociación con Titular y dependencia de uso con Formateador.",
+              "explicacion": "La referencia persistente es estructural; el parámetro temporal representa uso."
+            },
+            {
+              "id": "C",
+              "texto": "Herencia tanto de Titular como de Formateador.",
+              "explicacion": "Cuenta no es un tipo de ninguna de esas dos clases."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-030",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Diseño relacional y restricciones de integridad",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 23–24; UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 89–95.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-126",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un socio puede asistir a varios talleres y cada taller admite varios socios. Se debe guardar la fecha de inscripción de cada par.\n\n¿Qué estructura corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un único campo taller_id en Socio.",
+              "explicacion": "Solo permite un taller por socio."
+            },
+            {
+              "id": "B",
+              "texto": "Una tabla Inscripcion con claves foráneas a Socio y Taller, más la fecha.",
+              "explicacion": "Representa muchos a muchos y permite guardar un dato de la relación."
+            },
+            {
+              "id": "C",
+              "texto": "Una lista de talleres separada por comas en Socio.",
+              "explicacion": "Dificulta claves foráneas por taller y no asigna bien la fecha a cada par."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-127",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Cada ejemplar debe estar asignado a una sucursal válida. El diseño debe rechazar una asignación a una sucursal inexistente incluso si se escribe directo en la base.\n\n¿Qué restricción usar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una clave foránea de Ejemplar.sucursal_id a Sucursal.id.",
+              "explicacion": "La base comprueba la referencia sin depender de la interfaz."
+            },
+            {
+              "id": "B",
+              "texto": "Un texto de ayuda junto al selector de sucursal.",
+              "explicacion": "No protege escrituras fuera de esa pantalla."
+            },
+            {
+              "id": "C",
+              "texto": "Un índice no único sobre sucursal_id.",
+              "explicacion": "Acelera accesos, pero admite referencias inexistentes."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-128",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Dos centros pueden usar el mismo número de ventanilla, pero dentro de cada centro no se puede repetir.\n\n¿Qué restricción garantiza la regla?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Unicidad conjunta de centro_id y numero_ventanilla.",
+              "explicacion": "Rechaza duplicados dentro del centro y conserva la posibilidad de repetir en otro."
+            },
+            {
+              "id": "B",
+              "texto": "Unicidad global de numero_ventanilla.",
+              "explicacion": "Rechazaría repeticiones entre centros que sí están permitidas."
+            },
+            {
+              "id": "C",
+              "texto": "Unicidad de centro_id por sí solo.",
+              "explicacion": "Limitaría cada centro a una sola ventanilla."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-129",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema reserva un asiento por evento. Dos solicitudes concurrentes no deben quedar confirmadas para el mismo asiento en el mismo evento. Se conservan intentos fallidos aparte.\n\n¿Qué restricción es el último respaldo para las confirmaciones?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una validación visual que deshabilite el asiento después de actualizar la pantalla.",
+              "explicacion": "Dos pantallas pueden ver el asiento libre antes de que una se actualice."
+            },
+            {
+              "id": "B",
+              "texto": "Una clave única sobre el par evento_id y asiento_id en la tabla de reservas confirmadas.",
+              "explicacion": "La base protege la regla incluso si las solicitudes llegan al mismo tiempo."
+            },
+            {
+              "id": "C",
+              "texto": "Un índice no único sobre fecha de confirmación.",
+              "explicacion": "No evita que dos filas usen el mismo evento y asiento."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-130",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se deben conservar comprobantes históricos aunque cambie el nombre del cliente que aparece en futuras operaciones.\n\n¿Qué diseño permite recuperar el nombre tal como se imprimió?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Guardar el nombre emitido en el comprobante como dato histórico y conservar su referencia al cliente.",
+              "explicacion": "La referencia identifica a la persona; la copia preserva el hecho histórico emitido."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar la referencia al cliente y guardar solo el nombre.",
+              "explicacion": "Preserva texto, pero pierde la relación útil y puede confundir personas con nombres iguales."
+            },
+            {
+              "id": "C",
+              "texto": "Obtener siempre el nombre actual por unión con Cliente.",
+              "explicacion": "Cambiaría cómo se muestran comprobantes anteriores."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-031",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Normalización y decisiones sobre persistencia",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 89–95.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-131",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una tabla de inmuebles guarda varios teléfonos de contacto en un texto separado por comas. Se necesita validar y buscar cada teléfono por separado.\n\n¿Qué cambio elimina el grupo repetido para 1FN?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Crear una tabla TelefonoContacto con una fila por número y una referencia al inmueble.",
+              "explicacion": "Cada teléfono queda como valor atómico consultable y validable."
+            },
+            {
+              "id": "B",
+              "texto": "Agregar Tel1, Tel2 y Tel3 como campos repetidos.",
+              "explicacion": "Impone un máximo artificial y conserva el patrón de grupo repetido."
+            },
+            {
+              "id": "C",
+              "texto": "Cambiar las comas por punto y coma sin dividir el campo.",
+              "explicacion": "Sigue almacenando varios valores en una sola columna."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-132",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "DetalleCurso tiene clave (curso_id, docente_id). Guarda además nombre_docente, que depende solo de docente_id.\n\n¿Qué cambio corrige esa dependencia parcial?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mover nombre_docente a Curso.",
+              "explicacion": "Un curso puede asociarse a más de un docente y no determina el nombre."
+            },
+            {
+              "id": "B",
+              "texto": "Crear otro identificador en DetalleCurso y conservar el nombre repetido.",
+              "explicacion": "El identificador adicional no elimina la dependencia real ni la redundancia."
+            },
+            {
+              "id": "C",
+              "texto": "Mover nombre_docente a Docente y dejar su referencia en DetalleCurso.",
+              "explicacion": "El nombre no depende de la clave compuesta completa."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-133",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "RegistroEquipo guarda equipo_id, modelo_id y nombre_modelo. Cada modelo_id determina su nombre, y el equipo_id determina el modelo.\n\n¿Qué cambio elimina la dependencia transitiva?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Guardar modelo_id y nombre_modelo como una sola cadena.",
+              "explicacion": "Oculta los componentes y conserva el mismo dato repetido."
+            },
+            {
+              "id": "B",
+              "texto": "Indexar nombre_modelo y mantener todas las copias.",
+              "explicacion": "El índice acelera algunas consultas, pero no elimina la dependencia ni las inconsistencias."
+            },
+            {
+              "id": "C",
+              "texto": "Conservar modelo_id en RegistroEquipo y mover nombre_modelo a una tabla Modelo.",
+              "explicacion": "El nombre se almacena donde depende directamente de la clave del modelo."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-134",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación ya normalizada calcula un resumen con varias uniones. Medidas reales muestran que esa consulta domina la latencia y se acepta hasta un minuto de retraso.\n\n¿Qué ajuste es defendible?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Duplicar todos los datos de negocio sin definir cuál copia prevalece.",
+              "explicacion": "Introduce discrepancias sin tratar el requisito de latencia de forma controlada."
+            },
+            {
+              "id": "B",
+              "texto": "Crear una proyección de lectura materializada y definir su actualización y atraso máximo.",
+              "explicacion": "Conserva la fuente normalizada y hace explícito el costo de mantener la copia."
+            },
+            {
+              "id": "C",
+              "texto": "Reemplazar todas las relaciones con un solo documento antes de medir otra vez.",
+              "explicacion": "Afecta todo el modelo cuando el problema medido está en una consulta."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-135",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se guardan lecturas de sensores. Cada lectura se consulta casi siempre por dispositivo y rango de tiempo, y la colección recibe escrituras continuas.\n\n¿Qué índice empezarías a medir?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un índice de texto sobre el valor numérico leído.",
+              "explicacion": "No se ajusta al patrón de filtrado por dispositivo y tiempo."
+            },
+            {
+              "id": "B",
+              "texto": "Un índice por cada atributo disponible, sin medir costo de escritura.",
+              "explicacion": "Puede penalizar inserciones sin mejorar la consulta objetivo."
+            },
+            {
+              "id": "C",
+              "texto": "Un índice compuesto por dispositivo y marca de tiempo.",
+              "explicacion": "La primera columna restringe el dispositivo y la segunda permite recorrer su rango temporal."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-032",
+      "subarea": "2.3 Diseño de interfaces",
+      "nombre": "Diseño de interfaces de servicio y formatos",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 23–24; UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 87–88.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-136",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Clientes existentes esperan los campos folio y estado de una respuesta. Se quiere agregar nota como campo opcional y se sabe que esos clientes ignoran campos desconocidos.\n\n¿Qué cambio mantiene compatibilidad?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Añadir nota sin quitar ni cambiar el significado de folio y estado.",
+              "explicacion": "Los clientes antiguos siguen recibiendo el contrato que interpretan."
+            },
+            {
+              "id": "B",
+              "texto": "Renombrar folio a identificador y agregar nota como obligatoria.",
+              "explicacion": "Quita el nombre que esperan los clientes anteriores."
+            },
+            {
+              "id": "C",
+              "texto": "Mantener los nombres pero reemplazar estado por un objeto con un esquema distinto.",
+              "explicacion": "Conserva la etiqueta, pero rompe el tipo que esperan los clientes."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-137",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cliente intenta crear una orden, pierde la respuesta y vuelve a enviar la misma solicitud. Se requiere evitar una segunda orden y recuperar el resultado de la primera.\n\n¿Qué parte del contrato lo facilita?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Generar un folio distinto en cada recepción de la solicitud.",
+              "explicacion": "Convierte el reintento en otra operación y permite duplicar órdenes."
+            },
+            {
+              "id": "B",
+              "texto": "Responder siempre con error al detectar el mismo contenido, sin recuperar resultado.",
+              "explicacion": "No entrega el resultado original y puede confundir dos órdenes legítimas con datos iguales."
+            },
+            {
+              "id": "C",
+              "texto": "Aceptar una clave de idempotencia y devolver el resultado registrado para esa misma operación.",
+              "explicacion": "Da al servidor una forma estable de reconocer el reintento."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-138",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una búsqueda devuelve miles de expedientes y el orden debe mantenerse aunque varios tengan la misma fecha. El equipo prepara paginación por cursor.\n\n¿Qué diseño evita una posición ambigua?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Usar un cursor que solo indique cuántas filas tiene la tabla.",
+              "explicacion": "Ese dato no identifica la última posición consultada."
+            },
+            {
+              "id": "B",
+              "texto": "Ordenar por fecha y un identificador único, e incluir ambos en el cursor.",
+              "explicacion": "El identificador resuelve empates y permite continuar desde una posición estable."
+            },
+            {
+              "id": "C",
+              "texto": "Ordenar solo por fecha y guardar únicamente la fecha del último registro.",
+              "explicacion": "Con fechas repetidas, el cursor no distingue dónde terminó la página."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-139",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un proveedor y un receptor interpretan diferente si un campo ausente significa «sin dato» o «borrar el valor actual».\n\n¿Qué debe fijarse en el contrato?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El significado separado de un campo omitido, un campo nulo y un valor explícito.",
+              "explicacion": "Permite aplicar actualizaciones con la misma semántica en ambos lados."
+            },
+            {
+              "id": "B",
+              "texto": "Solo el nombre del archivo que se intercambia.",
+              "explicacion": "El nombre no resuelve cómo interpretar cada campo."
+            },
+            {
+              "id": "C",
+              "texto": "Una obligación de enviar siempre todos los campos, aun si el cliente no conoce su valor.",
+              "explicacion": "Evita omisiones forzando datos inciertos y no aclara qué significa nulo."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-140",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una interfaz devuelve «error de solicitud» tanto si falta un campo como si un recurso está temporalmente ocupado. Los clientes deben decidir si corregir datos o reintentar.\n\n¿Qué diseño de errores ayuda?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Devolver categorías y códigos estables que distingan validación de indisponibilidad temporal.",
+              "explicacion": "Permite que los clientes actúen sin deducir el tipo de fallo a partir de texto libre."
+            },
+            {
+              "id": "B",
+              "texto": "Devolver un código de éxito con un mensaje genérico en ambos casos.",
+              "explicacion": "Oculta que la operación falló y no distingue la acción apropiada."
+            },
+            {
+              "id": "C",
+              "texto": "Cambiar el mensaje de cada error según la pantalla que lo muestre.",
+              "explicacion": "Los clientes no tendrían un contrato estable para tomar decisiones."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-033",
+      "subarea": "2.3 Diseño de interfaces",
+      "nombre": "Flujos de interfaz y prevención de errores",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 20–24.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-141",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una pantalla solicita doce datos. Después de un error en un solo campo, vuelve vacía y no indica la causa.\n\n¿Qué cambio ayuda a corregir el intento con el menor retrabajo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Aumentar el tamaño del botón de envío y conservar el borrado.",
+              "explicacion": "Facilita pulsar, pero no corregir la causa ni recuperar los datos."
+            },
+            {
+              "id": "B",
+              "texto": "Trasladar la indicación de error a un manual externo.",
+              "explicacion": "Obliga a buscar la causa fuera del contexto donde puede corregirse."
+            },
+            {
+              "id": "C",
+              "texto": "Conservar los datos válidos y señalar el campo inválido con instrucciones concretas.",
+              "explicacion": "El usuario identifica y corrige solo el dato que impide continuar."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-142",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La interfaz muestra el estado de solicitudes exclusivamente con un círculo rojo, amarillo o verde. Hay personas que no distinguen esos colores.\n\n¿Qué mejora preserva el acceso al estado?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Usar tonos del mismo color con mayor saturación.",
+              "explicacion": "Sigue siendo un código solo cromático."
+            },
+            {
+              "id": "B",
+              "texto": "Ocultar el estado a quienes usen otro tema visual.",
+              "explicacion": "Elimina información necesaria en vez de ofrecerla de otra forma."
+            },
+            {
+              "id": "C",
+              "texto": "Acompañar cada color de una etiqueta textual o de una forma distinguible con significado claro.",
+              "explicacion": "La información deja de depender solo de percibir el color."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-143",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un asistente de registro tiene cinco pasos. Los usuarios no saben cuánto falta ni si al volver perderán lo capturado.\n\n¿Qué cambio reduce incertidumbre?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mostrar el avance y permitir volver a pasos previos conservando lo capturado.",
+              "explicacion": "Comunica el estado del flujo y protege el trabajo del usuario."
+            },
+            {
+              "id": "B",
+              "texto": "Pedir confirmación adicional para cada tecla que escribe la persona.",
+              "explicacion": "Interrumpe el flujo sin resolver navegación ni persistencia."
+            },
+            {
+              "id": "C",
+              "texto": "Ocultar el número de pasos para mantener todas las pantallas iguales.",
+              "explicacion": "No explica cuánto falta ni protege datos."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-144",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un prototipo, los probadores confunden «Archivar» con «Borrar» y eliminan expedientes que querían ocultar temporalmente.\n\n¿Qué ajuste reduce el error?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Diferenciar las etiquetas y explicar que archivar es reversible, reservando confirmación clara para borrar.",
+              "explicacion": "Hace visibles consecuencias distintas antes de tomar una decisión irreversible."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar la acción de archivo para que exista un solo botón.",
+              "explicacion": "Quita una función necesaria para ocultar sin perder datos."
+            },
+            {
+              "id": "C",
+              "texto": "Ubicar ambos botones juntos con el mismo nombre y distinto color.",
+              "explicacion": "Puede perpetuar la confusión y depende del color."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-145",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En el buscador, cada tecla inicia una consulta. Una respuesta antigua puede llegar después y sustituir resultados de una búsqueda más reciente.\n\n¿Qué diseño evita mostrar resultados equivocados?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Bloquear toda la interfaz hasta que termine cada consulta.",
+              "explicacion": "Evita concurrencia a costa de impedir la escritura fluida y no es necesario para descartar respuestas antiguas."
+            },
+            {
+              "id": "B",
+              "texto": "Identificar cada solicitud y aplicar únicamente la respuesta de la consulta vigente.",
+              "explicacion": "Distingue el orden de intención del orden impredecible de llegada."
+            },
+            {
+              "id": "C",
+              "texto": "Mostrar la última respuesta que llegue sin comprobar a qué búsqueda pertenece.",
+              "explicacion": "Puede sobrescribir la búsqueda actual con datos antiguos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-034",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Escenarios de arquitectura y compromisos de diseño",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT, pp. 17–24; UNITEC-ISC-EGEL-Plus-ISOFT-A4, pp. 23–29.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-146",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo propone alta disponibilidad mediante dos instancias que dependen de una sola base sin respaldo automático. El escenario prioritario es continuar si falla esa base.\n\n¿Qué riesgo debe registrar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El único riesgo es que cada instancia tenga un nombre distinto.",
+              "explicacion": "El nombre no explica la interrupción provocada por perder la dependencia común."
+            },
+            {
+              "id": "B",
+              "texto": "El riesgo desaparece porque hay dos procesos de aplicación.",
+              "explicacion": "Duplicar los procesos no duplica ni protege la base."
+            },
+            {
+              "id": "C",
+              "texto": "La base sigue siendo un punto único de falla aunque se duplique la aplicación.",
+              "explicacion": "Las dos instancias pierden la misma dependencia necesaria para responder."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-147",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un portal replica lecturas en varias zonas. Las pantallas públicas toleran 20 segundos de atraso, pero la verificación de un cupo debe observar la última reserva confirmada.\n\n¿Qué compromiso debe documentarse?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Todas las operaciones pueden usar cualquier réplica con el mismo límite de atraso.",
+              "explicacion": "Una réplica atrasada podría mostrar un cupo ya ocupado."
+            },
+            {
+              "id": "B",
+              "texto": "Exigir que cada consulta pública bloquee las actualizaciones del cupo.",
+              "explicacion": "Añade contención sin aprovechar la tolerancia de la pantalla pública."
+            },
+            {
+              "id": "C",
+              "texto": "Lecturas públicas pueden ser diferidas; la verificación de cupo requiere una lectura y actualización coherentes en la fuente autorizada.",
+              "explicacion": "Separamos dos necesidades de consistencia y se evita confirmar sobre una copia atrasada."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-148",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Dos opciones cumplen la meta de latencia. Una usa infraestructura más barata y demanda más guardias; la otra cuesta más al mes y reduce operación manual.\n\n¿Qué información conviene dejar en el registro de decisión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Solo el nombre de la alternativa seleccionada.",
+              "explicacion": "No deja evidencia del compromiso ni de por qué se descartó la otra."
+            },
+            {
+              "id": "B",
+              "texto": "Únicamente el precio inicial de compra de ambas.",
+              "explicacion": "Excluye el costo operativo que diferencia a las opciones."
+            },
+            {
+              "id": "C",
+              "texto": "El contexto, ambas alternativas, los costos operativos y el motivo por el que se acepta el compromiso elegido.",
+              "explicacion": "Permite reconstruir la decisión cuando cambien costos o prioridades."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-149",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un servicio separará autenticación y consulta pública. El escenario dice «durante una caída de identidad, los visitantes todavía deben consultar avisos públicos».\n\n¿Qué prueba de arquitectura valida el aislamiento?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Probar el inicio de sesión únicamente con identidad disponible.",
+              "explicacion": "Verifica otro flujo y no reproduce la falla exigida."
+            },
+            {
+              "id": "B",
+              "texto": "Simular la caída del servicio de identidad y verificar que la consulta pública mantiene su respuesta acordada.",
+              "explicacion": "Reproduce el estímulo y comprueba directamente el comportamiento objetivo."
+            },
+            {
+              "id": "C",
+              "texto": "Medir cuántas clases nuevas tiene el módulo de avisos.",
+              "explicacion": "No prueba continuidad cuando falla la dependencia."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-150",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo espera mil operaciones por segundo en un punto donde dos servicios escribirían el mismo dato. No sabe si el diseño de consistencia puede sostener esa carga.\n\n¿Qué conviene hacer antes de comprometerlo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Implementar primero todas las pantallas y evaluar el camino crítico al final.",
+              "explicacion": "Pospone la resolución de una incertidumbre que afecta a la arquitectura."
+            },
+            {
+              "id": "B",
+              "texto": "Prometer el rendimiento con base solo en el número de servidores planeados.",
+              "explicacion": "El número de servidores no demuestra que la coordinación de escrituras escale."
+            },
+            {
+              "id": "C",
+              "texto": "Construir una prueba técnica acotada del camino crítico y medir el escenario acordado.",
+              "explicacion": "Reduce el riesgo arquitectónico con evidencia sobre el cuello de botella real."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    }
+  ]
+}

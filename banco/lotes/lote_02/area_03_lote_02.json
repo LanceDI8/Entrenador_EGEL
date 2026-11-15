@@ -1,0 +1,1338 @@
+{
+  "_comentarios": [
+    "Lote 02: 50 reactivos originales. Agrega este archivo a banco/lotes junto a tus archivos anteriores."
+  ],
+  "area": 3,
+  "temas": [
+    {
+      "codigoTema": "EGEL-TEMA-A3-024",
+      "subarea": "3.3 Entornos de desarrollo",
+      "nombre": "Configuración, Git y trazabilidad de versiones",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 9–16.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-101",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se editan dos archivos: uno corrige un cálculo y el otro contiene un experimento. Solo el primero debe quedar en el próximo commit.\n\n¿Qué flujo permite separarlos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Ejecutar git add . y confirmar todo para limpiar el estado.",
+              "explicacion": "También incluiría el experimento."
+            },
+            {
+              "id": "B",
+              "texto": "Crear una etiqueta antes de editar y luego confirmar ambos archivos.",
+              "explicacion": "La etiqueta no selecciona qué cambios entran en el commit."
+            },
+            {
+              "id": "C",
+              "texto": "Añadir al área de preparación solo el archivo corregido y confirmar lo preparado.",
+              "explicacion": "El commit registra lo seleccionado en el índice, no toda edición del directorio."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-102",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo necesita reproducir exactamente el código que generó la versión 2.4.0, aunque la rama principal ya avanzó.\n\n¿Qué referencia conviene conservar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una etiqueta de la versión apuntando al commit construido y el artefacto asociado.",
+              "explicacion": "La etiqueta identifica el punto de origen en vez de depender de una rama que avanza."
+            },
+            {
+              "id": "B",
+              "texto": "Solo el nombre de la rama principal.",
+              "explicacion": "El nombre apunta a revisiones distintas conforme se integran cambios."
+            },
+            {
+              "id": "C",
+              "texto": "El nombre de la carpeta donde estaba el editor.",
+              "explicacion": "Una ruta local no identifica el contenido confirmado."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-103",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "La rama de mantenimiento necesita una corrección que ya existe en un commit de desarrollo. Los commits posteriores de desarrollo contienen cambios incompatibles con la versión mantenida.\n\n¿Qué operación traslada solo la corrección, si el commit es autónomo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Fusionar toda la rama de desarrollo en la de mantenimiento.",
+              "explicacion": "La fusión puede incorporar también los cambios incompatibles."
+            },
+            {
+              "id": "B",
+              "texto": "Etiquetar el commit de desarrollo con el nombre de la versión mantenida.",
+              "explicacion": "Una etiqueta señala un commit, pero no aplica sus cambios en otra rama."
+            },
+            {
+              "id": "C",
+              "texto": "Aplicar ese commit con git cherry-pick en la rama de mantenimiento y ejecutar sus pruebas.",
+              "explicacion": "Traslada los cambios del commit elegido sin incorporar todos los posteriores."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-104",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se sabe que un reporte funcionaba en una revisión antigua y falla en la actual. Entre ambas hay 120 commits. Existe una prueba reproducible para clasificar cada revisión.\n\n¿Qué herramienta reduce la búsqueda?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "git tag para nombrar cada revisión examinada a mano.",
+              "explicacion": "Las etiquetas no reducen el número de revisiones a evaluar."
+            },
+            {
+              "id": "B",
+              "texto": "git stash para guardar temporalmente cambios sin confirmar.",
+              "explicacion": "Ayuda a limpiar el espacio de trabajo, no a localizar el commit causante."
+            },
+            {
+              "id": "C",
+              "texto": "git bisect para acotar el intervalo marcando revisiones buenas y malas.",
+              "explicacion": "Usa una búsqueda binaria mientras la prueba identifica el lado donde apareció la falla."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-105",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una nueva función trabaja en paralelo a una corrección urgente de producción. Ambas deben poder integrarse sin obligar a liberar la función incompleta.\n\n¿Qué uso de ramas lo facilita?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Combinar primero todos los cambios de ambas ramas y luego intentar liberar solo parte del ejecutable.",
+              "explicacion": "La compilación ya incluiría trabajo no liberable y es difícil separar cambios."
+            },
+            {
+              "id": "B",
+              "texto": "Preparar la corrección desde una base liberable e integrarla sin incluir la rama de la función.",
+              "explicacion": "Se aísla la corrección del trabajo que aún no se puede publicar."
+            },
+            {
+              "id": "C",
+              "texto": "Editar directamente el artefacto instalado sin registrar un commit.",
+              "explicacion": "La corrección dejaría de ser reproducible desde el control de versiones."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-025",
+      "subarea": "3.3 Entornos de desarrollo",
+      "nombre": "Herramientas y construcción reproducible",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 17–38,96.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-106",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo Java necesita resolver dependencias y repetir desde consola las mismas fases de compilación, prueba y empaquetado.\n\n¿Qué artefacto describe ese flujo en Maven?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El diagrama de clases exportado como imagen.",
+              "explicacion": "Documenta estructura, no configura dependencias ni fases."
+            },
+            {
+              "id": "B",
+              "texto": "El pom.xml con dependencias y configuración del proyecto.",
+              "explicacion": "Permite al sistema de construcción resolver librerías y ejecutar el ciclo definido."
+            },
+            {
+              "id": "C",
+              "texto": "Un archivo de log de errores de la última ejecución.",
+              "explicacion": "Registra resultados, pero no define cómo construir."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-107",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación web falla al reservar una sala únicamente cuando se ejecuta el recorrido completo en un navegador. Se quiere repetir el flujo de clics en cada cambio.\n\n¿Qué tipo de herramienta encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Automatización de navegador, como Selenium, para ejecutar el flujo y verificar el resultado.",
+              "explicacion": "Reproduce las interacciones que disparan la falla de interfaz."
+            },
+            {
+              "id": "B",
+              "texto": "Un formateador de código aplicado a los archivos HTML.",
+              "explicacion": "Cambia el estilo de código, pero no ejecuta el recorrido."
+            },
+            {
+              "id": "C",
+              "texto": "Un gestor de incidencias que solo guarde el texto del defecto.",
+              "explicacion": "Ayuda a seguir el trabajo, pero no reproduce los pasos automáticamente."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-108",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Cada integrante instala de forma manual versiones distintas de una librería, y los resultados de prueba cambian según el equipo.\n\n¿Qué medida mejora la repetibilidad?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Conservar solo los binarios de cada máquina, sin documentar sus dependencias.",
+              "explicacion": "Preserva resultados distintos y no permite reproducirlos de manera controlada."
+            },
+            {
+              "id": "B",
+              "texto": "Pedir que todos usen el mismo tema visual del editor.",
+              "explicacion": "La apariencia no cambia las bibliotecas instaladas."
+            },
+            {
+              "id": "C",
+              "texto": "Declarar versiones de dependencias y construir en un entorno definido por el proyecto.",
+              "explicacion": "Reduce diferencias al hacer explícitas las entradas de la construcción."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-109",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación se construye en cada solicitud de cambio, pero no siempre ejecuta las pruebas. El equipo quiere impedir que se integren cambios con una prueba fallida.\n\n¿Qué configuración corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una canalización de integración continua que ejecute las pruebas y exija su aprobación para integrar.",
+              "explicacion": "Conecta la evidencia automática con la decisión de integrar."
+            },
+            {
+              "id": "B",
+              "texto": "Una lista de revisión sin información de las pruebas del commit.",
+              "explicacion": "No comprueba el resultado real de esa revisión."
+            },
+            {
+              "id": "C",
+              "texto": "Una tarea nocturna que solo publique el tamaño de los binarios.",
+              "explicacion": "No ejecuta ni exige la comprobación del comportamiento."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-110",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo necesita informar qué versión de la aplicación sufrió cada excepción y agrupar errores repetidos en producción.\n\n¿Qué capacidad debe priorizar al elegir herramienta?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Edición visual de diagramas UML.",
+              "explicacion": "No recibe errores ni los asocia a versiones desplegadas."
+            },
+            {
+              "id": "B",
+              "texto": "Monitoreo de excepciones con contexto de versión y agrupación por huella del error.",
+              "explicacion": "Permite relacionar fallos con una entrega y distinguir recurrencias."
+            },
+            {
+              "id": "C",
+              "texto": "Gestión de dependencias durante la compilación.",
+              "explicacion": "Controla bibliotecas, pero no observa excepciones de ejecución."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-026",
+      "subarea": "3.1 Lenguajes de desarrollo de software",
+      "nombre": "C++: alcance, referencias y control de flujo",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 39–46.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-111",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una persona modifica la variable de un bloque y después muestra el total fuera de él.\n\n¿Qué imprime?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nint main() {\n    int total = 6;\n    {\n        int total = 2;\n        total += 5;\n    }\n    std::cout << total;\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "11.",
+              "explicacion": "Sería el resultado de sumar 5 a la variable externa, pero esa no se modifica."
+            },
+            {
+              "id": "B",
+              "texto": "6.",
+              "explicacion": "La variable interna oculta temporalmente a la externa y los cambios no afectan a la de fuera."
+            },
+            {
+              "id": "C",
+              "texto": "7.",
+              "explicacion": "Es el valor interno antes de que termine su alcance."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-112",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Se recorre una colección de niveles con una referencia en el for.\n\n¿Qué par imprime el programa?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> niveles{2, 4, 6};\n    for (int& nivel : niveles) {\n        nivel += 1;\n    }\n    std::cout << niveles[0] << \",\" << niveles[2];\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "2,6.",
+              "explicacion": "Ese par se conservaría si el recorrido usara copias, no referencias."
+            },
+            {
+              "id": "B",
+              "texto": "1,3.",
+              "explicacion": "Confunde los valores almacenados con índices u otros contadores."
+            },
+            {
+              "id": "C",
+              "texto": "3,7.",
+              "explicacion": "Cada referencia modifica el elemento real del vector."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-113",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El programa guarda en copia lo que lee a través del puntero y luego escribe usando ese puntero.\n\n¿Qué imprime?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nint main() {\n    int saldo = 9;\n    int* p = &saldo;\n    int copia = *p;\n    *p = 12;\n    std::cout << copia << \",\" << saldo;\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "9,12.",
+              "explicacion": "copia captura el valor previo y la asignación mediante p modifica saldo."
+            },
+            {
+              "id": "B",
+              "texto": "12,12.",
+              "explicacion": "copia es un entero independiente, no una referencia a saldo."
+            },
+            {
+              "id": "C",
+              "texto": "9,9.",
+              "explicacion": "Ignora que escribir en *p cambia la variable apuntada."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-114",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El fragmento omite pares y corta el recorrido cuando la suma alcanza cuatro.\n\n¿Qué imprime?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nint main() {\n    int valor = 0;\n    for (int n : {1, 2, 3, 4}) {\n        if (n % 2 == 0) continue;\n        valor += n;\n        if (valor >= 4) break;\n    }\n    std::cout << valor;\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "3.",
+              "explicacion": "Solo se obtiene si se considera el último impar y no su acumulación."
+            },
+            {
+              "id": "B",
+              "texto": "4.",
+              "explicacion": "Suma 1, omite 2, suma 3 y termina al llegar a 4."
+            },
+            {
+              "id": "C",
+              "texto": "10.",
+              "explicacion": "Suma todos los valores y no respeta continue ni break."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-115",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Se comparan dos formas de dividir enteros en C++.\n\n¿Qué resultados se imprimen?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nint main() {\n    int a = 9, b = 4;\n    double media = a / b;\n    double exacta = static_cast<double>(a) / b;\n    std::cout << media << \",\" << exacta;\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "2,2.25.",
+              "explicacion": "La primera división entera trunca antes de asignar; la segunda se hace en punto flotante."
+            },
+            {
+              "id": "B",
+              "texto": "2,2.",
+              "explicacion": "La conversión previa de un operando sí cambia el tipo de la operación."
+            },
+            {
+              "id": "C",
+              "texto": "2.25,2.25.",
+              "explicacion": "El tipo de la variable receptora no cambia la división entera que ya ocurrió."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-027",
+      "subarea": "3.1 Lenguajes de desarrollo de software",
+      "nombre": "Lectura de código en Java, Python y JavaScript",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 36–46,87.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-116",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Dos cadenas se construyen con new y tienen los mismos caracteres.\n\n¿Qué imprime Java?",
+          "lenguaje": "Java",
+          "fragmentoCodigo": "class Demo {\n    public static void main(String[] args) {\n        String a = new String(\"folio\");\n        String b = new String(\"folio\");\n        System.out.print((a == b) + \",\" + a.equals(b));\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "false,false.",
+              "explicacion": "equals de String devuelve true para los mismos caracteres."
+            },
+            {
+              "id": "B",
+              "texto": "false,true.",
+              "explicacion": "Son objetos distintos para ==, pero equals compara su contenido."
+            },
+            {
+              "id": "C",
+              "texto": "true,true.",
+              "explicacion": "Confunde igualdad de contenido con identidad de referencia."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-117",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El programa asigna un arreglo a otra variable sin clonarlo.\n\n¿Qué imprime?",
+          "lenguaje": "Java",
+          "fragmentoCodigo": "class Demo {\n    public static void main(String[] args) {\n        int[] datos = {7, 8, 9};\n        int[] vista = datos;\n        vista[1] = 4;\n        System.out.print(datos[1]);\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "8.",
+              "explicacion": "Solo se conservaría si vista fuera una copia independiente."
+            },
+            {
+              "id": "B",
+              "texto": "4.",
+              "explicacion": "Las dos referencias apuntan al mismo arreglo."
+            },
+            {
+              "id": "C",
+              "texto": "7.",
+              "explicacion": "El elemento modificado está en el índice 1, no en el índice 0."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-118",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La función crea una lista dentro del cuerpo cuando no se recibe ninguna.\n\n¿Qué muestra al llamarla dos veces sin segundo argumento?",
+          "lenguaje": "Python",
+          "fragmentoCodigo": "def acumular(n, valores=None):\n    if valores is None:\n        valores = []\n    valores.append(n)\n    return valores\nprint(acumular(4), acumular(7))",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "[4, 7] [4, 7].",
+              "explicacion": "Eso requeriría que ambas llamadas compartieran una misma lista mutable."
+            },
+            {
+              "id": "B",
+              "texto": "[4] [7].",
+              "explicacion": "Cada llamada crea una lista nueva antes de agregar su elemento."
+            },
+            {
+              "id": "C",
+              "texto": "[4] [4, 7].",
+              "explicacion": "No se reutiliza la lista creada en la primera llamada."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-119",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El diccionario agrega una clave faltante y modifica una ya existente.\n\n¿Qué suma imprime?",
+          "lenguaje": "Python",
+          "fragmentoCodigo": "puntos = {\"R\": 3, \"S\": 1}\npuntos[\"T\"] = puntos.get(\"T\", 0) + 2\npuntos[\"R\"] -= 1\nprint(sum(puntos.values()))",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "5.",
+              "explicacion": "Los valores finales son 2, 1 y 2."
+            },
+            {
+              "id": "B",
+              "texto": "6.",
+              "explicacion": "Incluye el nuevo 2, pero omite la reducción de R."
+            },
+            {
+              "id": "C",
+              "texto": "4.",
+              "explicacion": "Es la suma inicial y no incluye el efecto neto de los cambios."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-120",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una transformación incrementa cada entrada antes de filtrar los resultados.\n\n¿Qué texto se imprime?",
+          "lenguaje": "JavaScript",
+          "fragmentoCodigo": "const valores = [2, 4, 6];\nconst datos = valores.map(n => n + 1).filter(n => n > 4);\nconsole.log(datos.join(\",\"));",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "7.",
+              "explicacion": "Se obtendría si se filtraran primero las entradas originales."
+            },
+            {
+              "id": "B",
+              "texto": "3,5,7.",
+              "explicacion": "Es la salida de map antes de aplicar el filtro."
+            },
+            {
+              "id": "C",
+              "texto": "5,7.",
+              "explicacion": "map produce 3, 5 y 7; filter conserva los dos mayores que cuatro."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-028",
+      "subarea": "3.2 Paradigmas de programación",
+      "nombre": "Algoritmos, recorridos y complejidad",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 39–40.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-121",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El algoritmo autoriza los cargos uno a uno siempre que haya saldo suficiente.\n\n¿Qué valor queda?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "saldo <- 12\npara cada cargo en [3, 5, 2]:\n    si cargo > saldo: continuar\n    saldo <- saldo - cargo\nmostrar(saldo)",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "7.",
+              "explicacion": "Solo resta cinco, ignorando los otros cargos autorizados."
+            },
+            {
+              "id": "B",
+              "texto": "4.",
+              "explicacion": "Es el saldo después de dos cargos; el tercero también cabe."
+            },
+            {
+              "id": "C",
+              "texto": "2.",
+              "explicacion": "Se descuentan los tres cargos y queda 12 − 3 − 5 − 2."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-122",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Con el arreglo ordenado [2, 5, 8, 11, 18, 21, 27] y la búsqueda descrita,\n\n¿qué índices se consultan antes de encontrar 18, incluyendo el índice final?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "izq <- 0\nder <- 6\nmientras izq <= der:\n    medio <- piso((izq + der) / 2)\n    si datos[medio] = 18: retornar medio\n    si datos[medio] < 18: izq <- medio + 1\n    si datos[medio] > 18: der <- medio - 1",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "3, 5 y 4.",
+              "explicacion": "Primero se lee 11, luego 21 en el tramo derecho y después 18."
+            },
+            {
+              "id": "B",
+              "texto": "0, 1, 2, 3 y 4.",
+              "explicacion": "Corresponde a un recorrido lineal, no a elegir puntos medios."
+            },
+            {
+              "id": "C",
+              "texto": "3 y 4.",
+              "explicacion": "Omite que el nuevo punto medio del intervalo 4..6 es 5."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-123",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una cola atiende en el orden de llegada.\n\n¿Qué elemento muestra el segundo desencolado?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "cola <- vacía\nencolar(cola, \"A\")\nencolar(cola, \"B\")\ndesencolar(cola)\nencolar(cola, \"C\")\nmostrar(desencolar(cola))",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "C.",
+              "explicacion": "Es el último en llegar; sería prioritario en una pila."
+            },
+            {
+              "id": "B",
+              "texto": "A.",
+              "explicacion": "A ya fue retirado en el primer desencolado."
+            },
+            {
+              "id": "C",
+              "texto": "B.",
+              "explicacion": "A sale primero y C se agrega detrás de B."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-124",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Ambos extremos de los ciclos son inclusivos. Si n vale 5,\n\n¿cuántas veces se ejecuta el incremento?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "contador <- 0\npara i desde 1 hasta n:\n    para j desde 1 hasta i:\n        contador <- contador + 1",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "15.",
+              "explicacion": "El ciclo interior itera 1 + 2 + 3 + 4 + 5 veces."
+            },
+            {
+              "id": "B",
+              "texto": "10.",
+              "explicacion": "Omite las cinco iteraciones del último valor de i."
+            },
+            {
+              "id": "C",
+              "texto": "25.",
+              "explicacion": "Solo ocurriría si el ciclo interior llegara siempre hasta n."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-125",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "vistos inicia vacío. Si datos contiene (X, 4), (Y, 3), (X, 9) y (Z, 2) en ese orden,\n\n¿qué total se obtiene?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "total <- 0\npara cada par (clave, valor) en datos:\n    si clave aún no está en vistos:\n        total <- total + valor\n        agregar clave a vistos",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "14.",
+              "explicacion": "Usa 9 para X aunque la lógica conserva su primera aparición."
+            },
+            {
+              "id": "B",
+              "texto": "9.",
+              "explicacion": "Se suman 4, 3 y 2; la segunda X se descarta."
+            },
+            {
+              "id": "C",
+              "texto": "18.",
+              "explicacion": "Suma ambas apariciones de X en vez de filtrar la repetición."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-029",
+      "subarea": "3.2 Paradigmas de programación",
+      "nombre": "Clases, contratos y comportamiento en ejecución",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 41–84.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-126",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una referencia del tipo base apunta a una instancia del subtipo.\n\n¿Qué cadena imprime?",
+          "lenguaje": "Java",
+          "fragmentoCodigo": "class Demo {\n    public static void main(String[] args) {\n        class Aviso { String texto() { return \"general\"; } }\n        class AvisoUrgente extends Aviso {\n            @Override String texto() { return \"urgente\"; }\n        }\n        Aviso a = new AvisoUrgente();\n        System.out.print(a.texto());\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "general.",
+              "explicacion": "Confunde el tipo declarado de la referencia con el despacho dinámico."
+            },
+            {
+              "id": "B",
+              "texto": "El fragmento falla porque Aviso no puede apuntar a AvisoUrgente.",
+              "explicacion": "El subtipo puede asignarse a una referencia de su tipo base."
+            },
+            {
+              "id": "C",
+              "texto": "urgente.",
+              "explicacion": "La llamada a un método de instancia sobrescrito usa la implementación del objeto concreto."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-127",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Se quiere impedir que un cliente cambie saldo arbitrariamente.\n\n¿Qué detalle del fragmento protege esa decisión?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nint main() {\n    struct Cuenta {\n        explicit Cuenta(int inicial) : saldo(inicial) {}\n        int verSaldo() const { return saldo; }\n    private:\n        int saldo;\n    };\n    Cuenta c(15);\n    std::cout << c.verSaldo();\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "saldo es privado y el cliente solo accede a él a través de la operación pública.",
+              "explicacion": "La representación interna queda encapsulada y no se escribe por acceso directo."
+            },
+            {
+              "id": "B",
+              "texto": "La función se llama verSaldo, por lo que C++ prohíbe escribir cualquier dato de Cuenta.",
+              "explicacion": "El nombre de una función no impone control de acceso."
+            },
+            {
+              "id": "C",
+              "texto": "El constructor recibe un entero, por lo que todos los miembros quedan públicos.",
+              "explicacion": "La firma del constructor no altera la visibilidad declarada."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-128",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La clase expone dos operaciones con el mismo nombre y distinta lista de parámetros.\n\n¿Qué imprime la llamada?",
+          "lenguaje": "Java",
+          "fragmentoCodigo": "class Demo {\n    public static void main(String[] args) {\n        class Tarifa {\n            int total(int base) { return base + 5; }\n            int total(int base, int ajuste) { return base + ajuste; }\n        }\n        System.out.print(new Tarifa().total(10, 3));\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "15.",
+              "explicacion": "Es el resultado de la sobrecarga que recibe un solo argumento."
+            },
+            {
+              "id": "B",
+              "texto": "13.",
+              "explicacion": "La sobrecarga de dos argumentos suma 10 y 3."
+            },
+            {
+              "id": "C",
+              "texto": "18.",
+              "explicacion": "Suma el ajuste y el valor fijo aunque la sobrecarga elegida solo aplica uno."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-129",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El código copia la primera tarea del vector y cambia su campo.\n\n¿Qué muestra?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n#include <vector>\n\nint main() {\n    struct Tarea { int horas; };\n    std::vector<Tarea> tareas{{2}, {4}};\n    Tarea primera = tareas.front();\n    primera.horas = 9;\n    std::cout << tareas.front().horas;\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "2.",
+              "explicacion": "primera es una copia por valor, así que el elemento original no cambia."
+            },
+            {
+              "id": "B",
+              "texto": "4.",
+              "explicacion": "Ese valor pertenece al segundo elemento."
+            },
+            {
+              "id": "C",
+              "texto": "9.",
+              "explicacion": "Sería el valor si primera se hubiera declarado como referencia a la tarea del vector."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-130",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "El módulo necesita un objeto de formato cuyo atributo extension se establezca una sola vez.\n\n¿Qué combinación logra eso aquí?",
+          "lenguaje": "Java",
+          "fragmentoCodigo": "class Demo {\n    public static void main(String[] args) {\n        class Formato {\n            private final String extension;\n            Formato(String extension) { this.extension = extension; }\n            String extension() { return extension; }\n        }\n        Formato f = new Formato(\"csv\");\n        System.out.print(f.extension());\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una operación de lectura sin constructor ni valor inicial.",
+              "explicacion": "No asegura que la extensión quede establecida al crear el objeto."
+            },
+            {
+              "id": "B",
+              "texto": "Un campo final inicializado por el constructor y una operación de solo lectura.",
+              "explicacion": "El campo no puede reasignarse tras su inicialización y no se ofrece un mutador."
+            },
+            {
+              "id": "C",
+              "texto": "Un campo público mutable y una recomendación de no tocarlo.",
+              "explicacion": "La recomendación no impide que el cliente lo reasigne."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-030",
+      "subarea": "3.2 Paradigmas de programación",
+      "nombre": "SOLID aplicado a implementación y pruebas",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 85–86.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-131",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un servicio calcula recargos y además decide si enviar correo por SMTP o por una pasarela. Los cambios de proveedor obligan a tocar el cálculo.\n\n¿Qué refactorización aplica responsabilidad única?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Duplicar la regla de recargo para cada proveedor.",
+              "explicacion": "Agrava la dependencia y crea varias copias de la misma regla."
+            },
+            {
+              "id": "B",
+              "texto": "Añadir un parámetro que active todos los modos de correo dentro del cálculo.",
+              "explicacion": "Sigue concentrando las dos responsabilidades en la misma operación."
+            },
+            {
+              "id": "C",
+              "texto": "Extraer la notificación a una colaboración separada y mantener el cálculo enfocado en la regla de recargo.",
+              "explicacion": "La regla y la infraestructura cambian por razones distintas."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-132",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una rutina selecciona el cálculo con un switch por tipo de beca. Cada tipo nuevo obliga a editar el módulo ya probado.\n\n¿Qué cambio favorece abierto/cerrado?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Definir estrategias de cálculo intercambiables y registrar una implementación por tipo.",
+              "explicacion": "Permite extender con otra estrategia sin modificar la lógica que invoca el cálculo."
+            },
+            {
+              "id": "B",
+              "texto": "Mover el switch a un archivo con más líneas disponibles.",
+              "explicacion": "El lugar cambia, pero la selección sigue requiriendo modificar el switch."
+            },
+            {
+              "id": "C",
+              "texto": "Convertir todos los importes en constantes globales.",
+              "explicacion": "No resuelve cómo agregar una regla sin modificar el comportamiento existente."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-133",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una clase base promete que retirar una cantidad válida devuelve un resultado sin lanzar excepciones de tipo no soportado. Una subclase lanza ese error incluso para retiros válidos.\n\n¿Qué principio se incumple?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Responsabilidad única, únicamente porque se devuelve un resultado.",
+              "explicacion": "Devolver un resultado no prueba que la clase tenga más de una razón para cambiar."
+            },
+            {
+              "id": "B",
+              "texto": "Segregación de interfaces, únicamente porque existe una clase base.",
+              "explicacion": "La existencia de una jerarquía no demuestra una interfaz innecesariamente amplia."
+            },
+            {
+              "id": "C",
+              "texto": "Sustitución de Liskov.",
+              "explicacion": "El subtipo rompe el contrato observable que esperan los clientes del tipo base."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-134",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un lector de reportes está obligado a implementar crear, eliminar y leer, aunque solo tiene permiso para leer.\n\n¿Qué refactorización elimina operaciones que no puede cumplir?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Conservar el contrato y lanzar «no soportado» en cada operación de escritura.",
+              "explicacion": "Los clientes siguen viendo operaciones que el objeto no puede cumplir."
+            },
+            {
+              "id": "B",
+              "texto": "Separar contratos de lectura y de escritura, y hacer que el lector implemente solo el primero.",
+              "explicacion": "Los clientes dependen únicamente de operaciones pertinentes a su rol."
+            },
+            {
+              "id": "C",
+              "texto": "Hacer públicas todas las variables del lector.",
+              "explicacion": "No reduce las obligaciones de la interfaz."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-135",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una prueba del caso de uso debería reemplazar el acceso a la base por un doble en memoria. Sin embargo, el caso de uso instancia directamente el cliente concreto.\n\n¿Qué cambio aplica inversión de dependencias?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar el nombre de la variable del cliente concreto a interfaz.",
+              "explicacion": "Renombrar no crea una abstracción ni habilita sustitución."
+            },
+            {
+              "id": "B",
+              "texto": "Depender de un contrato de persistencia e inyectar su implementación desde fuera.",
+              "explicacion": "Permite sustituir infraestructura sin editar la política de aplicación."
+            },
+            {
+              "id": "C",
+              "texto": "Instanciar también el doble dentro del caso de uso con una bandera de pruebas.",
+              "explicacion": "El caso de uso aún selecciona y conoce detalles de infraestructura."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-031",
+      "subarea": "3.4 Gestión de datos",
+      "nombre": "SQL y álgebra relacional en casos de práctica",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 89–95.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-136",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La consulta devuelve carreras sin duplicados de alumnado activo.\n\n¿Qué operaciones del álgebra relacional describe?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT DISTINCT carrera\nFROM Alumnos\nWHERE activo = 1;",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Selección de filas por activo y proyección de la columna carrera.",
+              "explicacion": "WHERE filtra filas y la proyección relacional conserva los atributos indicados sin duplicados."
+            },
+            {
+              "id": "B",
+              "texto": "Producto cartesiano de carrera y activo.",
+              "explicacion": "No se combinan dos relaciones."
+            },
+            {
+              "id": "C",
+              "texto": "Proyección de alumnos activos y selección de la columna carrera.",
+              "explicacion": "Intercambia la función de selección y proyección."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-137",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La primera tabla devuelve los folios 21 y 22; la segunda, 22 y 23. No se garantiza el orden de salida.\n\n¿Qué folios aparecen, contando repeticiones?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT folio FROM SolicitudWeb\nUNION ALL\nSELECT folio FROM SolicitudVentanilla;",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "21, 22 y 23.",
+              "explicacion": "Ese conjunto se obtendría con UNION sin ALL, que elimina duplicados."
+            },
+            {
+              "id": "B",
+              "texto": "Solo 22.",
+              "explicacion": "Sería la intersección de los folios, no la unión de ambos resultados."
+            },
+            {
+              "id": "C",
+              "texto": "21, 22, 22 y 23.",
+              "explicacion": "UNION ALL concatena resultados y conserva las dos apariciones del folio 22."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-138",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La zona N tiene ventas no canceladas de 60 y 45, y una cancelada de 20. La zona S tiene una no cancelada de 90.\n\n¿Qué resultado corresponde?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT zona, SUM(importe) AS total\nFROM Venta\nWHERE cancelada = 0\nGROUP BY zona\nHAVING SUM(importe) >= 100;",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "N con total 105 y S con total 90.",
+              "explicacion": "Ignora el umbral aplicado a cada grupo."
+            },
+            {
+              "id": "B",
+              "texto": "N con total 125; S queda fuera.",
+              "explicacion": "Incluye la venta cancelada en el acumulado."
+            },
+            {
+              "id": "C",
+              "texto": "N con total 105; S queda fuera.",
+              "explicacion": "WHERE retira la cancelada y HAVING filtra los totales ya agrupados."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-139",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Hay una tarea 1 sin fecha y prioridad alta, una 2 sin fecha y prioridad media, y una 3 con fecha y prioridad alta.\n\n¿Qué identificadores devuelve?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT id FROM Tarea\nWHERE fecha_cierre IS NULL AND prioridad = 'alta';",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "1 y 2.",
+              "explicacion": "Aplica el filtro de fecha, pero ignora la prioridad de la tarea 2."
+            },
+            {
+              "id": "B",
+              "texto": "Solo 1.",
+              "explicacion": "Debe cumplirse tanto que la fecha sea nula como que la prioridad sea alta."
+            },
+            {
+              "id": "C",
+              "texto": "1 y 3.",
+              "explicacion": "Aplica la prioridad, pero ignora que la tarea 3 ya tiene fecha de cierre."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-140",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Entrada contiene 10, 11 y 12. Salida referencia a 10 dos veces y a 12 una vez.\n\n¿Qué devuelve la consulta?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT id\nFROM Entrada e\nWHERE NOT EXISTS (\n  SELECT 1 FROM Salida s WHERE s.entrada_id = e.id\n);",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "10 y 12.",
+              "explicacion": "Son los identificadores con coincidencias; corresponderían a EXISTS."
+            },
+            {
+              "id": "B",
+              "texto": "10, 11 y 12.",
+              "explicacion": "No aplica la exclusión de las entradas con alguna salida."
+            },
+            {
+              "id": "C",
+              "texto": "Solo 11.",
+              "explicacion": "No existe una salida que referencie a esa entrada."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-032",
+      "subarea": "3.4 Gestión de datos",
+      "nombre": "Persistencia, migración y consistencia",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 89–99.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-141",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una transacción que aún no se confirma se actualiza un catálogo y después se recalculan indicadores opcionales. Se quiere poder deshacer el recálculo sin descartar la actualización ni confirmar por adelantado.\n\n¿Qué mecanismo lo permite si el motor admite puntos de guardado?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Ejecutar ROLLBACK de toda la transacción si se rechazan los indicadores.",
+              "explicacion": "También se perdería la actualización del catálogo."
+            },
+            {
+              "id": "B",
+              "texto": "Crear un punto de guardado antes del recálculo y volver a él si es necesario.",
+              "explicacion": "Volver a ese punto deshace lo posterior sin cerrar la transacción ni revertir el trabajo previo."
+            },
+            {
+              "id": "C",
+              "texto": "Confirmar el catálogo antes del recálculo para tener un punto de retorno.",
+              "explicacion": "Lo confirmaría por adelantado, contra la condición del caso."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-142",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El sistema heredado guarda fechas como día/mes/año, pero el destino usa un tipo fecha. Los registros con valores imposibles deben enviarse a revisión.\n\n¿En qué paso de ETL se realiza la conversión y validación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Extracción, pero solo para borrar permanentemente las filas dudosas del origen.",
+              "explicacion": "Leer el origen no exige modificarlo ni perder evidencia."
+            },
+            {
+              "id": "B",
+              "texto": "Carga, ingresando las cadenas tal como llegan sin validarlas.",
+              "explicacion": "El destino puede rechazar el lote o interpretar mal los valores."
+            },
+            {
+              "id": "C",
+              "texto": "Transformación, después de extraer y antes de cargar los datos aceptados.",
+              "explicacion": "Es donde se ajusta la representación y se verifica que cada valor sea válido."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-143",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Después de una migración, ambos sistemas muestran 10,000 expedientes. Se teme que algunos importes se hayan cambiado aunque el conteo coincida.\n\n¿Qué comprobación añade evidencia útil?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Conciliar totales e identificadores, y comparar una muestra de campos críticos entre origen y destino.",
+              "explicacion": "Detecta discrepancias de contenido que un conteo global no revela."
+            },
+            {
+              "id": "B",
+              "texto": "Contar las filas una segunda vez con la misma consulta.",
+              "explicacion": "Confirma el tamaño, pero no verifica los valores."
+            },
+            {
+              "id": "C",
+              "texto": "Revisar que el nombre de la tabla de destino sea más corto.",
+              "explicacion": "El nombre no informa si se conservaron los importes."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-144",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Dos procesos actualizan un registro a partir de la misma versión. Se quiere rechazar la escritura si otra ya cambió esa versión mientras tanto.\n\n¿Qué técnica encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Leer la versión antes y después, pero ejecutar la actualización sin condición.",
+              "explicacion": "Entre lectura y escritura puede ocurrir otra modificación que se sobrescriba."
+            },
+            {
+              "id": "B",
+              "texto": "Asignar siempre el mismo número de versión al guardar.",
+              "explicacion": "Impide distinguir una escritura nueva de una versión antigua."
+            },
+            {
+              "id": "C",
+              "texto": "Actualizar condicionando por identificador y versión esperada, y comprobar si se modificó una fila.",
+              "explicacion": "Una discrepancia de versión detecta la escritura concurrente antes de sobrescribirla."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-145",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un catálogo cambió el nombre de su columna estado. La migración se debe desplegar sin romper una instancia anterior que todavía la lee.\n\n¿Qué secuencia es más segura?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Agregar primero el campo nuevo y mantener compatibilidad; retirar el anterior cuando todas las instancias hayan migrado.",
+              "explicacion": "Evita un periodo en que la versión anterior dependa de un campo ya eliminado."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar la columna anterior antes de desplegar el código nuevo.",
+              "explicacion": "La versión anterior fallará mientras siga en uso."
+            },
+            {
+              "id": "C",
+              "texto": "Renombrarla en cada instancia de aplicación sin aplicar un cambio de esquema.",
+              "explicacion": "Cambiar el código no modifica los campos disponibles en la base."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-033",
+      "subarea": "3.5 Plataformas de desarrollo",
+      "nombre": "Pruebas, entrega y operación del software",
+      "fuente": "Reactivos originales de práctica. Referencia temática: UNITEC-ISC-EGEL-Plus-ISOFT-A3, pp. 96–99.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-146",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un módulo de precios falla para valores negativos. Se quiere comprobar la regla que transforma un importe sin levantar una base ni el navegador.\n\n¿Qué prueba aporta la evidencia más directa?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una prueba unitaria de la operación de precio con entradas negativas y resultados esperados.",
+              "explicacion": "Aísla la regla y permite verificarla sin dependencias externas."
+            },
+            {
+              "id": "B",
+              "texto": "Una prueba de carga con miles de usuarios que entren a la página inicial.",
+              "explicacion": "Mide capacidad y no garantiza que se ejecute ese caso de negocio."
+            },
+            {
+              "id": "C",
+              "texto": "Una prueba de aceptación que solo compruebe el texto del menú.",
+              "explicacion": "No ejecuta ni verifica la regla del importe."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-147",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una actualización se instala en un entorno paralelo y se valida antes de cambiar todo el tráfico al nuevo entorno. El entorno anterior queda disponible para volver.\n\n¿Qué estrategia se describe?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Actualización en sitio sobre el único entorno disponible.",
+              "explicacion": "Aquí existe un entorno paralelo al anterior."
+            },
+            {
+              "id": "B",
+              "texto": "Blue/green.",
+              "explicacion": "Mantiene dos entornos y cambia el destino del tráfico tras validar el nuevo."
+            },
+            {
+              "id": "C",
+              "texto": "Canary con 5 % de tráfico durante el piloto.",
+              "explicacion": "El escenario indica un cambio de todo el tráfico, no una exposición gradual por porcentaje."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-148",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Después del despliegue, una instancia acepta conexiones pero aún no terminó de cargar sus datos de arranque. El balanceador no debería enviarle solicitudes reales todavía.\n\n¿Qué comprobación debe gobernar esa decisión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una comprobación de preparación que solo sea positiva cuando la instancia pueda atender tráfico.",
+              "explicacion": "Distingue estar ejecutándose de estar lista para recibir solicitudes."
+            },
+            {
+              "id": "B",
+              "texto": "Contar cuántos archivos contiene la imagen del servicio.",
+              "explicacion": "No mide su disponibilidad para atender tráfico."
+            },
+            {
+              "id": "C",
+              "texto": "La comprobación de que el proceso existe.",
+              "explicacion": "Un proceso vivo puede seguir inicializándose."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-149",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una canalización construye un paquete para pruebas y vuelve a compilar uno diferente antes de desplegar. Se quiere garantizar que producción ejecute exactamente lo probado.\n\n¿Qué ajuste conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Recompilar en producción desde la rama principal sin fijar revisión.",
+              "explicacion": "Puede incorporar cambios que no pasaron por la prueba anterior."
+            },
+            {
+              "id": "B",
+              "texto": "Comparar únicamente el nombre visible de ambos archivos.",
+              "explicacion": "El nombre no demuestra que sus contenidos sean iguales."
+            },
+            {
+              "id": "C",
+              "texto": "Promover el mismo artefacto identificado desde pruebas hasta producción.",
+              "explicacion": "La identidad del artefacto permite comprobar que no hubo otra compilación intermedia."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-150",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Al desplegar una versión, aumenta el porcentaje de errores aunque la máquina conserva CPU libre. Se ha definido que superar 2 % de errores durante cinco minutos obliga a volver.\n\n¿Qué evidencia se usa para decidir?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "La proporción de solicitudes fallidas en esa ventana y su comparación con el umbral.",
+              "explicacion": "Es la métrica y el intervalo que gobiernan la decisión de reversión."
+            },
+            {
+              "id": "B",
+              "texto": "El número total de usuarios registrados desde el lanzamiento del producto.",
+              "explicacion": "No mide el comportamiento de la versión durante los cinco minutos."
+            },
+            {
+              "id": "C",
+              "texto": "El porcentaje de CPU libre, porque es la métrica con valor más favorable.",
+              "explicacion": "No representa la condición acordada para volver."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    }
+  ]
+}

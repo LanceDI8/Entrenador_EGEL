@@ -1,0 +1,1351 @@
+{
+  "_comentarios": [
+    "formato indica el tipo de pregunta. Este ejemplo usa caso_practico y se responde sin leer código.",
+    "enunciado guarda el caso y la pregunta. texto guarda lo que se ve en cada inciso.",
+    "explicacion contiene la retroalimentación de cada inciso, aunque sea incorrecto."
+  ],
+  "area": 3,
+  "temas": [
+    {
+      "codigoTema": "EGEL-TEMA-A3-001",
+      "subarea": "3.3 Entornos de desarrollo",
+      "nombre": "Pruebas de integración",
+      "fuente": "Reactivo original. Referencia de elaboración: Estructura ISOFT+ 3(4), p. 5",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-001",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En un sistema de ventas, el módulo de Pedidos solicita al módulo de Inventario que reserve los artículos. Los dos módulos pasan sus pruebas por separado, pero al conectarlos algunos pedidos se confirman aunque Inventario haya rechazado la reserva. El equipo debe verificar que ambos módulos intercambien e interpreten correctamente el resultado de la operación.\n\n¿Qué prueba aborda de forma más directa el fallo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Probar por separado el cálculo del stock disponible, sin conectar el módulo de Pedidos.",
+              "explicacion": "Comprueba la lógica de Inventario de forma aislada y no detecta cómo interpreta Pedidos su respuesta."
+            },
+            {
+              "id": "B",
+              "texto": "Conectar ambos módulos en un entorno de pruebas y comprobar qué estado guarda Pedidos cuando Inventario acepta o rechaza una reserva.",
+              "explicacion": "Una prueba de integración cubre el intercambio real entre los módulos. Probar el rechazo revela si Pedidos lo está interpretando como una confirmación."
+            },
+            {
+              "id": "C",
+              "texto": "Pedir al personal de ventas que valide el recorrido habitual de compra con artículos que siempre están disponibles.",
+              "explicacion": "Un recorrido de aceptación con stock suficiente no reproduce el rechazo que origina el fallo."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-002",
+      "subarea": "3.1 Lenguajes de desarrollo de software",
+      "nombre": "C++: punteros, funciones y colecciones",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-002",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Un técnico prueba el fragmento para comprobar si el puntero modifica el arreglo original.\n\n¿Qué imprime?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nint main() {\n    int datos[] = {4, 7, 9};\n    int* p = datos + 1;\n    *p += 3;\n    std::cout << datos[1];\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "10.",
+              "explicacion": "El puntero apunta al segundo elemento y la suma cambia 7 a 10."
+            },
+            {
+              "id": "B",
+              "texto": "7.",
+              "explicacion": "Sería el valor previo a modificar el elemento apuntado."
+            },
+            {
+              "id": "C",
+              "texto": "12.",
+              "explicacion": "Resultaría de sumar 3 al tercer elemento, al que el puntero no apunta."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-003",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una función ajusta dos contadores recibidos de una pantalla.\n\n¿Qué valores imprime al regresar al código que la llamó?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n\nvoid ajustar(int x, int& y) {\n    x += 2;\n    y += 3;\n}\n\nint main() {\n    int a = 4, b = 5;\n    ajustar(a, b);\n    std::cout << a << \" \" << b;\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "6 8.",
+              "explicacion": "Supone que x también modifica el argumento original."
+            },
+            {
+              "id": "B",
+              "texto": "4 8.",
+              "explicacion": "x recibe una copia y y es una referencia a b."
+            },
+            {
+              "id": "C",
+              "texto": "4 5.",
+              "explicacion": "Ignora que la modificación por referencia sí cambia b."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-004",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Al revisar un lector de sensores, se detecta un acceso fuera del vector en la última vuelta.\n\n¿Qué ajuste conserva todas las lecturas válidas?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> lecturas{5, 10, 15};\n    for (std::size_t i = 0; i <= lecturas.size(); ++i) {\n        std::cout << lecturas[i] << std::endl;\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar la condición a i < lecturas.size().",
+              "explicacion": "Con tres elementos, las posiciones válidas son 0, 1 y 2."
+            },
+            {
+              "id": "B",
+              "texto": "Cambiar la condición a i < lecturas.size() - 1.",
+              "explicacion": "En este vector deja de recorrer la posición 2."
+            },
+            {
+              "id": "C",
+              "texto": "Iniciar i en 1 y mantener i <= lecturas.size().",
+              "explicacion": "Omite la posición 0 y todavía accede a la posición 3."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-005",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una prueba usa un vector para registrar los últimos códigos recibidos.\n\n¿Qué valor se imprime al final?",
+          "lenguaje": "C++17",
+          "fragmentoCodigo": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> cola{2, 5};\n    cola.push_back(8);\n    cola.pop_back();\n    std::cout << cola.back();\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "5.",
+              "explicacion": "Se agrega 8 y se retira ese mismo elemento del final; 5 vuelve a quedar al final."
+            },
+            {
+              "id": "B",
+              "texto": "8.",
+              "explicacion": "Sería el último valor si no se ejecutara pop_back."
+            },
+            {
+              "id": "C",
+              "texto": "2.",
+              "explicacion": "El primer elemento sigue en el vector, pero back consulta el último."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-003",
+      "subarea": "3.1 Lenguajes de desarrollo de software",
+      "nombre": "Python, Java y JavaScript",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-006",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Se esperaba que original conservara tres lecturas al preparar una copia.\n\n¿Qué imprime este código?",
+          "lenguaje": "Python",
+          "fragmentoCodigo": "original = [2, 4, 6]\ncopia = original\ncopia.append(8)\nprint(len(original))",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "3.",
+              "explicacion": "Ese resultado requeriría una copia independiente o no agregar el dato."
+            },
+            {
+              "id": "B",
+              "texto": "8.",
+              "explicacion": "El valor añadido no es lo que devuelve len."
+            },
+            {
+              "id": "C",
+              "texto": "4.",
+              "explicacion": "La asignación crea otro nombre para la misma lista; append la modifica."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-007",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Dos formularios generan objetos String distintos con el mismo código.\n\n¿Qué resultado tiene la comparación mostrada?",
+          "lenguaje": "Java",
+          "fragmentoCodigo": "class Demo {\n    public static void main(String[] args) {\n        String a = new String(\"EGEL\");\n        String b = new String(\"EGEL\");\n        System.out.print(a.equals(b));\n    }\n}",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "true, porque new devuelve el mismo objeto en las dos llamadas.",
+              "explicacion": "El resultado es verdadero por el contenido, aunque los objetos sean distintos."
+            },
+            {
+              "id": "B",
+              "texto": "false, porque a y b son objetos distintos.",
+              "explicacion": "Esa diferencia de identidad importa para ==, no para String.equals."
+            },
+            {
+              "id": "C",
+              "texto": "true, porque equals compara el contenido de las cadenas.",
+              "explicacion": "Ambos objetos contienen los mismos caracteres."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-008",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Un formulario entrega una cantidad como texto.\n\n¿Qué registra la consola tras calcular total?",
+          "lenguaje": "JavaScript",
+          "fragmentoCodigo": "const captura = \"5\";\nconst total = Number(captura) + 2;\nconsole.log(total);",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El número 7.",
+              "explicacion": "Number convierte el texto a número antes de la suma."
+            },
+            {
+              "id": "B",
+              "texto": "La cadena \"52\".",
+              "explicacion": "Esa concatenación ocurriría al usar el texto directamente con +."
+            },
+            {
+              "id": "C",
+              "texto": "El número 52.",
+              "explicacion": "Ni la conversión ni la suma concatenan los dígitos."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-009",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una prueba calcula el precio final con una tasa enviada por nombre.\n\n¿Qué valor numérico resulta?",
+          "lenguaje": "Python",
+          "fragmentoCodigo": "def cobrar(base, tasa=0):\n    return base + base * tasa\n\nprint(cobrar(100, tasa=0.15))",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "115.",
+              "explicacion": "La tasa explícita sustituye el valor por defecto: 100 + 15."
+            },
+            {
+              "id": "B",
+              "texto": "15.",
+              "explicacion": "Es solo el recargo; la función también suma la base."
+            },
+            {
+              "id": "C",
+              "texto": "100.",
+              "explicacion": "Ese valor se obtendría sin proporcionar tasa."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-004",
+      "subarea": "3.1 Lenguajes de desarrollo de software",
+      "nombre": "Web y comunicación con servicios",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-010",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un formulario web comprueba en el navegador que la cantidad pedida sea positiva. Un cliente puede llamar al servicio sin usar el formulario.\n\n¿Dónde debe aplicarse la regla para todas las solicitudes?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Solo al mostrar el recibo, después de guardar la orden.",
+              "explicacion": "El dato inválido ya podría haberse almacenado."
+            },
+            {
+              "id": "B",
+              "texto": "En el servidor, además de mantener la ayuda inmediata en el formulario.",
+              "explicacion": "El servidor controla la operación aunque el cliente omita la validación visual."
+            },
+            {
+              "id": "C",
+              "texto": "Solo en JavaScript, deshabilitando el botón con cantidades inválidas.",
+              "explicacion": "Una solicitud directa puede evitar el botón."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-011",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una pantalla llama a un API al pulsar Cargar. La respuesta tarda y el usuario debe poder seguir navegando.\n\n¿Cómo manejar la petición?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Realizarla de forma asíncrona y mostrar estado de carga o error al completarse.",
+              "explicacion": "Evita bloquear la interfaz y permite informar el resultado de la operación."
+            },
+            {
+              "id": "B",
+              "texto": "Hacer la petición síncrona y dejar bloqueada la pantalla hasta que termine.",
+              "explicacion": "Contradice el requisito de seguir navegando."
+            },
+            {
+              "id": "C",
+              "texto": "Ocultar el botón al hacer clic sin procesar el resultado de la petición.",
+              "explicacion": "No establece cómo se mostrarán los datos ni el error."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-012",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una página HTML enlaza dos etiquetas de texto al mismo campo porque ambos usan el mismo id de formulario.\n\n¿Qué corrección permite identificar cada campo al navegar con ayudas de accesibilidad?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Asignar a cada campo un id único y apuntar su etiqueta al id correspondiente.",
+              "explicacion": "La asociación explícita permite identificar el propósito de cada control."
+            },
+            {
+              "id": "B",
+              "texto": "Cambiar el tamaño del texto de las dos etiquetas.",
+              "explicacion": "La apariencia no repara las referencias duplicadas."
+            },
+            {
+              "id": "C",
+              "texto": "Quitar las etiquetas y conservar solo textos de ejemplo que desaparecen al escribir.",
+              "explicacion": "Se pierde una identificación persistente del campo."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-013",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cliente HTTP necesita tratar de manera distinta los errores del servidor y los datos válidos. El programa intenta analizar como JSON cualquier respuesta, incluso una página de error.\n\n¿Qué conviene hacer primero?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Revisar el estado HTTP y comprobar el tipo de contenido antes de interpretar el cuerpo como datos válidos.",
+              "explicacion": "Separa errores de transporte o protocolo de la respuesta de negocio esperada."
+            },
+            {
+              "id": "B",
+              "texto": "Convertir todas las respuestas a texto vacío si el análisis falla.",
+              "explicacion": "Oculta la causa y no deja distinguir el resultado de un fallo."
+            },
+            {
+              "id": "C",
+              "texto": "Analizar como JSON y asumir éxito siempre que la respuesta tenga texto.",
+              "explicacion": "Puede confundir un error con un resultado o fallar al interpretar HTML."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-005",
+      "subarea": "3.2 Paradigmas de programación",
+      "nombre": "Programación estructurada y procedimental",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-014",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Un filtro acumula solo lotes con más de una pieza.\n\n¿Con qué valor queda total?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "total <- 0\nPARA CADA cantidad EN [2, 0, 4, 1]\n    SI cantidad > 1 ENTONCES\n        total <- total + cantidad\n    FIN SI\nFIN PARA",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "2.",
+              "explicacion": "Cuenta cuántos lotes pasan el filtro, en lugar de sumar sus cantidades."
+            },
+            {
+              "id": "B",
+              "texto": "6.",
+              "explicacion": "Solo se suman los lotes de 2 y 4."
+            },
+            {
+              "id": "C",
+              "texto": "7.",
+              "explicacion": "Incluye el lote de una pieza que la condición excluye."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-015",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una estación procesa grupos de tres mientras quedan más de tres objetos.\n\n¿Qué valor final conserva n?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "n <- 10\nMIENTRAS n > 3\n    n <- n - 3\nFIN MIENTRAS",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "3.",
+              "explicacion": "La condición se compara con 3, pero las restas no pasan por ese valor."
+            },
+            {
+              "id": "B",
+              "texto": "1.",
+              "explicacion": "El ciclo recorre 10, 7, 4 y 1; después se detiene."
+            },
+            {
+              "id": "C",
+              "texto": "4.",
+              "explicacion": "Con 4 todavía se cumple la condición y se resta otra vez."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-016",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La regla se repite en tres procesos y se necesita probar si un pedido califica sin modificarlo.\n\n¿Qué refactorización es adecuada?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "PARA CADA pedido EN pedidos\n    subtotal <- precio(pedido) * piezas(pedido)\n    SI subtotal >= 500 ENTONCES\n        marcar(pedido)\n    FIN SI\nFIN PARA",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Extraer una función que reciba precio y piezas y devuelva si el subtotal alcanza 500.",
+              "explicacion": "La regla queda reutilizable y se puede probar sin llamar a marcar."
+            },
+            {
+              "id": "B",
+              "texto": "Cambiar subtotal por una variable global que lean los tres procesos.",
+              "explicacion": "Comparte estado, pero no encapsula ni facilita probar la regla."
+            },
+            {
+              "id": "C",
+              "texto": "Mover marcar a otra línea dentro del mismo ciclo en cada proceso.",
+              "explicacion": "No centraliza la regla de elegibilidad."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-017",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Un auditor revisa la implementación del criterio de aprobación en un curso.\n\n¿Qué resultado produce el fragmento?",
+          "lenguaje": "Pseudocódigo",
+          "fragmentoCodigo": "aprobados <- 0\nPARA CADA nota EN [80, 49, 50, 73]\n    SI nota >= 50 ENTONCES\n        aprobados <- aprobados + 1\n    FIN SI\nFIN PARA",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "3 aprobados.",
+              "explicacion": "80, 50 y 73 cumplen el límite inclusivo."
+            },
+            {
+              "id": "B",
+              "texto": "2 aprobados.",
+              "explicacion": "Serían dos si la comparación excluyera exactamente 50."
+            },
+            {
+              "id": "C",
+              "texto": "203 aprobados.",
+              "explicacion": "203 es la suma de las notas aprobadas; aquí se incrementa un contador."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-006",
+      "subarea": "3.2 Paradigmas de programación",
+      "nombre": "Programación funcional, lógica y reactiva",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-018",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Un componente prepara valores para una gráfica sin alterar la lista de entrada.\n\n¿Qué lista contiene salida?",
+          "lenguaje": "Pseudocódigo funcional",
+          "fragmentoCodigo": "datos = [3, 8, 5, 2]\nvalidos = filtrar(datos, x => x > 3)\nsalida = transformar(validos, x => x * 2)",
+          "supuestos": "Filtrar y transformar recorren los valores de izquierda a derecha y conservan ese orden en el resultado.",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "[10, 16].",
+              "explicacion": "El filtro y la transformación conservan el orden de los valores aceptados."
+            },
+            {
+              "id": "B",
+              "texto": "[16, 10].",
+              "explicacion": "Se conservan 8 y 5 en ese orden y luego se duplica cada uno."
+            },
+            {
+              "id": "C",
+              "texto": "[6, 16, 10, 4].",
+              "explicacion": "Duplica todos los valores sin aplicar el filtro."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-019",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una herramienta de tutorías busca una persona distinta que curse alguna materia con Ana.\n\n¿Qué valor puede tomar Y en la consulta comparte(ana, Y)?",
+          "lenguaje": "Prolog",
+          "fragmentoCodigo": "inscrito(ana, redes).\ninscrito(luis, redes).\ninscrito(luis, logica).\ncomparte(X, Y) :- inscrito(X, M), inscrito(Y, M), dif(X, Y).",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "logica.",
+              "explicacion": "Es una materia, no un estudiante que cumpla inscrito(Y, M)."
+            },
+            {
+              "id": "B",
+              "texto": "luis.",
+              "explicacion": "Coincide con Ana en redes y satisface dif."
+            },
+            {
+              "id": "C",
+              "texto": "ana.",
+              "explicacion": "Comparte la materia consigo misma, pero dif exige valores distintos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-020",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una pantalla de precios debe recalcular el total cada vez que cambie el precio unitario o la cantidad. El equipo quiere declarar la dependencia una vez.\n\n¿Qué enfoque encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Actualizar solo cuando cambie el precio unitario.",
+              "explicacion": "El total quedaría obsoleto ante un cambio de cantidad."
+            },
+            {
+              "id": "B",
+              "texto": "Derivar el total como un valor reactivo que depende de precio y cantidad.",
+              "explicacion": "La expresión se actualiza al cambiar cualquiera de sus entradas."
+            },
+            {
+              "id": "C",
+              "texto": "Copiar el total calculado cuando se abre la pantalla y conservarlo fijo.",
+              "explicacion": "No refleja cambios posteriores de sus entradas."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-021",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación necesita probar un cálculo de descuento en paralelo con muchos valores. La función actual consulta el reloj y modifica una variable global.\n\n¿Qué ajuste vuelve determinista el cálculo para los mismos datos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Recibir la fecha y las cantidades como argumentos y devolver el resultado sin modificar estado externo.",
+              "explicacion": "Los valores de entrada bastan para determinar la salida y la función no produce efectos externos."
+            },
+            {
+              "id": "B",
+              "texto": "Guardar el último resultado en una variable pública y usarlo en la siguiente llamada.",
+              "explicacion": "El cálculo depende del orden de las llamadas y de un estado mutable."
+            },
+            {
+              "id": "C",
+              "texto": "Mantener la fecha del reloj y reiniciar la variable global al terminar cada llamada.",
+              "explicacion": "La salida todavía depende del reloj y persiste una modificación compartida."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-007",
+      "subarea": "3.2 Paradigmas de programación",
+      "nombre": "Objetos, eventos y responsabilidades",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-022",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema calcula el costo de distintos tipos de envío. La pantalla debe invocar calcularCosto con la misma firma y obtener el comportamiento del tipo concreto.\n\n¿Qué diseño aplica ese principio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Implementar un contrato común con una implementación de calcularCosto para cada tipo de envío.",
+              "explicacion": "El despacho polimórfico elige el comportamiento del objeto concreto."
+            },
+            {
+              "id": "B",
+              "texto": "Agregar una clase distinta que no comparta ninguna operación con las demás.",
+              "explicacion": "No ofrece un contrato común que la pantalla pueda invocar."
+            },
+            {
+              "id": "C",
+              "texto": "Leer todos los campos del objeto y decidir el cálculo con condiciones en la pantalla.",
+              "explicacion": "La interfaz de usuario conoce los detalles de cada tipo y decide manualmente."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-023",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una cuenta deja que cualquier módulo escriba su saldo; algunos módulos provocan saldos negativos por accidente.\n\n¿Cómo proteger la regla de negocio dentro del objeto?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Hacer público el saldo y mover la comprobación a una sola pantalla.",
+              "explicacion": "Otros consumidores del objeto podrían omitir esa comprobación."
+            },
+            {
+              "id": "B",
+              "texto": "Mantener el saldo público y documentar que debe ser positivo.",
+              "explicacion": "Una instrucción escrita no impide que otro módulo asigne un valor inválido."
+            },
+            {
+              "id": "C",
+              "texto": "Mantener el saldo privado y exponer retirar con validación del importe y saldo.",
+              "explicacion": "La operación controla el único camino para modificar el saldo por retiro."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-024",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un visor debe ejecutar guardarPreferencias al pulsar Guardar, pero hoy el programa revisa el estado del botón continuamente.\n\n¿Qué cambio encaja con programación orientada a eventos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Guardar las preferencias cada cinco segundos, aunque no se pulse el botón.",
+              "explicacion": "Cambia el disparador y el comportamiento solicitado."
+            },
+            {
+              "id": "B",
+              "texto": "Revisar el botón en un ciclo aún más rápido.",
+              "explicacion": "Mantiene el sondeo continuo sin usar la notificación del evento."
+            },
+            {
+              "id": "C",
+              "texto": "Registrar un manejador para el evento de clic que invoque guardarPreferencias.",
+              "explicacion": "El evento activa la operación cuando ocurre la interacción."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-025",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un módulo calcula un descuento y también decide la plantilla de correo y envía el mensaje. Cambiar el proveedor de correo obliga a modificar la clase que calcula.\n\n¿Qué refactorización se ajusta a responsabilidad única?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Conservar ambas funciones en el calculador y agruparlas en métodos privados.",
+              "explicacion": "Ocultar métodos no separa las responsabilidades de la clase."
+            },
+            {
+              "id": "B",
+              "texto": "Crear una subclase del calculador por cada proveedor de correo.",
+              "explicacion": "Vincula variantes de entrega con la lógica de cálculo."
+            },
+            {
+              "id": "C",
+              "texto": "Mantener el cálculo en un componente y delegar composición y envío a un servicio de notificaciones.",
+              "explicacion": "Separa motivos de cambio: la regla de descuento y el mecanismo de notificación."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-008",
+      "subarea": "3.3 Entornos de desarrollo",
+      "nombre": "Pruebas y diagnóstico de defectos",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-026",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El cálculo de un descuento tiene fallos justo en el umbral. La función no usa archivos ni red.\n\n¿Qué prueba permite detectar el defecto con menor alcance?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una prueba de aceptación que valide que el botón de pago es visible.",
+              "explicacion": "No comprueba el resultado del cálculo."
+            },
+            {
+              "id": "B",
+              "texto": "Una prueba unitaria que invoque la función con importes debajo, en y encima del umbral.",
+              "explicacion": "Aísla la regla y cubre su frontera."
+            },
+            {
+              "id": "C",
+              "texto": "Una prueba de carga que genere miles de solicitudes con el mismo importe alto.",
+              "explicacion": "Mide capacidad y no examina las fronteras de la regla."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-027",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El nuevo proceso de altas funciona según las pruebas técnicas. El área usuaria debe decidir si puede completar sus tareas habituales, incluidas correcciones de datos.\n\n¿Qué prueba encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una prueba de conexión a la base de datos.",
+              "explicacion": "Comprueba conectividad y no la aceptación del flujo de trabajo."
+            },
+            {
+              "id": "B",
+              "texto": "Una prueba de aceptación con usuarios y escenarios de alta y corrección acordados.",
+              "explicacion": "Evalúa si la solución satisface el trabajo esperado del usuario."
+            },
+            {
+              "id": "C",
+              "texto": "Una prueba unitaria del método que valida el correo.",
+              "explicacion": "Cubre una regla aislada, no el proceso completo."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-028",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un error solo aparece al guardar y recuperar una fecha; las pruebas con un repositorio simulado pasan.\n\n¿Qué prueba localiza mejor una discrepancia con el motor de datos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Ejecutar el navegador con distintas resoluciones.",
+              "explicacion": "El problema se observó al persistir fechas, no al presentar la pantalla."
+            },
+            {
+              "id": "B",
+              "texto": "Una prueba de integración con una base de prueba que guarde y lea fechas representativas.",
+              "explicacion": "Ejercita la conversión real en la frontera con persistencia."
+            },
+            {
+              "id": "C",
+              "texto": "Agregar casos a la misma simulación sin usar el motor.",
+              "explicacion": "Puede repetir la simplificación que oculta el defecto."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-029",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una búsqueda devuelve resultados correctos, pero se vuelve lenta con 300 solicitudes concurrentes.\n\n¿Qué prueba cuantifica ese problema?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una prueba de carga con 300 solicitudes concurrentes y medición de latencia.",
+              "explicacion": "Reproduce el volumen señalado y mide la característica afectada."
+            },
+            {
+              "id": "B",
+              "texto": "Una prueba de aceptación centrada en el texto de los botones.",
+              "explicacion": "No reproduce la carga ni mide el tiempo de respuesta."
+            },
+            {
+              "id": "C",
+              "texto": "Una prueba funcional con un usuario que compruebe los resultados de búsqueda.",
+              "explicacion": "Confirma exactitud, pero no el desempeño concurrente."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-009",
+      "subarea": "3.3 Entornos de desarrollo",
+      "nombre": "TDD, control de versiones y depuración",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-030",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Se agregará una regla para rechazar cupones vencidos mediante TDD.\n\n¿Qué secuencia permite demostrar que el nuevo caso realmente se cubre?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Implementar toda la función y después escribir una prueba que solo recorra el caso exitoso.",
+              "explicacion": "No comprueba el caso vencido que motivó el cambio."
+            },
+            {
+              "id": "B",
+              "texto": "Refactorizar antes de definir el comportamiento y omitir la prueba al pasar manualmente.",
+              "explicacion": "No deja una verificación automática de la nueva regla."
+            },
+            {
+              "id": "C",
+              "texto": "Escribir una prueba que falle por la regla faltante, implementar lo mínimo y refactorizar con las pruebas en verde.",
+              "explicacion": "Aplica el ciclo de fallo, corrección y mejora sin perder cobertura."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-031",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una regresión apareció entre dos versiones y el equipo tiene una prueba que distingue una revisión buena de una mala.\n\n¿Qué procedimiento localiza con menos comprobaciones el cambio culpable si el fallo permanece en las revisiones posteriores?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Probar todas las revisiones en orden desde la más antigua.",
+              "explicacion": "Puede funcionar, pero necesita muchas más comprobaciones."
+            },
+            {
+              "id": "B",
+              "texto": "Comparar solo las fechas de los commits y elegir el más reciente.",
+              "explicacion": "La fecha no prueba en qué revisión se introdujo el fallo."
+            },
+            {
+              "id": "C",
+              "texto": "Buscar por bisección en Git y ejecutar la prueba en cada revisión candidata.",
+              "explicacion": "Descarta aproximadamente la mitad del intervalo según el resultado de cada prueba."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-032",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cambio defectuoso ya está publicado en la rama compartida. El equipo necesita deshacerlo y conservar el historial que usan otros desarrolladores.\n\n¿Qué acción conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Borrar la rama local sin cambiar la remota.",
+              "explicacion": "La versión compartida seguiría incluyendo el defecto."
+            },
+            {
+              "id": "B",
+              "texto": "Restablecer la rama al commit anterior y forzar el envío.",
+              "explicacion": "Reescribe el historial y afecta a quienes ya descargaron el cambio."
+            },
+            {
+              "id": "C",
+              "texto": "Crear un commit de reversión con git revert.",
+              "explicacion": "Agrega la operación inversa sin reescribir el historial compartido."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-033",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un servicio falla solo cuando el contador pasa de 19 a 20. El depurador permite detener la ejecución con una condición.\n\n¿Qué punto facilita observar el cambio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Registrar solo el valor del contador al cerrar la aplicación.",
+              "explicacion": "No muestra qué instrucciones intervinieron en la transición."
+            },
+            {
+              "id": "B",
+              "texto": "Un punto de interrupción incondicional en el inicio del programa.",
+              "explicacion": "Detiene la ejecución lejos del estado de interés."
+            },
+            {
+              "id": "C",
+              "texto": "Un punto de interrupción condicionado a que el contador sea 19, justo antes de actualizarlo.",
+              "explicacion": "Permite inspeccionar el estado anterior y ejecutar la actualización paso a paso."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-010",
+      "subarea": "3.4 Gestión de datos",
+      "nombre": "Consultas SQL y cambios controlados",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-034",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "La tabla tiene un registro por pedido.\n\n¿Qué clientes devuelve el reporte?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT cliente, COUNT(*) AS pedidos\nFROM Pedido\nWHERE estado = 'pagado'\nGROUP BY cliente\nHAVING COUNT(*) >= 3;",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Clientes con tres o más pedidos pagados.",
+              "explicacion": "WHERE filtra antes de agrupar y HAVING aplica el mínimo al conteo."
+            },
+            {
+              "id": "B",
+              "texto": "Clientes con exactamente tres pedidos pagados.",
+              "explicacion": "La comparación también admite conteos mayores."
+            },
+            {
+              "id": "C",
+              "texto": "Clientes con tres o más pedidos de cualquier estado.",
+              "explicacion": "El filtro excluye los no pagados antes del conteo."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-035",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Pedido.id es obligatorio en toda fila de Pedido.\n\n¿Qué total obtiene un cliente sin pedidos?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "SELECT c.id, COUNT(p.id) AS total\nFROM Cliente c\nLEFT JOIN Pedido p ON p.cliente_id = c.id\nGROUP BY c.id;",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "1.",
+              "explicacion": "Eso ocurriría con COUNT(*) sobre la fila conservada."
+            },
+            {
+              "id": "B",
+              "texto": "0.",
+              "explicacion": "LEFT JOIN conserva el cliente y COUNT(p.id) ignora el valor nulo de la fila sin coincidencia."
+            },
+            {
+              "id": "C",
+              "texto": "El cliente no aparece.",
+              "explicacion": "Con LEFT JOIN la fila izquierda se conserva aunque no haya pedido."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-036",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Una factura pendiente vence el 1 de mayo de 2026. La columna vence es de tipo fecha.\n\n¿Qué hace la sentencia con esa factura?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "UPDATE Factura\nSET estado = 'vencida'\nWHERE estado = 'pendiente' AND vence < '2026-05-01';",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Elimina el registro por no cumplir la condición.",
+              "explicacion": "UPDATE no elimina filas."
+            },
+            {
+              "id": "B",
+              "texto": "La marca vencida porque es el día de corte.",
+              "explicacion": "Eso requeriría una comparación inclusiva."
+            },
+            {
+              "id": "C",
+              "texto": "La deja pendiente.",
+              "explicacion": "La condición es estrictamente menor; el día indicado queda fuera."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-037",
+          "version": 1,
+          "formato": "analisis_codigo",
+          "enunciado": "Durante la migración,\n\n¿cuál instrucción cambia la estructura que podrán usar consultas futuras?",
+          "lenguaje": "SQL",
+          "fragmentoCodigo": "ALTER TABLE Producto ADD COLUMN peso_gramos INTEGER;\nUPDATE Producto SET peso_gramos = 0 WHERE peso_gramos IS NULL;",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "ALTER TABLE, porque agrega la columna a la definición de Producto.",
+              "explicacion": "Es DDL: modifica el esquema persistente de la tabla."
+            },
+            {
+              "id": "B",
+              "texto": "UPDATE, porque cambia el valor de peso_gramos en filas existentes.",
+              "explicacion": "Es DML: actualiza datos de una columna que ya existe."
+            },
+            {
+              "id": "C",
+              "texto": "Ambas por igual, porque las dos mencionan peso_gramos.",
+              "explicacion": "Una cambia la definición y la otra los valores almacenados."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-011",
+      "subarea": "3.4 Gestión de datos",
+      "nombre": "Normalización e integridad",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-038",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una ficha de proveedor almacena teléfonos en una sola columna separados por comas. Se necesita buscar y modificar cada número de forma individual.\n\n¿Qué cambio aborda la primera forma normal?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Usar el primer teléfono como clave primaria del proveedor.",
+              "explicacion": "No resuelve cómo se representan los otros números."
+            },
+            {
+              "id": "B",
+              "texto": "Agregar una coma final para facilitar la separación.",
+              "explicacion": "El campo sigue conteniendo múltiples valores de teléfono."
+            },
+            {
+              "id": "C",
+              "texto": "Crear una fila de Teléfono por número, relacionada con su proveedor.",
+              "explicacion": "Cada valor se maneja por separado y se evita la lista dentro de una celda."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-039",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En Inscripción(alumno_id, curso_id, nombre_alumno, fecha), la clave es (alumno_id, curso_id). El nombre depende solo de alumno_id.\n\n¿Qué ajuste elimina esa dependencia parcial?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mover fecha a Alumno y conservar nombre_alumno en Inscripción.",
+              "explicacion": "La fecha puede pertenecer a una inscripción y el problema del nombre permanece."
+            },
+            {
+              "id": "B",
+              "texto": "Agregar nombre_alumno a la clave de Inscripción.",
+              "explicacion": "No elimina que el nombre dependa solamente del alumno."
+            },
+            {
+              "id": "C",
+              "texto": "Mover nombre_alumno a Alumno y conservar la referencia en Inscripción.",
+              "explicacion": "El nombre deja de depender de una parte de la clave de Inscripción."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-040",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una tabla Producto guarda producto_id, categoria_id y nombre_categoria. El nombre depende de categoria_id y cada producto tiene una categoría.\n\n¿Qué diseño elimina esa dependencia transitiva?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Duplicar nombre_categoria en una segunda columna de Producto.",
+              "explicacion": "Aumenta la redundancia y conserva la dependencia."
+            },
+            {
+              "id": "B",
+              "texto": "Hacer que nombre_categoria sea el identificador de Producto.",
+              "explicacion": "Varios productos pueden compartir categoría y nombre, por lo que no identifica un producto."
+            },
+            {
+              "id": "C",
+              "texto": "Crear Categoría con su nombre y dejar categoria_id como referencia en Producto.",
+              "explicacion": "El atributo que describe la categoría se almacena con la entidad que lo determina."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-041",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Dos operaciones transfieren saldo entre cuentas. Si se descuenta de una y falla el abono a la otra, ninguna modificación debe quedar registrada.\n\n¿Qué control aplica?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Crear un índice para identificar más rápido la cuenta de destino.",
+              "explicacion": "Puede acelerar una consulta, pero no garantiza atomicidad."
+            },
+            {
+              "id": "B",
+              "texto": "Confirmar cada operación por separado para reducir espera.",
+              "explicacion": "El descuento puede persistir sin su abono correspondiente."
+            },
+            {
+              "id": "C",
+              "texto": "Ejecutar descuento y abono en una sola transacción que se revierta ante un fallo.",
+              "explicacion": "La atomicidad hace que ambas operaciones se confirmen juntas o ninguna."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-012",
+      "subarea": "3.4 Gestión de datos",
+      "nombre": "Automatización y plataformas de análisis",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-042",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Varias aplicaciones pueden modificar la tabla de tarifas. Cada actualización, venga de donde venga, debe registrar valor anterior, nuevo y momento en otra tabla.\n\n¿Qué mecanismo de base de datos encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un índice en la tarifa que se modifica.",
+              "explicacion": "El índice facilita búsquedas, pero no crea un historial de cambios."
+            },
+            {
+              "id": "B",
+              "texto": "Un trigger de actualización que registre los datos de cada cambio.",
+              "explicacion": "Se ejecuta por el evento en la tabla sin requerir que cada cliente invoque auditoría."
+            },
+            {
+              "id": "C",
+              "texto": "Un procedimiento opcional que cada pantalla puede llamar al terminar.",
+              "explicacion": "Una aplicación podría actualizar sin invocar ese procedimiento."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-043",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una cadena procesa compras y devoluciones durante el día y compara ventas por región y trimestre al cerrar el mes.\n\n¿Qué separación atiende mejor ambos usos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "OLAP para registrar cada compra y OLTP para consolidar años de ventas.",
+              "explicacion": "Invierte los perfiles de trabajo que se quieren separar."
+            },
+            {
+              "id": "B",
+              "texto": "OLTP para registrar las operaciones y OLAP para el análisis agregado histórico.",
+              "explicacion": "Distingue transacciones cortas de consultas analíticas sobre periodos y dimensiones."
+            },
+            {
+              "id": "C",
+              "texto": "Un archivo de texto por turno para ambas tareas.",
+              "explicacion": "No aporta por sí mismo controles transaccionales ni consulta analítica eficiente."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-044",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una universidad quiere consolidar registros de varios sistemas con códigos homologados y mantener historial de años para consultas institucionales.\n\n¿Qué solución responde mejor a ese objetivo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un espacio que conserve archivos crudos sin homologar los códigos.",
+              "explicacion": "Permite conservar datos, pero no satisface la integración solicitada."
+            },
+            {
+              "id": "B",
+              "texto": "Un data warehouse que integre datos, reglas de transformación e historial común.",
+              "explicacion": "Organiza fuentes distintas para análisis coherente en el tiempo."
+            },
+            {
+              "id": "C",
+              "texto": "Un data mart dedicado exclusivamente al reporte mensual de una sola carrera.",
+              "explicacion": "Su alcance departamental no cubre la consolidación institucional pedida."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-045",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una organización quiere que cada dominio publique conjuntos de datos como productos con dueño y contrato, bajo reglas compartidas de gobierno.\n\n¿Qué propuesta corresponde a ese modelo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Centralizar toda definición y publicación en un único equipo de informes.",
+              "explicacion": "Elimina la propiedad por dominio que pide el caso."
+            },
+            {
+              "id": "B",
+              "texto": "Adoptar data mesh con responsabilidad por dominio y gobierno federado.",
+              "explicacion": "Combina propiedad descentralizada, productos de datos y normas comunes."
+            },
+            {
+              "id": "C",
+              "texto": "Crear solo un repositorio de archivos crudos sin dueños ni contratos.",
+              "explicacion": "El almacenamiento compartido no aporta las responsabilidades ni los contratos requeridos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A3-013",
+      "subarea": "3.5 Plataformas de desarrollo",
+      "nombre": "Contenedores, nube y despliegue",
+      "fuente": "Reactivos originales de práctica. Referencia temática: Estructura ISOFT+ 3(4), pp. 4–6.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A3-046",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un programa corre en desarrollo, pero falla en pruebas porque cada equipo instala versiones distintas de sus dependencias.\n\n¿Qué cambio ayuda a reproducir el entorno de ejecución?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Compartir solo los archivos fuente sin registrar dependencias.",
+              "explicacion": "El mismo código podría ejecutarse con bibliotecas distintas."
+            },
+            {
+              "id": "B",
+              "texto": "Instalar en cada máquina la versión que recomiende su herramienta local.",
+              "explicacion": "Mantiene variaciones entre entornos."
+            },
+            {
+              "id": "C",
+              "texto": "Construir una imagen de contenedor con versiones definidas y usar la misma imagen en ambos entornos.",
+              "explicacion": "Empaqueta el programa y dependencias reproducibles en un artefacto común."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-047",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un servicio guarda reportes en el sistema de archivos interno de su contenedor. Al reemplazarlo, los reportes desaparecen.\n\n¿Qué ajuste conserva los datos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Aumentar la memoria asignada al contenedor.",
+              "explicacion": "La memoria no vuelve persistente la capa de archivos del contenedor."
+            },
+            {
+              "id": "B",
+              "texto": "Generar una imagen nueva en cada inicio sin montar almacenamiento.",
+              "explicacion": "El reemplazo sigue descartando los datos de la instancia previa."
+            },
+            {
+              "id": "C",
+              "texto": "Guardar los reportes en un volumen persistente o almacenamiento externo montado.",
+              "explicacion": "Los datos sobreviven al ciclo de vida del contenedor."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-048",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo quiere ejecutar una aplicación web sin administrar máquinas virtuales ni actualizar su sistema operativo. Necesita desplegar código y configurar variables.\n\n¿Qué tipo de servicio encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "PaaS para desplegar la aplicación sobre un entorno administrado.",
+              "explicacion": "El proveedor administra la infraestructura y plataforma; el equipo entrega su aplicación."
+            },
+            {
+              "id": "B",
+              "texto": "IaaS con máquinas virtuales que el equipo administra.",
+              "explicacion": "Exige mantener el sistema operativo que el equipo quiere delegar."
+            },
+            {
+              "id": "C",
+              "texto": "SaaS de correo empresarial listo para usar.",
+              "explicacion": "Proporciona una aplicación ya hecha, no un entorno para desplegar la propia."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-049",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación usa un contenedor para el API y otro para el trabajador de colas. El trabajador recibe un pico independiente del API.\n\n¿Qué acción aprovecha un orquestador?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Aumentar por igual todas las réplicas de la aplicación.",
+              "explicacion": "Puede atender el pico, pero consume capacidad adicional en un componente estable."
+            },
+            {
+              "id": "B",
+              "texto": "Aumentar solo las réplicas del trabajador y mantener las del API.",
+              "explicacion": "Escala el componente cuya demanda creció."
+            },
+            {
+              "id": "C",
+              "texto": "Reemplazar los contenedores por uno solo que ejecute ambos procesos.",
+              "explicacion": "Une su despliegue y dificulta escalar cada carga por separado."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A3-050",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una empresa quiere liberar una versión nueva a un porcentaje pequeño de solicitudes y detener el avance si sube la tasa de errores.\n\n¿Qué estrategia cumple?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Despliegue canario con medición de errores antes de ampliar el tráfico.",
+              "explicacion": "Prueba la versión con exposición limitada y permite retirar el cambio."
+            },
+            {
+              "id": "B",
+              "texto": "Cambiar todo el tráfico de una vez y revisar errores al día siguiente.",
+              "explicacion": "Expone de inmediato a todos los usuarios."
+            },
+            {
+              "id": "C",
+              "texto": "Ejecutar la versión nueva en desarrollo sin enviarle tráfico representativo.",
+              "explicacion": "Reduce riesgo en pruebas, pero no cumple la liberación gradual solicitada."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    }
+  ]
+}

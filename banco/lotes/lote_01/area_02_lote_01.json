@@ -1,0 +1,1288 @@
+{
+  "_comentarios": [
+    "Lote 01: 50 preguntas nuevas. Coloca este archivo en la subcarpeta lotes del banco."
+  ],
+  "area": 2,
+  "temas": [
+    {
+      "codigoTema": "EGEL-TEMA-A2-015",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Límites de componentes y dependencias",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 01.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-051",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aseguradora quiere reemplazar el proveedor de correo sin modificar su cálculo de pólizas.\n\n¿Qué dependencia debe declarar el módulo de pólizas?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una conexión directa al servidor del proveedor desde cada regla de póliza.",
+              "explicacion": "Vincula las reglas a detalles del proveedor."
+            },
+            {
+              "id": "B",
+              "texto": "Un contrato de notificación que el adaptador del proveedor implemente.",
+              "explicacion": "La lógica depende de la capacidad requerida y no de la biblioteca externa."
+            },
+            {
+              "id": "C",
+              "texto": "Una referencia a todas las clases concretas de correo disponibles.",
+              "explicacion": "El núcleo seguiría acoplado a cada implementación."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-052",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una aplicación debe registrar ventas aunque el servicio de reportes esté fuera de línea. El reporte admite retraso.\n\n¿Qué frontera reduce esa dependencia?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Hacer que el módulo de reportes sea dueño del registro de ventas.",
+              "explicacion": "Mantiene bloqueada la operación principal cuando reportes falla."
+            },
+            {
+              "id": "B",
+              "texto": "Confirmar la venta solo cuando reportes confirme su actualización.",
+              "explicacion": "Acopla la disponibilidad de ambas funciones."
+            },
+            {
+              "id": "C",
+              "texto": "Guardar la venta y enviar un evento para que reportes lo procese después.",
+              "explicacion": "El registro no depende de que reportes esté disponible en ese instante."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-053",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "En una aplicación de entregas, las reglas de precios son comunes a la web y la app móvil.\n\n¿Dónde colocarlas para aplicar las mismas condiciones a ambas?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "En dos pantallas, una por plataforma, con el mismo texto descriptivo.",
+              "explicacion": "El texto no impide que las implementaciones diverjan."
+            },
+            {
+              "id": "B",
+              "texto": "En un archivo de estilos que ambas pantallas comparten.",
+              "explicacion": "Los estilos no ejecutan ni protegen reglas de precios."
+            },
+            {
+              "id": "C",
+              "texto": "En un servicio de negocio compartido por ambos clientes.",
+              "explicacion": "Concentra decisiones y mantiene una sola regla de precios."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-054",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo separa pagos en otro servicio. El módulo de pedidos escribe directamente en la tabla de pagos.\n\n¿Qué cambio protege el límite entre servicios?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Duplicar toda la lógica de cobro en pedidos.",
+              "explicacion": "Crea dos fuentes de reglas y debilita el límite."
+            },
+            {
+              "id": "B",
+              "texto": "Exponer operaciones de pago mediante un contrato y reservar su almacenamiento al servicio de pagos.",
+              "explicacion": "Evita que pedidos dependa del esquema interno de otro servicio."
+            },
+            {
+              "id": "C",
+              "texto": "Mantener escritura compartida y renombrar la tabla con un prefijo común.",
+              "explicacion": "El nombre no elimina la dependencia ni las escrituras externas."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-055",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una publicación debe reutilizar la lógica de transformación en el programa web y en una tarea nocturna del mismo producto. Ambos se despliegan juntos.\n\n¿Cuál opción agrega menos complejidad operativa?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Extraer la transformación a un módulo común que invoquen ambos puntos de entrada.",
+              "explicacion": "Reutiliza código sin crear otra unidad de despliegue."
+            },
+            {
+              "id": "B",
+              "texto": "Crear un servicio remoto solo para compartir una función entre ambos.",
+              "explicacion": "Agrega comunicación y operación remota que el caso no requiere."
+            },
+            {
+              "id": "C",
+              "texto": "Copiar la función en los dos puntos de entrada.",
+              "explicacion": "La duplicación dificulta mantener resultados iguales."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-016",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Escenarios y decisiones arquitectónicas",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 01.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-056",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema de rastreo prioriza aceptar capturas durante caídas de red y puede reflejarlas después en reportes.\n\n¿Qué diseño atiende ese compromiso?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Guardar las capturas solo en memoria hasta reconectar.",
+              "explicacion": "Pueden perderse si se cierra el dispositivo."
+            },
+            {
+              "id": "B",
+              "texto": "Requerir confirmación inmediata del reporte remoto para guardar cada captura.",
+              "explicacion": "Bloquea la captura al perder conectividad."
+            },
+            {
+              "id": "C",
+              "texto": "Persistir localmente las capturas y sincronizarlas cuando vuelva la red.",
+              "explicacion": "Mantiene la captura y acepta que los reportes tengan retraso temporal."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-057",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Durante una revisión, dos propuestas cumplen la carga esperada, pero solo una necesita menos pasos para recuperar servicio.\n\n¿Qué evidencia ayuda a justificar la elección?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un escenario de falla con tiempos medidos de recuperación para ambas propuestas.",
+              "explicacion": "Compara las opciones frente al atributo que las diferencia."
+            },
+            {
+              "id": "B",
+              "texto": "La cantidad de archivos de código de cada propuesta.",
+              "explicacion": "No indica cómo se recupera el servicio."
+            },
+            {
+              "id": "C",
+              "texto": "La fecha de publicación de cada biblioteca.",
+              "explicacion": "No mide el resultado durante una falla."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-058",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo acordó usar una cola para tolerar interrupciones y quiere que futuras personas entiendan qué alternativas descartó.\n\n¿Qué debe registrar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una decisión de arquitectura con contexto, alternativas, elección y consecuencias.",
+              "explicacion": "Conserva la justificación y permite reevaluarla si cambia el contexto."
+            },
+            {
+              "id": "B",
+              "texto": "Solo una captura de pantalla de la consola.",
+              "explicacion": "No documenta el razonamiento ni las alternativas."
+            },
+            {
+              "id": "C",
+              "texto": "Solo el nombre comercial de la tecnología elegida.",
+              "explicacion": "No explica por qué se eligió ni qué costos introduce."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-059",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un portal tarda en generar recibos. El equipo evalúa separar el proceso, pero ignora si el almacenamiento en red soporta el volumen.\n\n¿Qué experimento reduce esa incertidumbre?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Construir un menú nuevo para descargar recibos.",
+              "explicacion": "No evalúa capacidad de escritura."
+            },
+            {
+              "id": "B",
+              "texto": "Medir generación y escritura con archivos y concurrencia representativos en el almacenamiento propuesto.",
+              "explicacion": "Prueba el cuello de botella bajo condiciones relevantes."
+            },
+            {
+              "id": "C",
+              "texto": "Preguntar cuántos recibos desean ver los usuarios sin medir el almacenamiento.",
+              "explicacion": "No demuestra que la tecnología soporte la carga."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-060",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una solución conserva una copia de lectura por región. El equipo acepta que un cambio de domicilio tarde unos segundos en verse en otra región.\n\n¿Qué escenario debe documentar y verificar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El número de clases que leen el domicilio.",
+              "explicacion": "No mide propagación de la actualización."
+            },
+            {
+              "id": "B",
+              "texto": "El retraso permitido entre confirmar una actualización y observarla en la copia remota.",
+              "explicacion": "Hace verificable el compromiso de consistencia aceptado."
+            },
+            {
+              "id": "C",
+              "texto": "La resolución de pantalla con la que se edita el domicilio.",
+              "explicacion": "No está relacionada con la replicación."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-017",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "UML y documentación para distintos lectores",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-061",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Operación necesita ver dónde corren el API, el trabajador y la base de datos, y qué enlaces deben estar disponibles.\n\n¿Qué diagrama usar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un diagrama entidad-relación.",
+              "explicacion": "Describe datos y asociaciones, no nodos de ejecución."
+            },
+            {
+              "id": "B",
+              "texto": "Un diagrama de estados del pedido.",
+              "explicacion": "Explica su ciclo de vida, no su infraestructura."
+            },
+            {
+              "id": "C",
+              "texto": "Un diagrama de despliegue con nodos, artefactos y conexiones.",
+              "explicacion": "Describe la distribución del software en el ambiente de ejecución."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-062",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un diseñador quiere identificar qué objetos participan cuando se revierte un cargo y en qué orden se envían los mensajes.\n\n¿Qué diagrama encaja?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un diagrama de paquetes del código fuente.",
+              "explicacion": "Agrupa elementos sin indicar el intercambio temporal."
+            },
+            {
+              "id": "B",
+              "texto": "Un modelo de despliegue del centro de datos.",
+              "explicacion": "Ubica nodos, pero no las llamadas de la reversión."
+            },
+            {
+              "id": "C",
+              "texto": "Un diagrama de secuencia del escenario de reversión.",
+              "explicacion": "Muestra participantes y orden de mensajes."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-063",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El equipo de negocio quiere ver cómo una orden pasa de Recibida a En preparación, Enviada o Cancelada, y qué evento activa cada cambio.\n\n¿Qué vista usar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un diagrama de estados con eventos y transiciones válidas.",
+              "explicacion": "Representa el ciclo de vida de una orden concreta."
+            },
+            {
+              "id": "B",
+              "texto": "Un diagrama de clases con una propiedad estado sin transiciones.",
+              "explicacion": "Describe estructura pero no los cambios permitidos."
+            },
+            {
+              "id": "C",
+              "texto": "Un diagrama de contexto sin detalle de orden.",
+              "explicacion": "Muestra límites externos, no el ciclo de vida de la orden."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-064",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una escuela ofrece cursos en grupos diferentes. El grupo debe conocer el curso que imparte; un mismo curso se imparte en cero o muchos grupos.\n\n¿Qué multiplicidad corresponde?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un grupo obligatorio por curso y un curso por grupo.",
+              "explicacion": "Impide tener cursos todavía sin grupos y cursos con varios grupos."
+            },
+            {
+              "id": "B",
+              "texto": "Un curso por grupo y cero a muchos grupos por curso.",
+              "explicacion": "Coincide con las dos condiciones de la relación."
+            },
+            {
+              "id": "C",
+              "texto": "Un grupo por curso y cero o muchos cursos por grupo.",
+              "explicacion": "Invierte la relación solicitada."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-065",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "El área directiva quiere entender qué personas y sistemas externos interactúan con la solución, sin entrar a clases ni componentes.\n\n¿Qué nivel C4 conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "El diagrama de contexto del sistema.",
+              "explicacion": "Expone la solución como unidad y sus relaciones externas."
+            },
+            {
+              "id": "B",
+              "texto": "El diagrama de código de cada módulo.",
+              "explicacion": "Introduce detalle que el público no necesita."
+            },
+            {
+              "id": "C",
+              "texto": "El diagrama de componentes de un servicio.",
+              "explicacion": "Describe estructura interna y no ofrece la vista general solicitada."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-018",
+      "subarea": "2.1 Diseño arquitectónico del software",
+      "nombre": "Patrones de creación y comportamiento",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-066",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una terminal emite recibos PDF o de texto, pero la pantalla no debe conocer las clases concretas.\n\n¿Qué diseño desacopla la creación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Convertir el generador en una variable global mutable.",
+              "explicacion": "No resuelve cómo construir variantes y agrega estado compartido."
+            },
+            {
+              "id": "B",
+              "texto": "Crear todas las clases concretas en la pantalla y elegir después cuál llamar.",
+              "explicacion": "Mantiene conocimiento de las implementaciones en la interfaz."
+            },
+            {
+              "id": "C",
+              "texto": "Delegar en una fábrica que cree el generador correspondiente detrás de un contrato común.",
+              "explicacion": "La pantalla pide una variante sin instanciarla directamente."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-067",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una biblioteca necesita aplicar descuentos distintos según el tipo de usuario. Se espera agregar una variante sin modificar el código que usa la regla.\n\n¿Qué patrón se ajusta?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Composite, para formar una jerarquía de grupos de usuarios.",
+              "explicacion": "La necesidad es variar un cálculo, no operar árboles."
+            },
+            {
+              "id": "B",
+              "texto": "Estrategia, con una implementación intercambiable por regla.",
+              "explicacion": "Permite añadir variantes tras la misma interfaz de cálculo."
+            },
+            {
+              "id": "C",
+              "texto": "Singleton, para que todas las reglas sean una sola instancia.",
+              "explicacion": "Controlar instancias no define el intercambio de algoritmos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-068",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Varias pantallas deben actualizarse al cambiar el inventario, pero el inventario no debe conocer las pantallas concretas.\n\n¿Qué patrón aplica?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Fachada: hacer que la pantalla lea el inventario cada segundo.",
+              "explicacion": "Eso sigue siendo sondeo y no aprovecha suscripciones."
+            },
+            {
+              "id": "B",
+              "texto": "Adaptador: convertir todos los datos del inventario a otro formato.",
+              "explicacion": "Cambiar formato no distribuye notificaciones de cambios."
+            },
+            {
+              "id": "C",
+              "texto": "Observador: los interesados se suscriben a las notificaciones de cambio.",
+              "explicacion": "El emisor notifica a través de un contrato sin acoplarse a clases de pantalla."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-069",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un visor abre expedientes remotos y debe descargar el contenido solo al intentar mostrarlo.\n\n¿Qué variante de diseño evita descargar al crear el objeto?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar el visor para que reciba rutas locales que todavía no existen.",
+              "explicacion": "No obtiene el expediente remoto al solicitarlo."
+            },
+            {
+              "id": "B",
+              "texto": "Usar un objeto que descargue todos los expedientes durante el arranque.",
+              "explicacion": "Adelanta el costo y contradice la carga bajo demanda."
+            },
+            {
+              "id": "C",
+              "texto": "Usar un proxy que carga el expediente en el primer acceso y conserva la interfaz del visor.",
+              "explicacion": "El proxy difiere la operación costosa hasta que realmente se necesita."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-070",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una herramienta organiza tareas simples y grupos de tareas. Ambos deben responder a calcularDuración, y un grupo debe sumar la duración de sus hijos.\n\n¿Qué patrón representa el diseño?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Composite con una interfaz común para tareas y grupos.",
+              "explicacion": "Permite tratar hojas y grupos de manera uniforme."
+            },
+            {
+              "id": "B",
+              "texto": "Singleton para mantener una sola tarea global.",
+              "explicacion": "No representa agrupaciones ni tareas múltiples."
+            },
+            {
+              "id": "C",
+              "texto": "Adapter para traducir dos formatos de archivo.",
+              "explicacion": "No aborda la estructura recursiva."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-019",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Modelado relacional y reglas de integridad",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-071",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Cada consultorio puede atender una cita por franja, pero consultorios distintos sí pueden usar la misma franja.\n\n¿Qué restricción expresa esa regla?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Unicidad de la combinación consultorio y franja.",
+              "explicacion": "Evita duplicados solo dentro del mismo consultorio."
+            },
+            {
+              "id": "B",
+              "texto": "Unicidad de franja en toda la tabla.",
+              "explicacion": "Impediría citas simultáneas en consultorios distintos."
+            },
+            {
+              "id": "C",
+              "texto": "Unicidad de consultorio por toda la tabla.",
+              "explicacion": "Impediría registrar más de una cita en cada consultorio."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-072",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un proveedor puede ofrecer el mismo producto que otros y cada oferta tiene un precio propio.\n\n¿Dónde guardar el precio?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "En la entidad que relaciona proveedor y producto.",
+              "explicacion": "El precio depende de esa combinación, no solo del producto."
+            },
+            {
+              "id": "B",
+              "texto": "En Producto, con una sola columna precio.",
+              "explicacion": "Impondría un precio común para proveedores diferentes."
+            },
+            {
+              "id": "C",
+              "texto": "En Proveedor, con un precio único para todos sus productos.",
+              "explicacion": "No permite distinguir ofertas por producto."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-073",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un catálogo debe permitir corregir el correo de un cliente sin modificar las referencias de sus pedidos.\n\n¿Qué diseño lo facilita?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Identificar clientes por su nombre visible.",
+              "explicacion": "Los nombres pueden repetirse o cambiar."
+            },
+            {
+              "id": "B",
+              "texto": "Usar el correo como única clave en pedidos y actualizarla a mano.",
+              "explicacion": "Obliga a cambiar referencias cuando se corrige el correo."
+            },
+            {
+              "id": "C",
+              "texto": "Usar un identificador estable de cliente como clave y tratar el correo como atributo editable.",
+              "explicacion": "Los pedidos conservan la referencia al corregir el contacto."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-074",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema permite desactivar una categoría usada por ventas históricas sin borrar la relación con esas ventas.\n\n¿Qué diseño atiende el requisito?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Borrar la categoría y todos sus vínculos en cascada.",
+              "explicacion": "Destruye referencias históricas."
+            },
+            {
+              "id": "B",
+              "texto": "Conservar la categoría y marcarla inactiva para nuevas ventas.",
+              "explicacion": "Mantiene la historia y evita nuevas selecciones."
+            },
+            {
+              "id": "C",
+              "texto": "Renombrarla como si fuera una categoría distinta en cada venta antigua.",
+              "explicacion": "Modifica el significado de los registros históricos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-075",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un instituto quiere garantizar que una evaluación guardada pertenezca a una inscripción que existe.\n\n¿Qué diseño expresa esa integridad?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una clave foránea desde la evaluación hasta la inscripción identificada.",
+              "explicacion": "El motor rechaza evaluaciones que apuntan a una inscripción inexistente."
+            },
+            {
+              "id": "B",
+              "texto": "Una lista desplegable que se llena desde las inscripciones.",
+              "explicacion": "No protege otras escrituras ni evita referencias obsoletas."
+            },
+            {
+              "id": "C",
+              "texto": "Un índice no único sobre el identificador de inscripción en evaluaciones.",
+              "explicacion": "Puede acelerar consultas, pero no obliga a que exista la inscripción."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-020",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Persistencia distribuida y acceso a datos",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-076",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una tienda guarda el catálogo por país, manteniendo todas las columnas de los productos de cada país.\n\n¿Qué fragmentación está aplicando?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Replicación completa de toda la tabla en cada país.",
+              "explicacion": "El caso reparte registros en lugar de copiar el conjunto completo."
+            },
+            {
+              "id": "B",
+              "texto": "Vertical: se separan columnas por servidor.",
+              "explicacion": "Cada sede conserva todas las columnas."
+            },
+            {
+              "id": "C",
+              "texto": "Horizontal: se distribuyen filas según su país.",
+              "explicacion": "Se divide el conjunto de registros, no sus atributos."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-077",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una organización debe aislar datos de contacto y datos clínicos de cada expediente, pero requiere recomponer ambos con autorización.\n\n¿Qué esquema permite reunirlos?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Fragmentación horizontal con expedientes completos por región.",
+              "explicacion": "Reparte filas y deja juntos ambos grupos de atributos."
+            },
+            {
+              "id": "B",
+              "texto": "Un almacén de copias idénticas del expediente en todos los servidores.",
+              "explicacion": "No separa la información por grupos."
+            },
+            {
+              "id": "C",
+              "texto": "Fragmentación vertical conservando un identificador común en ambas partes.",
+              "explicacion": "Divide atributos y conserva la llave para reunirlos."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-078",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un portal consulta lecturas por medidor y rango de fechas en casi todos sus reportes.\n\n¿Qué índice compuesto conviene evaluar primero?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Medidor seguido de fecha de lectura.",
+              "explicacion": "Permite restringir por medidor y recorrer su rango temporal."
+            },
+            {
+              "id": "B",
+              "texto": "Solo el texto de la observación.",
+              "explicacion": "Las consultas no filtran ni ordenan por esa columna."
+            },
+            {
+              "id": "C",
+              "texto": "Solo el nombre visible del usuario que descargó el reporte.",
+              "explicacion": "Es ajeno a la búsqueda de lecturas."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-079",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una red de recomendaciones necesita descubrir personas a dos o tres saltos, siguiendo relaciones distintas según el caso.\n\n¿Qué modelo representa naturalmente ese acceso?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un almacén clave-valor con una sola entrada de toda la red.",
+              "explicacion": "Obliga a recuperar y procesar el conjunto para explorar vínculos."
+            },
+            {
+              "id": "B",
+              "texto": "Un grafo con nodos de personas y aristas tipadas.",
+              "explicacion": "Permite recorridos por vínculos y tipos de relación."
+            },
+            {
+              "id": "C",
+              "texto": "Una cola FIFO de perfiles ordenados por creación.",
+              "explicacion": "Representa orden de llegada, no relaciones."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-080",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un sistema lee con frecuencia un pedido completo junto con sus líneas, que son pocas y no se reutilizan en otros pedidos.\n\n¿Qué modelo documental conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Un documento por pedido con las líneas embebidas.",
+              "explicacion": "La unidad de lectura coincide con la unidad documental."
+            },
+            {
+              "id": "B",
+              "texto": "Un documento por precio, dejando sin vínculo las líneas de cada pedido.",
+              "explicacion": "Pierde la relación necesaria para reconstruir la compra."
+            },
+            {
+              "id": "C",
+              "texto": "Un único documento para todos los pedidos históricos.",
+              "explicacion": "Dificulta recuperar y actualizar un pedido específico de forma aislada."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-021",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Cohesión, contratos y pruebas de componentes",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-081",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un módulo imprime recibos, calcula impuestos y autentica operadores. Los cambios de cualquiera de esas funciones obligan a recompilarlo.\n\n¿Qué mejora su cohesión?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mantener un solo módulo y cambiar los nombres de los métodos.",
+              "explicacion": "La separación de responsabilidades no cambia."
+            },
+            {
+              "id": "B",
+              "texto": "Separar recibos, impuestos y autenticación en componentes con responsabilidades propias.",
+              "explicacion": "Agrupa comportamiento que cambia por un mismo motivo."
+            },
+            {
+              "id": "C",
+              "texto": "Duplicar las tres funciones en cada pantalla.",
+              "explicacion": "Aumenta la duplicación y el costo de cambio."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-082",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una clase de precios pide a su cliente que le entregue el objeto completo Usuario, aunque solo usa su nivel de membresía.\n\n¿Qué contrato reduce acoplamiento?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Aceptar solo el nivel de membresía requerido para calcular el precio.",
+              "explicacion": "La lógica deja de depender de atributos ajenos al cálculo."
+            },
+            {
+              "id": "B",
+              "texto": "Aceptar también el historial completo de compras por si se necesita después.",
+              "explicacion": "Agrega datos y dependencias que no se requieren."
+            },
+            {
+              "id": "C",
+              "texto": "Permitir que la clase lea la sesión global directamente.",
+              "explicacion": "Reemplaza una dependencia explícita por estado global difícil de probar."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-083",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una interfaz obliga a impresoras simples a implementar escanear aunque no puedan hacerlo.\n\n¿Qué diseño evita esa obligación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Hacer que escanear devuelva éxito sin realizar ninguna acción.",
+              "explicacion": "Engaña a los clientes de la interfaz."
+            },
+            {
+              "id": "B",
+              "texto": "Mantener una sola interfaz y exigir que todas lancen error al imprimir.",
+              "explicacion": "Rompe también la capacidad que sí pueden ofrecer."
+            },
+            {
+              "id": "C",
+              "texto": "Separar contratos de impresión y escaneo y usar solo los que cada equipo ofrece.",
+              "explicacion": "Los implementadores no dependen de operaciones que no soportan."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-084",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un equipo prueba el cálculo de tarifa sin poder acceder a un servicio de geolocalización externo.\n\n¿Qué diseño permite una prueba determinista?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Inyectar un contrato de geolocalización y sustituirlo por un doble de prueba.",
+              "explicacion": "Permite controlar los datos que recibe el cálculo sin la red real."
+            },
+            {
+              "id": "B",
+              "texto": "Eliminar del cálculo todas las reglas asociadas a ubicación.",
+              "explicacion": "Cambia el comportamiento que se necesita verificar."
+            },
+            {
+              "id": "C",
+              "texto": "Crear internamente un cliente remoto nuevo en cada cálculo.",
+              "explicacion": "Fija la dependencia de red en la lógica que se quiere probar."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-085",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Dos módulos comparten una estructura interna que ambos modifican. Cambiar un campo obliga a coordinar los dos despliegues.\n\n¿Qué mejora la evolución independiente?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Intercambiar datos mediante un contrato explícito y conservar la representación interna en cada módulo.",
+              "explicacion": "Reduce dependencia sobre detalles compartidos y permite cambios internos."
+            },
+            {
+              "id": "B",
+              "texto": "Mover la estructura global a otro archivo sin cambiar quién la modifica.",
+              "explicacion": "Solo cambia su ubicación física."
+            },
+            {
+              "id": "C",
+              "texto": "Agregar más campos a la misma estructura compartida para anticipar cambios.",
+              "explicacion": "Aumenta la superficie de acoplamiento."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-022",
+      "subarea": "2.2 Diseño de módulos, componentes y de datos de software",
+      "nombre": "Estructuras de datos para el comportamiento requerido",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-086",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un administrador debe retirar alertas de ambos extremos: las urgentes se insertan al frente y las rutinarias al final. Además, puede descartar del final alertas obsoletas.\n\n¿Qué estructura ofrece esas operaciones directamente?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una pila.",
+              "explicacion": "Solo opera sobre un extremo."
+            },
+            {
+              "id": "B",
+              "texto": "Una cola FIFO simple.",
+              "explicacion": "Solo extrae por el frente y no ofrece todas las operaciones pedidas."
+            },
+            {
+              "id": "C",
+              "texto": "Una cola de doble extremo.",
+              "explicacion": "Permite inserciones y extracciones en ambos extremos."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-087",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una calculadora de rutas explora conexiones sin pesos. Necesita encontrar el camino con menos enlaces entre dos puntos.\n\n¿Qué recorrido conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Búsqueda en anchura desde el punto de origen.",
+              "explicacion": "Explora por niveles de número de enlaces en un grafo sin pesos."
+            },
+            {
+              "id": "B",
+              "texto": "Búsqueda en profundidad tomando la primera ruta encontrada.",
+              "explicacion": "La primera ruta puede tener más enlaces."
+            },
+            {
+              "id": "C",
+              "texto": "Ordenar alfabéticamente los nombres de puntos sin recorrer conexiones.",
+              "explicacion": "No descubre caminos ni sus longitudes."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-088",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un planificador siempre debe extraer el incidente de mayor prioridad, aunque haya llegado más tarde.\n\n¿Qué estructura sirve mejor?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una pila de reportes.",
+              "explicacion": "Usaría la llegada más reciente como criterio, no el nivel."
+            },
+            {
+              "id": "B",
+              "texto": "Una cola FIFO de incidentes.",
+              "explicacion": "Entregaría antes el que llegó primero aunque sea de menor prioridad."
+            },
+            {
+              "id": "C",
+              "texto": "Una cola de prioridad con el nivel como clave.",
+              "explicacion": "La extracción se ordena por prioridad y no solo por llegada."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-089",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un catálogo debe autocompletar nombres buscando muchas veces por prefijo. Al escribir «pro», interesa recorrer solo las extensiones de ese prefijo.\n\n¿Qué estructura se adapta más directamente?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una tabla hash consultada solo por el nombre completo.",
+              "explicacion": "La búsqueda exacta no devuelve directamente todas las extensiones."
+            },
+            {
+              "id": "B",
+              "texto": "Un árbol de prefijos, con un camino por secuencia de caracteres.",
+              "explicacion": "Permite llegar al nodo del prefijo y explorar sus continuaciones."
+            },
+            {
+              "id": "C",
+              "texto": "Una pila ordenada por fecha de alta.",
+              "explicacion": "Prioriza antigüedad de altas, no prefijos."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-090",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un analizador necesita conservar el último paréntesis abierto para emparejarlo con el cierre actual.\n\n¿Qué estructura debe usar?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Una cola de aperturas pendientes.",
+              "explicacion": "Elegiría primero la apertura más antigua."
+            },
+            {
+              "id": "B",
+              "texto": "Un contador que solo mide cuántos caracteres se leyeron.",
+              "explicacion": "No conserva tipo ni orden de las aperturas."
+            },
+            {
+              "id": "C",
+              "texto": "Una pila de aperturas pendientes.",
+              "explicacion": "La apertura más reciente es la primera que debe cerrarse."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-023",
+      "subarea": "2.3 Diseño de interfaces",
+      "nombre": "Contratos HTTP y evolución de servicios",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-091",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un cliente móvil reenvía una solicitud de compra tras perder la respuesta. El servidor debe evitar crear dos órdenes para la misma operación.\n\n¿Qué diseño ayuda?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Asignar un identificador diferente a cada reenvío aunque tenga la misma clave.",
+              "explicacion": "Provocaría órdenes duplicadas."
+            },
+            {
+              "id": "B",
+              "texto": "Aceptar una clave de idempotencia y devolver el resultado de la primera operación al repetirla.",
+              "explicacion": "Distingue reintentos de operaciones realmente nuevas."
+            },
+            {
+              "id": "C",
+              "texto": "Desactivar todos los reintentos desde el móvil.",
+              "explicacion": "Un envío perdido deja la operación sin respuesta y no protege otros clientes."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-092",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un API cambiará el significado de un campo que clientes antiguos usan para calcular cuotas.\n\n¿Qué estrategia mantiene compatibilidad?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Introducir el nuevo significado en una versión o campo separado y mantener el contrato anterior durante la transición.",
+              "explicacion": "Evita que los clientes antiguos interpreten el dato nuevo con reglas anteriores."
+            },
+            {
+              "id": "B",
+              "texto": "Modificar el significado sin cambiar nombre ni versión.",
+              "explicacion": "Produce errores silenciosos en clientes antiguos."
+            },
+            {
+              "id": "C",
+              "texto": "Eliminar el campo al desplegar y pedir que todos actualicen después.",
+              "explicacion": "Rompe el contrato antes de que los clientes puedan migrar."
+            }
+          ],
+          "opcionCorrectaId": "A"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-093",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una búsqueda devuelve miles de coincidencias y la pantalla solo muestra veinte a la vez.\n\n¿Qué decisión conviene en el contrato?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Enviar todas las coincidencias cada vez y ocultar las sobrantes.",
+              "explicacion": "Carga la red y el cliente sin necesidad."
+            },
+            {
+              "id": "B",
+              "texto": "Elegir veinte coincidencias aleatorias en cada petición de página.",
+              "explicacion": "Puede repetir u omitir resultados sin control."
+            },
+            {
+              "id": "C",
+              "texto": "Permitir paginación con orden estable y un indicador de cómo obtener la siguiente página.",
+              "explicacion": "Reduce transferencia y mantiene una secuencia reproducible de resultados."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-094",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una persona autenticada intenta acceder a un recurso para el que su rol no tiene permiso. El servicio decide no ocultar que existe el recurso.\n\n¿Qué respuesta HTTP comunica mejor el rechazo?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "200 OK con un registro vacío.",
+              "explicacion": "Oculta el rechazo y confunde fallo de permiso con éxito."
+            },
+            {
+              "id": "B",
+              "texto": "403 Forbidden.",
+              "explicacion": "La identidad ya se conoce, pero falta autorización para la operación."
+            },
+            {
+              "id": "C",
+              "texto": "401 Unauthorized.",
+              "explicacion": "Se usa para solicitar autenticación válida, que ya se realizó."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-095",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una sincronización tarda varios minutos. Se requiere aceptar la solicitud y permitir al cliente consultar su progreso sin esperar con la conexión abierta.\n\n¿Qué contrato conviene?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mantener la solicitud abierta hasta que todo el trabajo finalice.",
+              "explicacion": "Contradice la condición de no esperar con la conexión abierta."
+            },
+            {
+              "id": "B",
+              "texto": "Responder «completado» inmediatamente aunque no haya empezado.",
+              "explicacion": "Presenta como exitoso un resultado que todavía no existe."
+            },
+            {
+              "id": "C",
+              "texto": "Aceptar el trabajo, entregar su identificador y ofrecer una consulta de estado.",
+              "explicacion": "Separa la aceptación del resultado y permite seguir el progreso."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        }
+      ]
+    },
+    {
+      "codigoTema": "EGEL-TEMA-A2-024",
+      "subarea": "2.3 Diseño de interfaces",
+      "nombre": "Flujos, mensajes y accesibilidad",
+      "fuente": "Reactivos originales de práctica; Entrenador EGEL, lote 02.",
+      "reactivos": [
+        {
+          "codigoReactivo": "EGEL-A2-096",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una pantalla tiene tres controles y los usuarios con teclado llegan primero al botón final, luego al primer campo.\n\n¿Qué mejora la navegación?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Aumentar el tamaño del botón final.",
+              "explicacion": "No cambia la secuencia del foco."
+            },
+            {
+              "id": "B",
+              "texto": "Ajustar el orden del foco a la secuencia lógica de captura y confirmación.",
+              "explicacion": "El teclado sigue el orden esperado de la tarea."
+            },
+            {
+              "id": "C",
+              "texto": "Ocultar el foco para evitar que parezca desordenado.",
+              "explicacion": "El usuario pierde la señal de dónde está."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-097",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una persona puede eliminar una lista completa de forma irreversible con un solo clic accidental.\n\n¿Qué ajuste reduce el error?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mostrar la confirmación solo después de eliminar.",
+              "explicacion": "Ya no permite evitar una acción irreversible."
+            },
+            {
+              "id": "B",
+              "texto": "Separar la acción destructiva y confirmar indicando qué lista y qué se perderá.",
+              "explicacion": "La persona puede verificar el impacto antes de confirmar."
+            },
+            {
+              "id": "C",
+              "texto": "Cambiar el texto del botón a «Aceptar» sin aclarar su efecto.",
+              "explicacion": "Hace la acción menos reconocible."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-098",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Una pantalla de contraseña indica el error únicamente poniendo el borde del campo en rojo.\n\n¿Qué diseño hace perceptible el fallo sin distinguir colores?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Cambiar todo el fondo a rojo sin señalar ningún campo.",
+              "explicacion": "No permite localizar qué debe corregirse."
+            },
+            {
+              "id": "B",
+              "texto": "Añadir un mensaje textual vinculado al campo, además del indicador visual.",
+              "explicacion": "Comunica qué ocurrió y dónde corregirlo por más de un medio."
+            },
+            {
+              "id": "C",
+              "texto": "Usar un rojo más intenso sin añadir texto.",
+              "explicacion": "Sigue dependiendo de percibir el color."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-099",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Durante una transferencia larga, el botón se bloquea pero la pantalla no indica si el envío sigue activo.\n\n¿Qué información debe presentar la interfaz?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Mostrar «éxito» mientras el proceso sigue en curso.",
+              "explicacion": "Podría comunicar un resultado que aún no se confirmó."
+            },
+            {
+              "id": "B",
+              "texto": "Ocultar todo el contenido hasta que finalice.",
+              "explicacion": "No informa si se procesa, falló o se congeló."
+            },
+            {
+              "id": "C",
+              "texto": "Estado de procesamiento y resultado final, con opción de cancelar si el flujo lo admite.",
+              "explicacion": "Hace visible el estado del sistema durante y después de la operación."
+            }
+          ],
+          "opcionCorrectaId": "C"
+        },
+        {
+          "codigoReactivo": "EGEL-A2-100",
+          "version": 1,
+          "formato": "caso_practico",
+          "enunciado": "Un formulario muestra «Error 17» al rechazar un teléfono incompleto.\n\n¿Qué mensaje permite corregirlo en esa pantalla?",
+          "opciones": [
+            {
+              "id": "A",
+              "texto": "Vaciar el formulario y solicitar que comience de nuevo.",
+              "explicacion": "Aumenta el esfuerzo sin aclarar la causa."
+            },
+            {
+              "id": "B",
+              "texto": "Identificar el campo y mostrar el formato esperado sin borrar los demás datos.",
+              "explicacion": "Da una acción concreta y evita perder el avance."
+            },
+            {
+              "id": "C",
+              "texto": "Mostrar solo el código técnico para que lo memorice la persona.",
+              "explicacion": "No explica cómo resolver el error."
+            }
+          ],
+          "opcionCorrectaId": "B"
+        }
+      ]
+    }
+  ]
+}
